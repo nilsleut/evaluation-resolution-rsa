@@ -132,8 +132,10 @@ pip install -r requirements.txt        # the core block is enough for this
 cd code && python make_figures.py      # reads ../results/, writes ../figures/
 ```
 
-This is also the integrity check on the repository: the regenerated PDFs are
-byte-for-byte the size of the committed ones.
+This is also the integrity check on the repository. A clean clone regenerates all
+seven PDFs identically to the committed ones apart from the `/CreationDate` string
+that matplotlib embeds — three bytes in each file. The plotted content is bit-identical,
+so if a figure changes here, the data or the code changed.
 
 ### The tables
 

@@ -23,9 +23,10 @@ the docstrings describe the runs as they were actually executed.
 ## The one file that was edited
 
 `make_figures.py` originally read from two separate working trees by absolute path.
-Its path block now points at `../results/`; the plotting code is untouched. The
-figures it writes are byte-for-byte identical in size to the seven PDFs in
-`../figures/`, which is the check that the shipped data is the data behind the paper:
+Its path block now points at `../results/`; the plotting code is untouched. Running it
+in a clean clone reproduces the seven PDFs in `../figures/` exactly, apart from the
+`/CreationDate` timestamp matplotlib embeds (three bytes per file) — which is the check
+that the shipped data is the data behind the paper:
 
 ```bash
 cd code && python make_figures.py     # overwrites ../figures/ with identical output
