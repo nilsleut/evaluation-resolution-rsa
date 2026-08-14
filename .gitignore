@@ -1,0 +1,57 @@
+# ---------------------------------------------------------------------------
+# Nothing large, nothing licensed, nothing re-derivable belongs in this repo.
+# The CSVs in results/ are the deliverable; everything they were computed from
+# is either public (THINGS, Brain-Score) or reproducible from code/.
+# ---------------------------------------------------------------------------
+
+# Model checkpoints — regenerate with code/learning_rules_v10_sweep_modal.py
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+
+# Saved RDMs and intermediate feature arrays (hundreds of MB)
+*.npy
+*.npz
+rdms/
+features/
+shards/
+
+# Brain data. THINGS-fMRI is under its own terms (openneuro.org/datasets/ds004192);
+# Brain-Score assemblies download themselves on first use.
+outputs_720/
+data/
+*.nii
+*.nii.gz
+.brainio/
+
+# THINGS stimulus images — obtain from the THINGS initiative, do not redistribute
+object_images/
+images_THINGS/
+
+# LaTeX build products; paper/*.tex is the source of record
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Modal / run bookkeeping
+spawned_calls.json
+*_partial.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

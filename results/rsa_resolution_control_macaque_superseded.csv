@@ -1,0 +1,51 @@
+# SUPERSEDED -- DO NOT USE. Kept for comparison only.
+# This file predates the repair described in Sec. 4.1 of arXiv:2608.12408: the
+# predictive-coding and STDP model classes overrode eval() with a no-op, so their
+# BatchNorm layers stayed in training mode during feature extraction and normalized
+# each evaluation batch by its own statistics.
+# The predictive_coding and stdp rows below are materially wrong: e.g. stdp at V1,
+# 224 px reads 0.304919 here against 0.266491 after repair. The random, backprop and
+# feedback_alignment rows are unaffected.
+# USE INSTEAD: rsa_resolution_control_macaque.csv (same directory). See results/README.md.
+# Read with: pandas.read_csv(path, comment='#')
+rule,layer,region,res,rho,ci_lo,ci_hi,n_stim
+random,Conv2,V4,224,0.038012,0.023864,0.055018,3200
+random,FC1,IT,224,0.101989,0.083015,0.121731,3200
+random,Conv1,V1,224,0.178069,0.110301,0.289941,135
+random,Conv1,V2,224,0.151685,0.075694,0.277417,135
+random,Conv2,V4,32,0.038562,0.024245,0.056124,3200
+random,FC1,IT,32,0.104643,0.085441,0.126419,3200
+random,Conv1,V1,32,0.384608,0.310756,0.492519,135
+random,Conv1,V2,32,0.207406,0.130364,0.325051,135
+backprop,Conv2,V4,224,0.0395,0.02732,0.053171,3200
+backprop,FC1,IT,224,0.072832,0.056232,0.090497,3200
+backprop,Conv1,V1,224,0.158416,0.108473,0.253834,135
+backprop,Conv1,V2,224,0.195649,0.148503,0.291618,135
+backprop,Conv2,V4,32,0.041783,0.030029,0.056226,3200
+backprop,FC1,IT,32,0.129911,0.110596,0.152914,3200
+backprop,Conv1,V1,32,0.384774,0.308604,0.493482,135
+backprop,Conv1,V2,32,0.367869,0.309326,0.467058,135
+feedback_alignment,Conv2,V4,224,0.039009,0.025909,0.054969,3200
+feedback_alignment,FC1,IT,224,0.089231,0.073383,0.106093,3200
+feedback_alignment,Conv1,V1,224,0.161056,0.108494,0.2609,135
+feedback_alignment,Conv1,V2,224,0.177781,0.12416,0.277359,135
+feedback_alignment,Conv2,V4,32,0.039871,0.026634,0.055753,3200
+feedback_alignment,FC1,IT,32,0.088213,0.072286,0.105543,3200
+feedback_alignment,Conv1,V1,32,0.300118,0.226804,0.403134,135
+feedback_alignment,Conv1,V2,32,0.299043,0.226392,0.412366,135
+predictive_coding,Conv2,V4,224,0.045141,0.031037,0.061437,3200
+predictive_coding,FC1,IT,224,0.124993,0.104894,0.146431,3200
+predictive_coding,Conv1,V1,224,0.209752,0.14377,0.319002,135
+predictive_coding,Conv1,V2,224,0.155021,0.088669,0.269853,135
+predictive_coding,Conv2,V4,32,0.044793,0.031009,0.061545,3200
+predictive_coding,FC1,IT,32,0.116882,0.098089,0.136058,3200
+predictive_coding,Conv1,V1,32,0.328967,0.245129,0.449366,135
+predictive_coding,Conv1,V2,32,0.238149,0.16128,0.360119,135
+stdp,Conv2,V4,224,0.061617,0.044443,0.083319,3200
+stdp,FC1,IT,224,0.13409,0.114365,0.153774,3200
+stdp,Conv1,V1,224,0.304919,0.232997,0.411223,135
+stdp,Conv1,V2,224,0.268476,0.183672,0.400722,135
+stdp,Conv2,V4,32,0.058655,0.04173,0.079913,3200
+stdp,FC1,IT,32,0.126602,0.107928,0.14671,3200
+stdp,Conv1,V1,32,0.388203,0.303779,0.498827,135
+stdp,Conv1,V2,32,0.218231,0.148029,0.331885,135

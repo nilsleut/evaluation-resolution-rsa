@@ -1,0 +1,1081 @@
+rule,layer,roi,res,rho,ci_lo,ci_hi,n_subs,rho_sub_mean,seed,seed_idx
+Backprop,Conv1,V1,32,0.06285,0.059061,0.06678,3,0.042907,42,0
+Backprop,Conv1,V2,32,0.04177,0.038127,0.045912,3,0.027381,42,0
+Backprop,Conv2,V1,32,0.065968,0.062292,0.069489,3,0.043414,42,0
+Backprop,Conv2,V2,32,0.036725,0.033315,0.040444,3,0.023277,42,0
+Backprop,Conv3,LOC,32,0.018664,0.014939,0.022237,3,0.011593,42,0
+Backprop,FC1,IT,32,0.021717,0.017593,0.025547,3,0.014247,42,0
+Backprop,Conv1,V1,64,0.051337,0.04733,0.055044,3,0.03466,42,0
+Backprop,Conv1,V2,64,0.032178,0.028791,0.036301,3,0.021078,42,0
+Backprop,Conv2,V1,64,0.00531,0.001075,0.008853,3,0.001048,42,0
+Backprop,Conv2,V2,64,-0.005037,-0.008603,-0.001497,3,-0.003608,42,0
+Backprop,Conv3,LOC,64,0.018984,0.015165,0.023052,3,0.011362,42,0
+Backprop,FC1,IT,64,0.022003,0.018126,0.025862,3,0.014335,42,0
+Backprop,Conv1,V1,96,0.042194,0.038078,0.045824,3,0.028258,42,0
+Backprop,Conv1,V2,96,0.025139,0.0217,0.029209,3,0.016502,42,0
+Backprop,Conv2,V1,96,-0.01835,-0.022292,-0.014736,3,-0.015091,42,0
+Backprop,Conv2,V2,96,-0.018601,-0.022287,-0.015126,3,-0.01237,42,0
+Backprop,Conv3,LOC,96,0.01603,0.012141,0.020036,3,0.009537,42,0
+Backprop,FC1,IT,96,0.019792,0.015663,0.023631,3,0.012859,42,0
+Backprop,Conv1,V1,128,0.035947,0.031842,0.039678,3,0.023936,42,0
+Backprop,Conv1,V2,128,0.020659,0.017147,0.024747,3,0.013595,42,0
+Backprop,Conv2,V1,128,-0.027978,-0.03186,-0.024212,3,-0.02149,42,0
+Backprop,Conv2,V2,128,-0.023404,-0.027166,-0.01998,3,-0.015509,42,0
+Backprop,Conv3,LOC,128,0.014208,0.010115,0.018157,3,0.008475,42,0
+Backprop,FC1,IT,128,0.016336,0.012027,0.020125,3,0.01076,42,0
+Backprop,Conv1,V1,160,0.032522,0.028445,0.036374,3,0.021575,42,0
+Backprop,Conv1,V2,160,0.018363,0.01491,0.022473,3,0.012103,42,0
+Backprop,Conv2,V1,160,-0.031474,-0.035338,-0.027672,3,-0.023753,42,0
+Backprop,Conv2,V2,160,-0.024606,-0.028335,-0.02117,3,-0.016334,42,0
+Backprop,Conv3,LOC,160,0.013683,0.009533,0.017538,3,0.008153,42,0
+Backprop,FC1,IT,160,0.014466,0.010322,0.018276,3,0.00967,42,0
+Backprop,Conv1,V1,224,0.026648,0.022558,0.03047,3,0.017584,42,0
+Backprop,Conv1,V2,224,0.014599,0.011105,0.018656,3,0.009666,42,0
+Backprop,Conv2,V1,224,-0.034996,-0.038735,-0.031162,3,-0.025847,42,0
+Backprop,Conv2,V2,224,-0.025784,-0.02956,-0.022193,3,-0.017055,42,0
+Backprop,Conv3,LOC,224,0.011572,0.007423,0.015363,3,0.006999,42,0
+Backprop,FC1,IT,224,0.011562,0.007641,0.015314,3,0.007881,42,0
+Backprop,Conv1,V1,32,0.071081,,,3,0.048295,123,1
+Backprop,Conv1,V2,32,0.046064,,,3,0.030253,123,1
+Backprop,Conv2,V1,32,0.031554,,,3,0.019848,123,1
+Backprop,Conv2,V2,32,0.017087,,,3,0.010754,123,1
+Backprop,Conv3,LOC,32,0.017908,,,3,0.011009,123,1
+Backprop,FC1,IT,32,0.017934,,,3,0.011369,123,1
+Backprop,Conv1,V1,64,0.05967,,,3,0.040063,123,1
+Backprop,Conv1,V2,64,0.035879,,,3,0.023625,123,1
+Backprop,Conv2,V1,64,-0.011431,,,3,-0.010116,123,1
+Backprop,Conv2,V2,64,-0.011151,,,3,-0.007555,123,1
+Backprop,Conv3,LOC,64,0.019367,,,3,0.011292,123,1
+Backprop,FC1,IT,64,0.019088,,,3,0.0122,123,1
+Backprop,Conv1,V1,96,0.049719,,,3,0.033145,123,1
+Backprop,Conv1,V2,96,0.028151,,,3,0.018644,123,1
+Backprop,Conv2,V1,96,-0.025997,,,3,-0.020025,123,1
+Backprop,Conv2,V2,96,-0.019409,,,3,-0.012946,123,1
+Backprop,Conv3,LOC,96,0.017211,,,3,0.010021,123,1
+Backprop,FC1,IT,96,0.01704,,,3,0.010839,123,1
+Backprop,Conv1,V1,128,0.042885,,,3,0.028422,123,1
+Backprop,Conv1,V2,128,0.023324,,,3,0.015503,123,1
+Backprop,Conv2,V1,128,-0.031085,,,3,-0.023361,123,1
+Backprop,Conv2,V2,128,-0.021786,,,3,-0.014521,123,1
+Backprop,Conv3,LOC,128,0.015457,,,3,0.008998,123,1
+Backprop,FC1,IT,128,0.015036,,,3,0.009623,123,1
+Backprop,Conv1,V1,160,0.038773,,,3,0.025615,123,1
+Backprop,Conv1,V2,160,0.020531,,,3,0.01369,123,1
+Backprop,Conv2,V1,160,-0.032742,,,3,-0.024367,123,1
+Backprop,Conv2,V2,160,-0.022064,,,3,-0.014739,123,1
+Backprop,Conv3,LOC,160,0.014907,,,3,0.008662,123,1
+Backprop,FC1,IT,160,0.013736,,,3,0.008915,123,1
+Backprop,Conv1,V1,224,0.032594,,,3,0.021432,123,1
+Backprop,Conv1,V2,224,0.016574,,,3,0.011113,123,1
+Backprop,Conv2,V1,224,-0.033564,,,3,-0.024673,123,1
+Backprop,Conv2,V2,224,-0.021786,,,3,-0.014536,123,1
+Backprop,Conv3,LOC,224,0.012955,,,3,0.007603,123,1
+Backprop,FC1,IT,224,0.011921,,,3,0.007801,123,1
+Backprop,Conv1,V1,32,0.05444,,,3,0.036931,456,2
+Backprop,Conv1,V2,32,0.035729,,,3,0.023669,456,2
+Backprop,Conv2,V1,32,0.034728,,,3,0.022211,456,2
+Backprop,Conv2,V2,32,0.018939,,,3,0.011878,456,2
+Backprop,Conv3,LOC,32,0.016144,,,3,0.010015,456,2
+Backprop,FC1,IT,32,0.02116,,,3,0.013303,456,2
+Backprop,Conv1,V1,64,0.044936,,,3,0.030078,456,2
+Backprop,Conv1,V2,64,0.027688,,,3,0.018352,456,2
+Backprop,Conv2,V1,64,-0.011826,,,3,-0.010278,456,2
+Backprop,Conv2,V2,64,-0.013245,,,3,-0.008935,456,2
+Backprop,Conv3,LOC,64,0.018042,,,3,0.010655,456,2
+Backprop,FC1,IT,64,0.023021,,,3,0.014542,456,2
+Backprop,Conv1,V1,96,0.037168,,,3,0.024658,456,2
+Backprop,Conv1,V2,96,0.021407,,,3,0.014252,456,2
+Backprop,Conv2,V1,96,-0.02908,,,3,-0.02204,456,2
+Backprop,Conv2,V2,96,-0.023459,,,3,-0.015559,456,2
+Backprop,Conv3,LOC,96,0.016528,,,3,0.009718,456,2
+Backprop,FC1,IT,96,0.020481,,,3,0.012954,456,2
+Backprop,Conv1,V1,128,0.0323,,,3,0.021291,456,2
+Backprop,Conv1,V2,128,0.017723,,,3,0.011847,456,2
+Backprop,Conv2,V1,128,-0.035239,,,3,-0.026093,456,2
+Backprop,Conv2,V2,128,-0.026368,,,3,-0.017498,456,2
+Backprop,Conv3,LOC,128,0.015403,,,3,0.009055,456,2
+Backprop,FC1,IT,128,0.018097,,,3,0.011535,456,2
+Backprop,Conv1,V1,160,0.029467,,,3,0.019348,456,2
+Backprop,Conv1,V2,160,0.015676,,,3,0.010508,456,2
+Backprop,Conv2,V1,160,-0.037203,,,3,-0.027305,456,2
+Backprop,Conv2,V2,160,-0.026636,,,3,-0.017706,456,2
+Backprop,Conv3,LOC,160,0.015197,,,3,0.00893,456,2
+Backprop,FC1,IT,160,0.016043,,,3,0.010303,456,2
+Backprop,Conv1,V1,224,0.024997,,,3,0.016331,456,2
+Backprop,Conv1,V2,224,0.012607,,,3,0.008526,456,2
+Backprop,Conv2,V1,224,-0.038206,,,3,-0.027737,456,2
+Backprop,Conv2,V2,224,-0.026197,,,3,-0.017388,456,2
+Backprop,Conv3,LOC,224,0.013545,,,3,0.008047,456,2
+Backprop,FC1,IT,224,0.013944,,,3,0.009035,456,2
+Backprop,Conv1,V1,32,0.055549,,,3,0.03763,789,3
+Backprop,Conv1,V2,32,0.037205,,,3,0.024595,789,3
+Backprop,Conv2,V1,32,0.037917,,,3,0.024283,789,3
+Backprop,Conv2,V2,32,0.020664,,,3,0.012837,789,3
+Backprop,Conv3,LOC,32,0.016893,,,3,0.010352,789,3
+Backprop,FC1,IT,32,0.020174,,,3,0.012796,789,3
+Backprop,Conv1,V1,64,0.048505,,,3,0.03245,789,3
+Backprop,Conv1,V2,64,0.030823,,,3,0.020295,789,3
+Backprop,Conv2,V1,64,-0.01373,,,3,-0.011664,789,3
+Backprop,Conv2,V2,64,-0.013696,,,3,-0.009383,789,3
+Backprop,Conv3,LOC,64,0.018192,,,3,0.010762,789,3
+Backprop,FC1,IT,64,0.020655,,,3,0.013209,789,3
+Backprop,Conv1,V1,96,0.04201,,,3,0.027869,789,3
+Backprop,Conv1,V2,96,0.025655,,,3,0.016907,789,3
+Backprop,Conv2,V1,96,-0.030481,,,3,-0.023138,789,3
+Backprop,Conv2,V2,96,-0.023848,,,3,-0.015928,789,3
+Backprop,Conv3,LOC,96,0.015979,,,3,0.009425,789,3
+Backprop,FC1,IT,96,0.018433,,,3,0.011716,789,3
+Backprop,Conv1,V1,128,0.037277,,,3,0.024567,789,3
+Backprop,Conv1,V2,128,0.022147,,,3,0.014597,789,3
+Backprop,Conv2,V1,128,-0.036458,,,3,-0.027106,789,3
+Backprop,Conv2,V2,128,-0.026665,,,3,-0.017781,789,3
+Backprop,Conv3,LOC,128,0.014272,,,3,0.008423,789,3
+Backprop,FC1,IT,128,0.016229,,,3,0.010345,789,3
+Backprop,Conv1,V1,160,0.034712,,,3,0.022788,789,3
+Backprop,Conv1,V2,160,0.02029,,,3,0.013381,789,3
+Backprop,Conv2,V1,160,-0.038171,,,3,-0.02816,789,3
+Backprop,Conv2,V2,160,-0.026778,,,3,-0.017903,789,3
+Backprop,Conv3,LOC,160,0.013967,,,3,0.008216,789,3
+Backprop,FC1,IT,160,0.015324,,,3,0.0098,789,3
+Backprop,Conv1,V1,224,0.030368,,,3,0.019842,789,3
+Backprop,Conv1,V2,224,0.017393,,,3,0.011498,789,3
+Backprop,Conv2,V1,224,-0.038792,,,3,-0.02832,789,3
+Backprop,Conv2,V2,224,-0.026041,,,3,-0.017423,789,3
+Backprop,Conv3,LOC,224,0.012451,,,3,0.007423,789,3
+Backprop,FC1,IT,224,0.012789,,,3,0.008216,789,3
+Backprop,Conv1,V1,32,0.083261,,,3,0.056657,1337,4
+Backprop,Conv1,V2,32,0.05379,,,3,0.035213,1337,4
+Backprop,Conv2,V1,32,0.061248,,,3,0.040045,1337,4
+Backprop,Conv2,V2,32,0.035124,,,3,0.022222,1337,4
+Backprop,Conv3,LOC,32,0.017498,,,3,0.010645,1337,4
+Backprop,FC1,IT,32,0.022343,,,3,0.014298,1337,4
+Backprop,Conv1,V1,64,0.070877,,,3,0.047774,1337,4
+Backprop,Conv1,V2,64,0.043549,,,3,0.028553,1337,4
+Backprop,Conv2,V1,64,0.005605,,,3,0.001413,1337,4
+Backprop,Conv2,V2,64,-0.001637,,,3,-0.001324,1337,4
+Backprop,Conv3,LOC,64,0.018953,,,3,0.011183,1337,4
+Backprop,FC1,IT,64,0.024134,,,3,0.015585,1337,4
+Backprop,Conv1,V1,96,0.060619,,,3,0.040613,1337,4
+Backprop,Conv1,V2,96,0.035743,,,3,0.023509,1337,4
+Backprop,Conv2,V1,96,-0.015933,,,3,-0.013218,1337,4
+Backprop,Conv2,V2,96,-0.014239,,,3,-0.009432,1337,4
+Backprop,Conv3,LOC,96,0.016921,,,3,0.00993,1337,4
+Backprop,FC1,IT,96,0.021358,,,3,0.013683,1337,4
+Backprop,Conv1,V1,128,0.053518,,,3,0.035724,1337,4
+Backprop,Conv1,V2,128,0.030668,,,3,0.020226,1337,4
+Backprop,Conv2,V1,128,-0.024315,,,3,-0.01874,1337,4
+Backprop,Conv2,V2,128,-0.018322,,,3,-0.012094,1337,4
+Backprop,Conv3,LOC,128,0.015026,,,3,0.008824,1337,4
+Backprop,FC1,IT,128,0.018383,,,3,0.011809,1337,4
+Backprop,Conv1,V1,160,0.049353,,,3,0.032868,1337,4
+Backprop,Conv1,V2,160,0.027825,,,3,0.018386,1337,4
+Backprop,Conv2,V1,160,-0.027642,,,3,-0.020893,1337,4
+Backprop,Conv2,V2,160,-0.019525,,,3,-0.012926,1337,4
+Backprop,Conv3,LOC,160,0.014393,,,3,0.008424,1337,4
+Backprop,FC1,IT,160,0.016032,,,3,0.010397,1337,4
+Backprop,Conv1,V1,224,0.042455,,,3,0.028188,1337,4
+Backprop,Conv1,V2,224,0.023283,,,3,0.015452,1337,4
+Backprop,Conv2,V1,224,-0.030726,,,3,-0.022732,1337,4
+Backprop,Conv2,V2,224,-0.020425,,,3,-0.013511,1337,4
+Backprop,Conv3,LOC,224,0.01256,,,3,0.007396,1337,4
+Backprop,FC1,IT,224,0.013071,,,3,0.008607,1337,4
+Feedback Alignment,Conv1,V1,32,0.029494,,,3,0.019464,42,0
+Feedback Alignment,Conv1,V2,32,0.013715,,,3,0.009145,42,0
+Feedback Alignment,Conv2,V1,32,0.03459,,,3,0.022961,42,0
+Feedback Alignment,Conv2,V2,32,0.018179,,,3,0.012007,42,0
+Feedback Alignment,Conv3,LOC,32,0.004282,,,3,0.002964,42,0
+Feedback Alignment,FC1,IT,32,0.00715,,,3,0.004449,42,0
+Feedback Alignment,Conv1,V1,64,0.02568,,,3,0.016809,42,0
+Feedback Alignment,Conv1,V2,64,0.010524,,,3,0.0071,42,0
+Feedback Alignment,Conv2,V1,64,0.026985,,,3,0.017729,42,0
+Feedback Alignment,Conv2,V2,64,0.01256,,,3,0.008417,42,0
+Feedback Alignment,Conv3,LOC,64,0.004604,,,3,0.002861,42,0
+Feedback Alignment,FC1,IT,64,0.008861,,,3,0.005222,42,0
+Feedback Alignment,Conv1,V1,96,0.023686,,,3,0.01544,42,0
+Feedback Alignment,Conv1,V2,96,0.009199,,,3,0.006241,42,0
+Feedback Alignment,Conv2,V1,96,0.024313,,,3,0.015958,42,0
+Feedback Alignment,Conv2,V2,96,0.011284,,,3,0.007635,42,0
+Feedback Alignment,Conv3,LOC,96,0.005972,,,3,0.003552,42,0
+Feedback Alignment,FC1,IT,96,0.011103,,,3,0.006358,42,0
+Feedback Alignment,Conv1,V1,128,0.022566,,,3,0.014683,42,0
+Feedback Alignment,Conv1,V2,128,0.008525,,,3,0.005803,42,0
+Feedback Alignment,Conv2,V1,128,0.02294,,,3,0.015121,42,0
+Feedback Alignment,Conv2,V2,128,0.010625,,,3,0.007228,42,0
+Feedback Alignment,Conv3,LOC,128,0.006232,,,3,0.003686,42,0
+Feedback Alignment,FC1,IT,128,0.011666,,,3,0.006635,42,0
+Feedback Alignment,Conv1,V1,160,0.021928,,,3,0.014263,42,0
+Feedback Alignment,Conv1,V2,160,0.008122,,,3,0.005548,42,0
+Feedback Alignment,Conv2,V1,160,0.022178,,,3,0.01467,42,0
+Feedback Alignment,Conv2,V2,160,0.010163,,,3,0.006968,42,0
+Feedback Alignment,Conv3,LOC,160,0.006341,,,3,0.003733,42,0
+Feedback Alignment,FC1,IT,160,0.011993,,,3,0.006826,42,0
+Feedback Alignment,Conv1,V1,224,0.021197,,,3,0.013791,42,0
+Feedback Alignment,Conv1,V2,224,0.007709,,,3,0.005279,42,0
+Feedback Alignment,Conv2,V1,224,0.022132,,,3,0.014768,42,0
+Feedback Alignment,Conv2,V2,224,0.010427,,,3,0.007161,42,0
+Feedback Alignment,Conv3,LOC,224,0.006276,,,3,0.003724,42,0
+Feedback Alignment,FC1,IT,224,0.011993,,,3,0.006855,42,0
+Feedback Alignment,Conv1,V1,32,0.023541,,,3,0.015309,123,1
+Feedback Alignment,Conv1,V2,32,0.011225,,,3,0.007528,123,1
+Feedback Alignment,Conv2,V1,32,0.026275,,,3,0.017151,123,1
+Feedback Alignment,Conv2,V2,32,0.01184,,,3,0.00796,123,1
+Feedback Alignment,Conv3,LOC,32,0.004451,,,3,0.002864,123,1
+Feedback Alignment,FC1,IT,32,0.00836,,,3,0.005092,123,1
+Feedback Alignment,Conv1,V1,64,0.017385,,,3,0.011068,123,1
+Feedback Alignment,Conv1,V2,64,0.007064,,,3,0.004825,123,1
+Feedback Alignment,Conv2,V1,64,0.017782,,,3,0.011237,123,1
+Feedback Alignment,Conv2,V2,64,0.006991,,,3,0.004811,123,1
+Feedback Alignment,Conv3,LOC,64,0.005506,,,3,0.003215,123,1
+Feedback Alignment,FC1,IT,64,0.011061,,,3,0.00657,123,1
+Feedback Alignment,Conv1,V1,96,0.014979,,,3,0.00947,123,1
+Feedback Alignment,Conv1,V2,96,0.005618,,,3,0.003905,123,1
+Feedback Alignment,Conv2,V1,96,0.01473,,,3,0.009177,123,1
+Feedback Alignment,Conv2,V2,96,0.005951,,,3,0.004085,123,1
+Feedback Alignment,Conv3,LOC,96,0.006208,,,3,0.003561,123,1
+Feedback Alignment,FC1,IT,96,0.012161,,,3,0.00708,123,1
+Feedback Alignment,Conv1,V1,128,0.013782,,,3,0.008696,123,1
+Feedback Alignment,Conv1,V2,128,0.005008,,,3,0.003514,123,1
+Feedback Alignment,Conv2,V1,128,0.013085,,,3,0.008117,123,1
+Feedback Alignment,Conv2,V2,128,0.00546,,,3,0.003757,123,1
+Feedback Alignment,Conv3,LOC,128,0.006049,,,3,0.003426,123,1
+Feedback Alignment,FC1,IT,128,0.012719,,,3,0.007334,123,1
+Feedback Alignment,Conv1,V1,160,0.013209,,,3,0.00834,123,1
+Feedback Alignment,Conv1,V2,160,0.004725,,,3,0.003343,123,1
+Feedback Alignment,Conv2,V1,160,0.012305,,,3,0.007646,123,1
+Feedback Alignment,Conv2,V2,160,0.00522,,,3,0.003601,123,1
+Feedback Alignment,Conv3,LOC,160,0.006022,,,3,0.00337,123,1
+Feedback Alignment,FC1,IT,160,0.012623,,,3,0.007259,123,1
+Feedback Alignment,Conv1,V1,224,0.012675,,,3,0.008039,123,1
+Feedback Alignment,Conv1,V2,224,0.004497,,,3,0.003211,123,1
+Feedback Alignment,Conv2,V1,224,0.01162,,,3,0.007331,123,1
+Feedback Alignment,Conv2,V2,224,0.005493,,,3,0.00379,123,1
+Feedback Alignment,Conv3,LOC,224,0.005853,,,3,0.003287,123,1
+Feedback Alignment,FC1,IT,224,0.012477,,,3,0.007176,123,1
+Feedback Alignment,Conv1,V1,32,0.020531,,,3,0.013345,456,2
+Feedback Alignment,Conv1,V2,32,0.008511,,,3,0.005778,456,2
+Feedback Alignment,Conv2,V1,32,0.024778,,,3,0.016235,456,2
+Feedback Alignment,Conv2,V2,32,0.012411,,,3,0.008191,456,2
+Feedback Alignment,Conv3,LOC,32,0.00512,,,3,0.003393,456,2
+Feedback Alignment,FC1,IT,32,0.007288,,,3,0.00471,456,2
+Feedback Alignment,Conv1,V1,64,0.015323,,,3,0.009778,456,2
+Feedback Alignment,Conv1,V2,64,0.005161,,,3,0.003637,456,2
+Feedback Alignment,Conv2,V1,64,0.01754,,,3,0.011323,456,2
+Feedback Alignment,Conv2,V2,64,0.007874,,,3,0.005339,456,2
+Feedback Alignment,Conv3,LOC,64,0.00589,,,3,0.003764,456,2
+Feedback Alignment,FC1,IT,64,0.010177,,,3,0.006182,456,2
+Feedback Alignment,Conv1,V1,96,0.012778,,,3,0.008045,456,2
+Feedback Alignment,Conv1,V2,96,0.003671,,,3,0.002682,456,2
+Feedback Alignment,Conv2,V1,96,0.014302,,,3,0.009208,456,2
+Feedback Alignment,Conv2,V2,96,0.006052,,,3,0.004206,456,2
+Feedback Alignment,Conv3,LOC,96,0.006312,,,3,0.003947,456,2
+Feedback Alignment,FC1,IT,96,0.011409,,,3,0.006737,456,2
+Feedback Alignment,Conv1,V1,128,0.011417,,,3,0.007142,456,2
+Feedback Alignment,Conv1,V2,128,0.002944,,,3,0.00222,456,2
+Feedback Alignment,Conv2,V1,128,0.01285,,,3,0.00833,456,2
+Feedback Alignment,Conv2,V2,128,0.005367,,,3,0.0038,456,2
+Feedback Alignment,Conv3,LOC,128,0.006048,,,3,0.003773,456,2
+Feedback Alignment,FC1,IT,128,0.011613,,,3,0.006769,456,2
+Feedback Alignment,Conv1,V1,160,0.010716,,,3,0.006689,456,2
+Feedback Alignment,Conv1,V2,160,0.002576,,,3,0.001993,456,2
+Feedback Alignment,Conv2,V1,160,0.012095,,,3,0.007907,456,2
+Feedback Alignment,Conv2,V2,160,0.004965,,,3,0.003566,456,2
+Feedback Alignment,Conv3,LOC,160,0.006008,,,3,0.003716,456,2
+Feedback Alignment,FC1,IT,160,0.011766,,,3,0.006827,456,2
+Feedback Alignment,Conv1,V1,224,0.009758,,,3,0.006072,456,2
+Feedback Alignment,Conv1,V2,224,0.002102,,,3,0.0017,456,2
+Feedback Alignment,Conv2,V1,224,0.011793,,,3,0.007835,456,2
+Feedback Alignment,Conv2,V2,224,0.005231,,,3,0.003754,456,2
+Feedback Alignment,Conv3,LOC,224,0.005586,,,3,0.003475,456,2
+Feedback Alignment,FC1,IT,224,0.011484,,,3,0.006687,456,2
+Feedback Alignment,Conv1,V1,32,0.010255,,,3,0.006604,789,3
+Feedback Alignment,Conv1,V2,32,0.004898,,,3,0.003337,789,3
+Feedback Alignment,Conv2,V1,32,0.03171,,,3,0.021201,789,3
+Feedback Alignment,Conv2,V2,32,0.020923,,,3,0.01391,789,3
+Feedback Alignment,Conv3,LOC,32,0.004116,,,3,0.002664,789,3
+Feedback Alignment,FC1,IT,32,0.008103,,,3,0.005226,789,3
+Feedback Alignment,Conv1,V1,64,0.004785,,,3,0.002843,789,3
+Feedback Alignment,Conv1,V2,64,0.002126,,,3,0.00153,789,3
+Feedback Alignment,Conv2,V1,64,0.021111,,,3,0.01387,789,3
+Feedback Alignment,Conv2,V2,64,0.014783,,,3,0.009887,789,3
+Feedback Alignment,Conv3,LOC,64,0.004708,,,3,0.002737,789,3
+Feedback Alignment,FC1,IT,64,0.0095,,,3,0.005799,789,3
+Feedback Alignment,Conv1,V1,96,0.00298,,,3,0.001638,789,3
+Feedback Alignment,Conv1,V2,96,0.001477,,,3,0.00111,789,3
+Feedback Alignment,Conv2,V1,96,0.017729,,,3,0.011621,789,3
+Feedback Alignment,Conv2,V2,96,0.013667,,,3,0.009149,789,3
+Feedback Alignment,Conv3,LOC,96,0.005683,,,3,0.003237,789,3
+Feedback Alignment,FC1,IT,96,0.011622,,,3,0.006849,789,3
+Feedback Alignment,Conv1,V1,128,0.002262,,,3,0.001188,789,3
+Feedback Alignment,Conv1,V2,128,0.001322,,,3,0.001011,789,3
+Feedback Alignment,Conv2,V1,128,0.016328,,,3,0.010779,789,3
+Feedback Alignment,Conv2,V2,128,0.013199,,,3,0.008874,789,3
+Feedback Alignment,Conv3,LOC,128,0.005277,,,3,0.003007,789,3
+Feedback Alignment,FC1,IT,128,0.011652,,,3,0.006748,789,3
+Feedback Alignment,Conv1,V1,160,0.002136,,,3,0.001135,789,3
+Feedback Alignment,Conv1,V2,160,0.00142,,,3,0.001081,789,3
+Feedback Alignment,Conv2,V1,160,0.015587,,,3,0.010356,789,3
+Feedback Alignment,Conv2,V2,160,0.012961,,,3,0.008759,789,3
+Feedback Alignment,Conv3,LOC,160,0.005209,,,3,0.002991,789,3
+Feedback Alignment,FC1,IT,160,0.011231,,,3,0.006496,789,3
+Feedback Alignment,Conv1,V1,224,0.002177,,,3,0.001216,789,3
+Feedback Alignment,Conv1,V2,224,0.001688,,,3,0.001271,789,3
+Feedback Alignment,Conv2,V1,224,0.016151,,,3,0.010894,789,3
+Feedback Alignment,Conv2,V2,224,0.013749,,,3,0.00931,789,3
+Feedback Alignment,Conv3,LOC,224,0.004438,,,3,0.002622,789,3
+Feedback Alignment,FC1,IT,224,0.01063,,,3,0.00615,789,3
+Feedback Alignment,Conv1,V1,32,0.017764,,,3,0.01142,1337,4
+Feedback Alignment,Conv1,V2,32,0.009076,,,3,0.006087,1337,4
+Feedback Alignment,Conv2,V1,32,0.02056,,,3,0.013259,1337,4
+Feedback Alignment,Conv2,V2,32,0.011557,,,3,0.007751,1337,4
+Feedback Alignment,Conv3,LOC,32,0.003689,,,3,0.00246,1337,4
+Feedback Alignment,FC1,IT,32,0.007528,,,3,0.004755,1337,4
+Feedback Alignment,Conv1,V1,64,0.014378,,,3,0.009093,1337,4
+Feedback Alignment,Conv1,V2,64,0.005818,,,3,0.003968,1337,4
+Feedback Alignment,Conv2,V1,64,0.012841,,,3,0.007904,1337,4
+Feedback Alignment,Conv2,V2,64,0.005261,,,3,0.003726,1337,4
+Feedback Alignment,Conv3,LOC,64,0.005515,,,3,0.003403,1337,4
+Feedback Alignment,FC1,IT,64,0.009603,,,3,0.005781,1337,4
+Feedback Alignment,Conv1,V1,96,0.01306,,,3,0.008203,1337,4
+Feedback Alignment,Conv1,V2,96,0.004759,,,3,0.003287,1337,4
+Feedback Alignment,Conv2,V1,96,0.010813,,,3,0.006602,1337,4
+Feedback Alignment,Conv2,V2,96,0.004529,,,3,0.003244,1337,4
+Feedback Alignment,Conv3,LOC,96,0.006947,,,3,0.004146,1337,4
+Feedback Alignment,FC1,IT,96,0.011344,,,3,0.00671,1337,4
+Feedback Alignment,Conv1,V1,128,0.01238,,,3,0.00776,1337,4
+Feedback Alignment,Conv1,V2,128,0.004319,,,3,0.00299,1337,4
+Feedback Alignment,Conv2,V1,128,0.00998,,,3,0.006093,1337,4
+Feedback Alignment,Conv2,V2,128,0.004438,,,3,0.003135,1337,4
+Feedback Alignment,Conv3,LOC,128,0.007107,,,3,0.004203,1337,4
+Feedback Alignment,FC1,IT,128,0.011542,,,3,0.006717,1337,4
+Feedback Alignment,Conv1,V1,160,0.012125,,,3,0.00761,1337,4
+Feedback Alignment,Conv1,V2,160,0.004131,,,3,0.002871,1337,4
+Feedback Alignment,Conv2,V1,160,0.009796,,,3,0.00601,1337,4
+Feedback Alignment,Conv2,V2,160,0.004522,,,3,0.003175,1337,4
+Feedback Alignment,Conv3,LOC,160,0.006802,,,3,0.004009,1337,4
+Feedback Alignment,FC1,IT,160,0.011419,,,3,0.006622,1337,4
+Feedback Alignment,Conv1,V1,224,0.011802,,,3,0.007427,1337,4
+Feedback Alignment,Conv1,V2,224,0.003914,,,3,0.002737,1337,4
+Feedback Alignment,Conv2,V1,224,0.010295,,,3,0.006481,1337,4
+Feedback Alignment,Conv2,V2,224,0.00515,,,3,0.003591,1337,4
+Feedback Alignment,Conv3,LOC,224,0.006057,,,3,0.003578,1337,4
+Feedback Alignment,FC1,IT,224,0.010755,,,3,0.006184,1337,4
+Predictive Coding,Conv1,V1,32,0.025456,,,3,0.01705,42,0
+Predictive Coding,Conv1,V2,32,0.014994,,,3,0.009904,42,0
+Predictive Coding,Conv2,V1,32,0.012843,,,3,0.008464,42,0
+Predictive Coding,Conv2,V2,32,0.005651,,,3,0.003873,42,0
+Predictive Coding,Conv3,LOC,32,0.007101,,,3,0.004427,42,0
+Predictive Coding,FC1,IT,32,0.014805,,,3,0.009243,42,0
+Predictive Coding,Conv1,V1,64,0.018913,,,3,0.012482,42,0
+Predictive Coding,Conv1,V2,64,0.010677,,,3,0.0071,42,0
+Predictive Coding,Conv2,V1,64,0.010945,,,3,0.007113,42,0
+Predictive Coding,Conv2,V2,64,0.003863,,,3,0.002646,42,0
+Predictive Coding,Conv3,LOC,64,0.005919,,,3,0.003625,42,0
+Predictive Coding,FC1,IT,64,0.016084,,,3,0.009914,42,0
+Predictive Coding,Conv1,V1,96,0.015851,,,3,0.010387,42,0
+Predictive Coding,Conv1,V2,96,0.00884,,,3,0.005928,42,0
+Predictive Coding,Conv2,V1,96,0.010187,,,3,0.006593,42,0
+Predictive Coding,Conv2,V2,96,0.003637,,,3,0.002441,42,0
+Predictive Coding,Conv3,LOC,96,0.005864,,,3,0.003576,42,0
+Predictive Coding,FC1,IT,96,0.014386,,,3,0.008932,42,0
+Predictive Coding,Conv1,V1,128,0.014039,,,3,0.00918,42,0
+Predictive Coding,Conv1,V2,128,0.007803,,,3,0.005261,42,0
+Predictive Coding,Conv2,V1,128,0.009888,,,3,0.006394,42,0
+Predictive Coding,Conv2,V2,128,0.003862,,,3,0.002569,42,0
+Predictive Coding,Conv3,LOC,128,0.00541,,,3,0.003374,42,0
+Predictive Coding,FC1,IT,128,0.013448,,,3,0.008364,42,0
+Predictive Coding,Conv1,V1,160,0.013105,,,3,0.008571,42,0
+Predictive Coding,Conv1,V2,160,0.007293,,,3,0.00494,42,0
+Predictive Coding,Conv2,V1,160,0.010142,,,3,0.006585,42,0
+Predictive Coding,Conv2,V2,160,0.004227,,,3,0.002792,42,0
+Predictive Coding,Conv3,LOC,160,0.005379,,,3,0.003396,42,0
+Predictive Coding,FC1,IT,160,0.012271,,,3,0.007692,42,0
+Predictive Coding,Conv1,V1,224,0.011866,,,3,0.007769,42,0
+Predictive Coding,Conv1,V2,224,0.00662,,,3,0.004518,42,0
+Predictive Coding,Conv2,V1,224,0.010626,,,3,0.006993,42,0
+Predictive Coding,Conv2,V2,224,0.004993,,,3,0.003291,42,0
+Predictive Coding,Conv3,LOC,224,0.004785,,,3,0.003101,42,0
+Predictive Coding,FC1,IT,224,0.010366,,,3,0.006662,42,0
+Predictive Coding,Conv1,V1,32,0.022207,,,3,0.014684,123,1
+Predictive Coding,Conv1,V2,32,0.01073,,,3,0.007088,123,1
+Predictive Coding,Conv2,V1,32,0.022991,,,3,0.015239,123,1
+Predictive Coding,Conv2,V2,32,0.010087,,,3,0.007178,123,1
+Predictive Coding,Conv3,LOC,32,0.005433,,,3,0.003494,123,1
+Predictive Coding,FC1,IT,32,0.014262,,,3,0.00874,123,1
+Predictive Coding,Conv1,V1,64,0.018534,,,3,0.012105,123,1
+Predictive Coding,Conv1,V2,64,0.008807,,,3,0.005765,123,1
+Predictive Coding,Conv2,V1,64,0.022688,,,3,0.014911,123,1
+Predictive Coding,Conv2,V2,64,0.010375,,,3,0.0072,123,1
+Predictive Coding,Conv3,LOC,64,0.006305,,,3,0.003735,123,1
+Predictive Coding,FC1,IT,64,0.015243,,,3,0.009372,123,1
+Predictive Coding,Conv1,V1,96,0.016922,,,3,0.011036,123,1
+Predictive Coding,Conv1,V2,96,0.007902,,,3,0.005181,123,1
+Predictive Coding,Conv2,V1,96,0.022652,,,3,0.014867,123,1
+Predictive Coding,Conv2,V2,96,0.010808,,,3,0.007394,123,1
+Predictive Coding,Conv3,LOC,96,0.006944,,,3,0.00407,123,1
+Predictive Coding,FC1,IT,96,0.014966,,,3,0.00911,123,1
+Predictive Coding,Conv1,V1,128,0.016006,,,3,0.010432,123,1
+Predictive Coding,Conv1,V2,128,0.007433,,,3,0.004872,123,1
+Predictive Coding,Conv2,V1,128,0.02273,,,3,0.014909,123,1
+Predictive Coding,Conv2,V2,128,0.011276,,,3,0.007644,123,1
+Predictive Coding,Conv3,LOC,128,0.007098,,,3,0.004154,123,1
+Predictive Coding,FC1,IT,128,0.013971,,,3,0.008424,123,1
+Predictive Coding,Conv1,V1,160,0.015605,,,3,0.010188,123,1
+Predictive Coding,Conv1,V2,160,0.007236,,,3,0.004754,123,1
+Predictive Coding,Conv2,V1,160,0.023327,,,3,0.015344,123,1
+Predictive Coding,Conv2,V2,160,0.012015,,,3,0.008097,123,1
+Predictive Coding,Conv3,LOC,160,0.00748,,,3,0.004404,123,1
+Predictive Coding,FC1,IT,160,0.013283,,,3,0.007995,123,1
+Predictive Coding,Conv1,V1,224,0.015187,,,3,0.009941,123,1
+Predictive Coding,Conv1,V2,224,0.007072,,,3,0.004648,123,1
+Predictive Coding,Conv2,V1,224,0.024401,,,3,0.016133,123,1
+Predictive Coding,Conv2,V2,224,0.013384,,,3,0.008941,123,1
+Predictive Coding,Conv3,LOC,224,0.007364,,,3,0.004394,123,1
+Predictive Coding,FC1,IT,224,0.01263,,,3,0.007627,123,1
+Predictive Coding,Conv1,V1,32,0.023603,,,3,0.015612,456,2
+Predictive Coding,Conv1,V2,32,0.013011,,,3,0.008582,456,2
+Predictive Coding,Conv2,V1,32,0.035659,,,3,0.024065,456,2
+Predictive Coding,Conv2,V2,32,0.016362,,,3,0.010826,456,2
+Predictive Coding,Conv3,LOC,32,0.010637,,,3,0.006578,456,2
+Predictive Coding,FC1,IT,32,0.010408,,,3,0.006519,456,2
+Predictive Coding,Conv1,V1,64,0.018983,,,3,0.012429,456,2
+Predictive Coding,Conv1,V2,64,0.009643,,,3,0.006375,456,2
+Predictive Coding,Conv2,V1,64,0.030413,,,3,0.020292,456,2
+Predictive Coding,Conv2,V2,64,0.012034,,,3,0.007954,456,2
+Predictive Coding,Conv3,LOC,64,0.010519,,,3,0.00643,456,2
+Predictive Coding,FC1,IT,64,0.012374,,,3,0.007529,456,2
+Predictive Coding,Conv1,V1,96,0.016979,,,3,0.011089,456,2
+Predictive Coding,Conv1,V2,96,0.008291,,,3,0.005508,456,2
+Predictive Coding,Conv2,V1,96,0.026844,,,3,0.017809,456,2
+Predictive Coding,Conv2,V2,96,0.010023,,,3,0.006648,456,2
+Predictive Coding,Conv3,LOC,96,0.010536,,,3,0.006401,456,2
+Predictive Coding,FC1,IT,96,0.013233,,,3,0.007953,456,2
+Predictive Coding,Conv1,V1,128,0.01614,,,3,0.010549,456,2
+Predictive Coding,Conv1,V2,128,0.007777,,,3,0.005178,456,2
+Predictive Coding,Conv2,V1,128,0.024777,,,3,0.016397,456,2
+Predictive Coding,Conv2,V2,128,0.008959,,,3,0.005972,456,2
+Predictive Coding,Conv3,LOC,128,0.010201,,,3,0.006182,456,2
+Predictive Coding,FC1,IT,128,0.012698,,,3,0.007661,456,2
+Predictive Coding,Conv1,V1,160,0.015808,,,3,0.010357,456,2
+Predictive Coding,Conv1,V2,160,0.00756,,,3,0.005045,456,2
+Predictive Coding,Conv2,V1,160,0.024024,,,3,0.015898,456,2
+Predictive Coding,Conv2,V2,160,0.008649,,,3,0.005778,456,2
+Predictive Coding,Conv3,LOC,160,0.009761,,,3,0.005898,456,2
+Predictive Coding,FC1,IT,160,0.011619,,,3,0.006988,456,2
+Predictive Coding,Conv1,V1,224,0.015509,,,3,0.010211,456,2
+Predictive Coding,Conv1,V2,224,0.007378,,,3,0.004939,456,2
+Predictive Coding,Conv2,V1,224,0.022686,,,3,0.015066,456,2
+Predictive Coding,Conv2,V2,224,0.008273,,,3,0.005552,456,2
+Predictive Coding,Conv3,LOC,224,0.009271,,,3,0.005607,456,2
+Predictive Coding,FC1,IT,224,0.010235,,,3,0.006266,456,2
+Predictive Coding,Conv1,V1,32,0.016495,,,3,0.010727,789,3
+Predictive Coding,Conv1,V2,32,0.006184,,,3,0.004253,789,3
+Predictive Coding,Conv2,V1,32,0.020122,,,3,0.013041,789,3
+Predictive Coding,Conv2,V2,32,0.008575,,,3,0.005894,789,3
+Predictive Coding,Conv3,LOC,32,0.003573,,,3,0.002618,789,3
+Predictive Coding,FC1,IT,32,0.012157,,,3,0.007326,789,3
+Predictive Coding,Conv1,V1,64,0.014781,,,3,0.009552,789,3
+Predictive Coding,Conv1,V2,64,0.005143,,,3,0.003517,789,3
+Predictive Coding,Conv2,V1,64,0.017603,,,3,0.011326,789,3
+Predictive Coding,Conv2,V2,64,0.007005,,,3,0.004856,789,3
+Predictive Coding,Conv3,LOC,64,0.003223,,,3,0.002215,789,3
+Predictive Coding,FC1,IT,64,0.01165,,,3,0.007112,789,3
+Predictive Coding,Conv1,V1,96,0.014085,,,3,0.009098,789,3
+Predictive Coding,Conv1,V2,96,0.004919,,,3,0.003342,789,3
+Predictive Coding,Conv2,V1,96,0.016603,,,3,0.010684,789,3
+Predictive Coding,Conv2,V2,96,0.006716,,,3,0.004636,789,3
+Predictive Coding,Conv3,LOC,96,0.003367,,,3,0.002285,789,3
+Predictive Coding,FC1,IT,96,0.011768,,,3,0.007285,789,3
+Predictive Coding,Conv1,V1,128,0.013873,,,3,0.008981,789,3
+Predictive Coding,Conv1,V2,128,0.004902,,,3,0.003316,789,3
+Predictive Coding,Conv2,V1,128,0.016185,,,3,0.010446,789,3
+Predictive Coding,Conv2,V2,128,0.006736,,,3,0.004647,789,3
+Predictive Coding,Conv3,LOC,128,0.003255,,,3,0.002239,789,3
+Predictive Coding,FC1,IT,128,0.011487,,,3,0.007102,789,3
+Predictive Coding,Conv1,V1,160,0.013936,,,3,0.00905,789,3
+Predictive Coding,Conv1,V2,160,0.005041,,,3,0.00341,789,3
+Predictive Coding,Conv2,V1,160,0.016228,,,3,0.010511,789,3
+Predictive Coding,Conv2,V2,160,0.006846,,,3,0.004721,789,3
+Predictive Coding,Conv3,LOC,160,0.003007,,,3,0.002105,789,3
+Predictive Coding,FC1,IT,160,0.010802,,,3,0.006619,789,3
+Predictive Coding,Conv1,V1,224,0.014214,,,3,0.009283,789,3
+Predictive Coding,Conv1,V2,224,0.00536,,,3,0.003627,789,3
+Predictive Coding,Conv2,V1,224,0.016552,,,3,0.010808,789,3
+Predictive Coding,Conv2,V2,224,0.007429,,,3,0.005082,789,3
+Predictive Coding,Conv3,LOC,224,0.002676,,,3,0.001948,789,3
+Predictive Coding,FC1,IT,224,0.009995,,,3,0.006162,789,3
+Predictive Coding,Conv1,V1,32,0.043488,,,3,0.028788,1337,4
+Predictive Coding,Conv1,V2,32,0.022306,,,3,0.014663,1337,4
+Predictive Coding,Conv2,V1,32,0.024015,,,3,0.015475,1337,4
+Predictive Coding,Conv2,V2,32,0.009658,,,3,0.006567,1337,4
+Predictive Coding,Conv3,LOC,32,0.006712,,,3,0.004307,1337,4
+Predictive Coding,FC1,IT,32,0.012458,,,3,0.007503,1337,4
+Predictive Coding,Conv1,V1,64,0.035227,,,3,0.02296,1337,4
+Predictive Coding,Conv1,V2,64,0.016743,,,3,0.011066,1337,4
+Predictive Coding,Conv2,V1,64,0.01786,,,3,0.011094,1337,4
+Predictive Coding,Conv2,V2,64,0.004811,,,3,0.003443,1337,4
+Predictive Coding,Conv3,LOC,64,0.006923,,,3,0.004251,1337,4
+Predictive Coding,FC1,IT,64,0.013105,,,3,0.007923,1337,4
+Predictive Coding,Conv1,V1,96,0.03058,,,3,0.019777,1337,4
+Predictive Coding,Conv1,V2,96,0.013943,,,3,0.009277,1337,4
+Predictive Coding,Conv2,V1,96,0.013691,,,3,0.008183,1337,4
+Predictive Coding,Conv2,V2,96,0.002545,,,3,0.001913,1337,4
+Predictive Coding,Conv3,LOC,96,0.007651,,,3,0.004631,1337,4
+Predictive Coding,FC1,IT,96,0.013565,,,3,0.008066,1337,4
+Predictive Coding,Conv1,V1,128,0.028061,,,3,0.018088,1337,4
+Predictive Coding,Conv1,V2,128,0.012532,,,3,0.008367,1337,4
+Predictive Coding,Conv2,V1,128,0.011442,,,3,0.006635,1337,4
+Predictive Coding,Conv2,V2,128,0.001421,,,3,0.001167,1337,4
+Predictive Coding,Conv3,LOC,128,0.007607,,,3,0.004598,1337,4
+Predictive Coding,FC1,IT,128,0.012779,,,3,0.007712,1337,4
+Predictive Coding,Conv1,V1,160,0.026802,,,3,0.017264,1337,4
+Predictive Coding,Conv1,V2,160,0.011832,,,3,0.007926,1337,4
+Predictive Coding,Conv2,V1,160,0.010505,,,3,0.006011,1337,4
+Predictive Coding,Conv2,V2,160,0.000948,,,3,0.000876,1337,4
+Predictive Coding,Conv3,LOC,160,0.007598,,,3,0.004591,1337,4
+Predictive Coding,FC1,IT,160,0.01217,,,3,0.007354,1337,4
+Predictive Coding,Conv1,V1,224,0.024887,,,3,0.016028,1337,4
+Predictive Coding,Conv1,V2,224,0.010834,,,3,0.0073,1337,4
+Predictive Coding,Conv2,V1,224,0.008863,,,3,0.004975,1337,4
+Predictive Coding,Conv2,V2,224,0.000609,,,3,0.000646,1337,4
+Predictive Coding,Conv3,LOC,224,0.00704,,,3,0.004303,1337,4
+Predictive Coding,FC1,IT,224,0.011488,,,3,0.00704,1337,4
+Random Weights,Conv1,V1,32,0.070563,0.06713,0.074779,3,0.049303,42,0
+Random Weights,Conv1,V2,32,0.038778,0.035323,0.042868,3,0.025779,42,0
+Random Weights,Conv2,V1,32,0.073979,0.07024,0.078058,3,0.052345,42,0
+Random Weights,Conv2,V2,32,0.045058,0.041356,0.049111,3,0.030207,42,0
+Random Weights,Conv3,LOC,32,-0.004314,-0.008536,-0.000281,3,-0.001799,42,0
+Random Weights,FC1,IT,32,0.004205,0.000493,0.008228,3,0.002302,42,0
+Random Weights,Conv1,V1,64,0.075849,0.072407,0.080105,3,0.053071,42,0
+Random Weights,Conv1,V2,64,0.043135,0.039577,0.047206,3,0.028703,42,0
+Random Weights,Conv2,V1,64,0.08103,0.077415,0.085094,3,0.057331,42,0
+Random Weights,Conv2,V2,64,0.049505,0.045713,0.053507,3,0.033192,42,0
+Random Weights,Conv3,LOC,64,-0.006412,-0.010506,-0.002507,3,-0.002917,42,0
+Random Weights,FC1,IT,64,0.005607,0.001677,0.009444,3,0.003453,42,0
+Random Weights,Conv1,V1,96,0.07899,0.075468,0.083263,3,0.055305,42,0
+Random Weights,Conv1,V2,96,0.045746,0.042106,0.04976,3,0.030448,42,0
+Random Weights,Conv2,V1,96,0.085458,0.081753,0.089471,3,0.060408,42,0
+Random Weights,Conv2,V2,96,0.052493,0.048695,0.056501,3,0.035154,42,0
+Random Weights,Conv3,LOC,96,-0.006937,-0.011056,-0.00312,3,-0.00321,42,0
+Random Weights,FC1,IT,96,0.006362,0.002403,0.010369,3,0.003999,42,0
+Random Weights,Conv1,V1,128,0.080902,0.077377,0.085083,3,0.056672,42,0
+Random Weights,Conv1,V2,128,0.047246,0.04362,0.051253,3,0.031456,42,0
+Random Weights,Conv2,V1,128,0.088012,0.084369,0.092012,3,0.062162,42,0
+Random Weights,Conv2,V2,128,0.054316,0.050509,0.058313,3,0.036351,42,0
+Random Weights,Conv3,LOC,128,-0.007333,-0.011473,-0.003545,3,-0.003437,42,0
+Random Weights,FC1,IT,128,0.006427,0.002582,0.010397,3,0.004114,42,0
+Random Weights,Conv1,V1,160,0.082195,0.078671,0.086336,3,0.057597,42,0
+Random Weights,Conv1,V2,160,0.048215,0.044584,0.052231,3,0.03212,42,0
+Random Weights,Conv2,V1,160,0.089592,0.085939,0.093545,3,0.063264,42,0
+Random Weights,Conv2,V2,160,0.055347,0.051591,0.059339,3,0.03705,42,0
+Random Weights,Conv3,LOC,160,-0.007523,-0.011675,-0.003683,3,-0.003541,42,0
+Random Weights,FC1,IT,160,0.006481,0.002737,0.010493,3,0.004158,42,0
+Random Weights,Conv1,V1,224,0.083977,0.080442,0.088084,3,0.058863,42,0
+Random Weights,Conv1,V2,224,0.049506,0.045887,0.053499,3,0.032993,42,0
+Random Weights,Conv2,V1,224,0.09165,0.088012,0.095581,3,0.064679,42,0
+Random Weights,Conv2,V2,224,0.056744,0.052994,0.060675,3,0.037989,42,0
+Random Weights,Conv3,LOC,224,-0.007902,-0.012123,-0.004011,3,-0.003739,42,0
+Random Weights,FC1,IT,224,0.006677,0.002925,0.010585,3,0.004334,42,0
+Random Weights,Conv1,V1,32,0.05701,,,3,0.039235,123,1
+Random Weights,Conv1,V2,32,0.030798,,,3,0.02038,123,1
+Random Weights,Conv2,V1,32,0.080575,,,3,0.056198,123,1
+Random Weights,Conv2,V2,32,0.049166,,,3,0.032842,123,1
+Random Weights,Conv3,LOC,32,0.001717,,,3,0.001584,123,1
+Random Weights,FC1,IT,32,0.007472,,,3,0.004455,123,1
+Random Weights,Conv1,V1,64,0.059389,,,3,0.040929,123,1
+Random Weights,Conv1,V2,64,0.033042,,,3,0.021854,123,1
+Random Weights,Conv2,V1,64,0.085034,,,3,0.0593,123,1
+Random Weights,Conv2,V2,64,0.052038,,,3,0.034756,123,1
+Random Weights,Conv3,LOC,64,-0.000729,,,3,0.000325,123,1
+Random Weights,FC1,IT,64,0.006688,,,3,0.004347,123,1
+Random Weights,Conv1,V1,96,0.060942,,,3,0.04207,123,1
+Random Weights,Conv1,V2,96,0.034272,,,3,0.022683,123,1
+Random Weights,Conv2,V1,96,0.086507,,,3,0.060302,123,1
+Random Weights,Conv2,V2,96,0.052993,,,3,0.03537,123,1
+Random Weights,Conv3,LOC,96,-0.001861,,,3,-0.000307,123,1
+Random Weights,FC1,IT,96,0.00715,,,3,0.004558,123,1
+Random Weights,Conv1,V1,128,0.061905,,,3,0.042776,123,1
+Random Weights,Conv1,V2,128,0.03496,,,3,0.023149,123,1
+Random Weights,Conv2,V1,128,0.087303,,,3,0.060885,123,1
+Random Weights,Conv2,V2,128,0.053622,,,3,0.035777,123,1
+Random Weights,Conv3,LOC,128,-0.002236,,,3,-0.000516,123,1
+Random Weights,FC1,IT,128,0.007202,,,3,0.004505,123,1
+Random Weights,Conv1,V1,160,0.062596,,,3,0.043284,123,1
+Random Weights,Conv1,V2,160,0.035436,,,3,0.02348,123,1
+Random Weights,Conv2,V1,160,0.088007,,,3,0.061387,123,1
+Random Weights,Conv2,V2,160,0.054269,,,3,0.036197,123,1
+Random Weights,Conv3,LOC,160,-0.002554,,,3,-0.000671,123,1
+Random Weights,FC1,IT,160,0.00739,,,3,0.004588,123,1
+Random Weights,Conv1,V1,224,0.063488,,,3,0.043932,123,1
+Random Weights,Conv1,V2,224,0.036081,,,3,0.023921,123,1
+Random Weights,Conv2,V1,224,0.088153,,,3,0.061493,123,1
+Random Weights,Conv2,V2,224,0.05451,,,3,0.036356,123,1
+Random Weights,Conv3,LOC,224,-0.003059,,,3,-0.000931,123,1
+Random Weights,FC1,IT,224,0.00798,,,3,0.004942,123,1
+Random Weights,Conv1,V1,32,0.067057,,,3,0.046539,456,2
+Random Weights,Conv1,V2,32,0.035473,,,3,0.023525,456,2
+Random Weights,Conv2,V1,32,0.086247,,,3,0.060826,456,2
+Random Weights,Conv2,V2,32,0.052194,,,3,0.034916,456,2
+Random Weights,Conv3,LOC,32,0.000559,,,3,0.001116,456,2
+Random Weights,FC1,IT,32,0.009119,,,3,0.00573,456,2
+Random Weights,Conv1,V1,64,0.07108,,,3,0.049432,456,2
+Random Weights,Conv1,V2,64,0.039012,,,3,0.025882,456,2
+Random Weights,Conv2,V1,64,0.09112,,,3,0.064135,456,2
+Random Weights,Conv2,V2,64,0.055028,,,3,0.036743,456,2
+Random Weights,Conv3,LOC,64,-0.001592,,,3,-0.000173,456,2
+Random Weights,FC1,IT,64,0.009854,,,3,0.005949,456,2
+Random Weights,Conv1,V1,96,0.073586,,,3,0.051247,456,2
+Random Weights,Conv1,V2,96,0.041053,,,3,0.027257,456,2
+Random Weights,Conv2,V1,96,0.093607,,,3,0.065853,456,2
+Random Weights,Conv2,V2,96,0.056723,,,3,0.03785,456,2
+Random Weights,Conv3,LOC,96,-0.001753,,,3,-0.000193,456,2
+Random Weights,FC1,IT,96,0.011189,,,3,0.006753,456,2
+Random Weights,Conv1,V1,128,0.075358,,,3,0.052524,456,2
+Random Weights,Conv1,V2,128,0.042383,,,3,0.02816,456,2
+Random Weights,Conv2,V1,128,0.094842,,,3,0.066708,456,2
+Random Weights,Conv2,V2,128,0.057701,,,3,0.038501,456,2
+Random Weights,Conv3,LOC,128,-0.001978,,,3,-0.000287,456,2
+Random Weights,FC1,IT,128,0.011728,,,3,0.007084,456,2
+Random Weights,Conv1,V1,160,0.076503,,,3,0.05335,456,2
+Random Weights,Conv1,V2,160,0.04322,,,3,0.028734,456,2
+Random Weights,Conv2,V1,160,0.095795,,,3,0.067354,456,2
+Random Weights,Conv2,V2,160,0.05848,,,3,0.039016,456,2
+Random Weights,Conv3,LOC,160,-0.002056,,,3,-0.000303,456,2
+Random Weights,FC1,IT,160,0.012152,,,3,0.007355,456,2
+Random Weights,Conv1,V1,224,0.078138,,,3,0.05452,456,2
+Random Weights,Conv1,V2,224,0.044454,,,3,0.029576,456,2
+Random Weights,Conv2,V1,224,0.096832,,,3,0.068055,456,2
+Random Weights,Conv2,V2,224,0.059382,,,3,0.039615,456,2
+Random Weights,Conv3,LOC,224,-0.002218,,,3,-0.000346,456,2
+Random Weights,FC1,IT,224,0.01257,,,3,0.007638,456,2
+Random Weights,Conv1,V1,32,0.067322,,,3,0.046956,789,3
+Random Weights,Conv1,V2,32,0.035308,,,3,0.023625,789,3
+Random Weights,Conv2,V1,32,0.078416,,,3,0.055342,789,3
+Random Weights,Conv2,V2,32,0.045278,,,3,0.03046,789,3
+Random Weights,Conv3,LOC,32,-0.003332,,,3,-0.001307,789,3
+Random Weights,FC1,IT,32,0.003,,,3,0.001442,789,3
+Random Weights,Conv1,V1,64,0.073214,,,3,0.051132,789,3
+Random Weights,Conv1,V2,64,0.040196,,,3,0.026886,789,3
+Random Weights,Conv2,V1,64,0.083886,,,3,0.059206,789,3
+Random Weights,Conv2,V2,64,0.048936,,,3,0.032941,789,3
+Random Weights,Conv3,LOC,64,-0.005156,,,3,-0.002352,789,3
+Random Weights,FC1,IT,64,0.00258,,,3,0.001288,789,3
+Random Weights,Conv1,V1,96,0.076283,,,3,0.053308,789,3
+Random Weights,Conv1,V2,96,0.042652,,,3,0.02851,789,3
+Random Weights,Conv2,V1,96,0.087287,,,3,0.061539,789,3
+Random Weights,Conv2,V2,96,0.051591,,,3,0.034654,789,3
+Random Weights,Conv3,LOC,96,-0.005726,,,3,-0.002681,789,3
+Random Weights,FC1,IT,96,0.003262,,,3,0.001785,789,3
+Random Weights,Conv1,V1,128,0.078086,,,3,0.054592,789,3
+Random Weights,Conv1,V2,128,0.043994,,,3,0.02941,789,3
+Random Weights,Conv2,V1,128,0.088734,,,3,0.062548,789,3
+Random Weights,Conv2,V2,128,0.052702,,,3,0.035387,789,3
+Random Weights,Conv3,LOC,128,-0.006217,,,3,-0.00295,789,3
+Random Weights,FC1,IT,128,0.003641,,,3,0.002038,789,3
+Random Weights,Conv1,V1,160,0.07927,,,3,0.055428,789,3
+Random Weights,Conv1,V2,160,0.044847,,,3,0.029986,789,3
+Random Weights,Conv2,V1,160,0.089638,,,3,0.063166,789,3
+Random Weights,Conv2,V2,160,0.053337,,,3,0.035804,789,3
+Random Weights,Conv3,LOC,160,-0.006563,,,3,-0.003131,789,3
+Random Weights,FC1,IT,160,0.004111,,,3,0.002369,789,3
+Random Weights,Conv1,V1,224,0.080877,,,3,0.056563,789,3
+Random Weights,Conv1,V2,224,0.046015,,,3,0.030778,789,3
+Random Weights,Conv2,V1,224,0.090631,,,3,0.063843,789,3
+Random Weights,Conv2,V2,224,0.054033,,,3,0.036272,789,3
+Random Weights,Conv3,LOC,224,-0.006933,,,3,-0.003317,789,3
+Random Weights,FC1,IT,224,0.00483,,,3,0.002834,789,3
+Random Weights,Conv1,V1,32,0.060509,,,3,0.041553,1337,4
+Random Weights,Conv1,V2,32,0.032143,,,3,0.021371,1337,4
+Random Weights,Conv2,V1,32,0.08033,,,3,0.056021,1337,4
+Random Weights,Conv2,V2,32,0.047188,,,3,0.031581,1337,4
+Random Weights,Conv3,LOC,32,-0.002286,,,3,-0.000604,1337,4
+Random Weights,FC1,IT,32,0.003948,,,3,0.002517,1337,4
+Random Weights,Conv1,V1,64,0.064315,,,3,0.044308,1337,4
+Random Weights,Conv1,V2,64,0.035538,,,3,0.023658,1337,4
+Random Weights,Conv2,V1,64,0.083966,,,3,0.058583,1337,4
+Random Weights,Conv2,V2,64,0.049817,,,3,0.033351,1337,4
+Random Weights,Conv3,LOC,64,-0.003957,,,3,-0.001395,1337,4
+Random Weights,FC1,IT,64,0.004746,,,3,0.002952,1337,4
+Random Weights,Conv1,V1,96,0.066959,,,3,0.046198,1337,4
+Random Weights,Conv1,V2,96,0.037772,,,3,0.025122,1337,4
+Random Weights,Conv2,V1,96,0.086297,,,3,0.060198,1337,4
+Random Weights,Conv2,V2,96,0.051736,,,3,0.034589,1337,4
+Random Weights,Conv3,LOC,96,-0.004294,,,3,-0.001551,1337,4
+Random Weights,FC1,IT,96,0.005518,,,3,0.003479,1337,4
+Random Weights,Conv1,V1,128,0.06846,,,3,0.047289,1337,4
+Random Weights,Conv1,V2,128,0.038888,,,3,0.025874,1337,4
+Random Weights,Conv2,V1,128,0.087181,,,3,0.0608,1337,4
+Random Weights,Conv2,V2,128,0.052462,,,3,0.035069,1337,4
+Random Weights,Conv3,LOC,128,-0.004573,,,3,-0.001684,1337,4
+Random Weights,FC1,IT,128,0.006257,,,3,0.003915,1337,4
+Random Weights,Conv1,V1,160,0.069435,,,3,0.048002,1337,4
+Random Weights,Conv1,V2,160,0.039608,,,3,0.02637,1337,4
+Random Weights,Conv2,V1,160,0.087846,,,3,0.061275,1337,4
+Random Weights,Conv2,V2,160,0.05299,,,3,0.035436,1337,4
+Random Weights,Conv3,LOC,160,-0.004902,,,3,-0.001869,1337,4
+Random Weights,FC1,IT,160,0.006402,,,3,0.004062,1337,4
+Random Weights,Conv1,V1,224,0.070844,,,3,0.049018,1337,4
+Random Weights,Conv1,V2,224,0.040628,,,3,0.027066,1337,4
+Random Weights,Conv2,V1,224,0.0882,,,3,0.061528,1337,4
+Random Weights,Conv2,V2,224,0.05346,,,3,0.035747,1337,4
+Random Weights,Conv3,LOC,224,-0.005154,,,3,-0.001991,1337,4
+Random Weights,FC1,IT,224,0.006801,,,3,0.004379,1337,4
+Random Weights (BN-calibrated),Conv1,V1,32,0.017406,,,3,0.011367,42,0
+Random Weights (BN-calibrated),Conv1,V2,32,0.009142,,,3,0.006065,42,0
+Random Weights (BN-calibrated),Conv2,V1,32,0.007975,,,3,0.004894,42,0
+Random Weights (BN-calibrated),Conv2,V2,32,0.003848,,,3,0.002729,42,0
+Random Weights (BN-calibrated),Conv3,LOC,32,0.003953,,,3,0.002437,42,0
+Random Weights (BN-calibrated),FC1,IT,32,0.009606,,,3,0.005389,42,0
+Random Weights (BN-calibrated),Conv1,V1,64,0.011758,,,3,0.007454,42,0
+Random Weights (BN-calibrated),Conv1,V2,64,0.005089,,,3,0.003451,42,0
+Random Weights (BN-calibrated),Conv2,V1,64,0.001962,,,3,0.000742,42,0
+Random Weights (BN-calibrated),Conv2,V2,64,0.000236,,,3,0.00032,42,0
+Random Weights (BN-calibrated),Conv3,LOC,64,0.004324,,,3,0.002573,42,0
+Random Weights (BN-calibrated),FC1,IT,64,0.009684,,,3,0.005472,42,0
+Random Weights (BN-calibrated),Conv1,V1,96,0.00971,,,3,0.006067,42,0
+Random Weights (BN-calibrated),Conv1,V2,96,0.003832,,,3,0.002638,42,0
+Random Weights (BN-calibrated),Conv2,V1,96,0.001363,,,3,0.000401,42,0
+Random Weights (BN-calibrated),Conv2,V2,96,0.000822,,,3,0.000619,42,0
+Random Weights (BN-calibrated),Conv3,LOC,96,0.004993,,,3,0.002939,42,0
+Random Weights (BN-calibrated),FC1,IT,96,0.009408,,,3,0.005352,42,0
+Random Weights (BN-calibrated),Conv1,V1,128,0.008619,,,3,0.005353,42,0
+Random Weights (BN-calibrated),Conv1,V2,128,0.003252,,,3,0.002256,42,0
+Random Weights (BN-calibrated),Conv2,V1,128,0.0018,,,3,0.000757,42,0
+Random Weights (BN-calibrated),Conv2,V2,128,0.001742,,,3,0.001195,42,0
+Random Weights (BN-calibrated),Conv3,LOC,128,0.004944,,,3,0.00294,42,0
+Random Weights (BN-calibrated),FC1,IT,128,0.009508,,,3,0.005385,42,0
+Random Weights (BN-calibrated),Conv1,V1,160,0.008221,,,3,0.005112,42,0
+Random Weights (BN-calibrated),Conv1,V2,160,0.003073,,,3,0.002146,42,0
+Random Weights (BN-calibrated),Conv2,V1,160,0.002236,,,3,0.001126,42,0
+Random Weights (BN-calibrated),Conv2,V2,160,0.002297,,,3,0.001559,42,0
+Random Weights (BN-calibrated),Conv3,LOC,160,0.004829,,,3,0.002889,42,0
+Random Weights (BN-calibrated),FC1,IT,160,0.008572,,,3,0.004869,42,0
+Random Weights (BN-calibrated),Conv1,V1,224,0.007722,,,3,0.004817,42,0
+Random Weights (BN-calibrated),Conv1,V2,224,0.002868,,,3,0.00202,42,0
+Random Weights (BN-calibrated),Conv2,V1,224,0.004083,,,3,0.002522,42,0
+Random Weights (BN-calibrated),Conv2,V2,224,0.003827,,,3,0.002575,42,0
+Random Weights (BN-calibrated),Conv3,LOC,224,0.004302,,,3,0.00263,42,0
+Random Weights (BN-calibrated),FC1,IT,224,0.007659,,,3,0.004375,42,0
+Random Weights (BN-calibrated),Conv1,V1,32,0.011127,,,3,0.007086,123,1
+Random Weights (BN-calibrated),Conv1,V2,32,0.004019,,,3,0.00276,123,1
+Random Weights (BN-calibrated),Conv2,V1,32,0.019623,,,3,0.012782,123,1
+Random Weights (BN-calibrated),Conv2,V2,32,0.010408,,,3,0.007172,123,1
+Random Weights (BN-calibrated),Conv3,LOC,32,0.006591,,,3,0.004201,123,1
+Random Weights (BN-calibrated),FC1,IT,32,0.010125,,,3,0.006277,123,1
+Random Weights (BN-calibrated),Conv1,V1,64,0.007918,,,3,0.004846,123,1
+Random Weights (BN-calibrated),Conv1,V2,64,0.002276,,,3,0.001561,123,1
+Random Weights (BN-calibrated),Conv2,V1,64,0.012344,,,3,0.007588,123,1
+Random Weights (BN-calibrated),Conv2,V2,64,0.006612,,,3,0.004572,123,1
+Random Weights (BN-calibrated),Conv3,LOC,64,0.007366,,,3,0.004303,123,1
+Random Weights (BN-calibrated),FC1,IT,64,0.010422,,,3,0.006277,123,1
+Random Weights (BN-calibrated),Conv1,V1,96,0.007052,,,3,0.004289,123,1
+Random Weights (BN-calibrated),Conv1,V2,96,0.00181,,,3,0.001253,123,1
+Random Weights (BN-calibrated),Conv2,V1,96,0.01065,,,3,0.006513,123,1
+Random Weights (BN-calibrated),Conv2,V2,96,0.006363,,,3,0.004374,123,1
+Random Weights (BN-calibrated),Conv3,LOC,96,0.008288,,,3,0.004778,123,1
+Random Weights (BN-calibrated),FC1,IT,96,0.011011,,,3,0.006419,123,1
+Random Weights (BN-calibrated),Conv1,V1,128,0.00681,,,3,0.004155,123,1
+Random Weights (BN-calibrated),Conv1,V2,128,0.001794,,,3,0.001225,123,1
+Random Weights (BN-calibrated),Conv2,V1,128,0.010079,,,3,0.006168,123,1
+Random Weights (BN-calibrated),Conv2,V2,128,0.006436,,,3,0.004409,123,1
+Random Weights (BN-calibrated),Conv3,LOC,128,0.008174,,,3,0.004709,123,1
+Random Weights (BN-calibrated),FC1,IT,128,0.011482,,,3,0.006622,123,1
+Random Weights (BN-calibrated),Conv1,V1,160,0.006952,,,3,0.004292,123,1
+Random Weights (BN-calibrated),Conv1,V2,160,0.001932,,,3,0.001319,123,1
+Random Weights (BN-calibrated),Conv2,V1,160,0.010029,,,3,0.006189,123,1
+Random Weights (BN-calibrated),Conv2,V2,160,0.006822,,,3,0.004662,123,1
+Random Weights (BN-calibrated),Conv3,LOC,160,0.008183,,,3,0.004737,123,1
+Random Weights (BN-calibrated),FC1,IT,160,0.011677,,,3,0.006735,123,1
+Random Weights (BN-calibrated),Conv1,V1,224,0.007354,,,3,0.004616,123,1
+Random Weights (BN-calibrated),Conv1,V2,224,0.00229,,,3,0.001549,123,1
+Random Weights (BN-calibrated),Conv2,V1,224,0.011061,,,3,0.006996,123,1
+Random Weights (BN-calibrated),Conv2,V2,224,0.007981,,,3,0.005408,123,1
+Random Weights (BN-calibrated),Conv3,LOC,224,0.007697,,,3,0.004506,123,1
+Random Weights (BN-calibrated),FC1,IT,224,0.011484,,,3,0.00661,123,1
+Random Weights (BN-calibrated),Conv1,V1,32,0.024902,,,3,0.01644,456,2
+Random Weights (BN-calibrated),Conv1,V2,32,0.013579,,,3,0.008935,456,2
+Random Weights (BN-calibrated),Conv2,V1,32,0.02256,,,3,0.014999,456,2
+Random Weights (BN-calibrated),Conv2,V2,32,0.009959,,,3,0.006681,456,2
+Random Weights (BN-calibrated),Conv3,LOC,32,0.007615,,,3,0.004975,456,2
+Random Weights (BN-calibrated),FC1,IT,32,0.007892,,,3,0.0046,456,2
+Random Weights (BN-calibrated),Conv1,V1,64,0.019986,,,3,0.013029,456,2
+Random Weights (BN-calibrated),Conv1,V2,64,0.00983,,,3,0.006505,456,2
+Random Weights (BN-calibrated),Conv2,V1,64,0.014282,,,3,0.009129,456,2
+Random Weights (BN-calibrated),Conv2,V2,64,0.004128,,,3,0.002837,456,2
+Random Weights (BN-calibrated),Conv3,LOC,64,0.008377,,,3,0.005241,456,2
+Random Weights (BN-calibrated),FC1,IT,64,0.010453,,,3,0.005863,456,2
+Random Weights (BN-calibrated),Conv1,V1,96,0.018028,,,3,0.011697,456,2
+Random Weights (BN-calibrated),Conv1,V2,96,0.008506,,,3,0.005649,456,2
+Random Weights (BN-calibrated),Conv2,V1,96,0.011643,,,3,0.007356,456,2
+Random Weights (BN-calibrated),Conv2,V2,96,0.003038,,,3,0.002127,456,2
+Random Weights (BN-calibrated),Conv3,LOC,96,0.009823,,,3,0.006021,456,2
+Random Weights (BN-calibrated),FC1,IT,96,0.011808,,,3,0.006497,456,2
+Random Weights (BN-calibrated),Conv1,V1,128,0.01731,,,3,0.011234,456,2
+Random Weights (BN-calibrated),Conv1,V2,128,0.008082,,,3,0.00537,456,2
+Random Weights (BN-calibrated),Conv2,V1,128,0.010753,,,3,0.006795,456,2
+Random Weights (BN-calibrated),Conv2,V2,128,0.002799,,,3,0.001975,456,2
+Random Weights (BN-calibrated),Conv3,LOC,128,0.010275,,,3,0.006264,456,2
+Random Weights (BN-calibrated),FC1,IT,128,0.012629,,,3,0.00703,456,2
+Random Weights (BN-calibrated),Conv1,V1,160,0.017093,,,3,0.01112,456,2
+Random Weights (BN-calibrated),Conv1,V2,160,0.007939,,,3,0.005281,456,2
+Random Weights (BN-calibrated),Conv2,V1,160,0.010703,,,3,0.006811,456,2
+Random Weights (BN-calibrated),Conv2,V2,160,0.002993,,,3,0.002104,456,2
+Random Weights (BN-calibrated),Conv3,LOC,160,0.010265,,,3,0.006245,456,2
+Random Weights (BN-calibrated),FC1,IT,160,0.012999,,,3,0.007258,456,2
+Random Weights (BN-calibrated),Conv1,V1,224,0.016965,,,3,0.011089,456,2
+Random Weights (BN-calibrated),Conv1,V2,224,0.007878,,,3,0.00525,456,2
+Random Weights (BN-calibrated),Conv2,V1,224,0.011377,,,3,0.007393,456,2
+Random Weights (BN-calibrated),Conv2,V2,224,0.003792,,,3,0.002634,456,2
+Random Weights (BN-calibrated),Conv3,LOC,224,0.010014,,,3,0.006097,456,2
+Random Weights (BN-calibrated),FC1,IT,224,0.012875,,,3,0.007216,456,2
+Random Weights (BN-calibrated),Conv1,V1,32,0.008158,,,3,0.004909,789,3
+Random Weights (BN-calibrated),Conv1,V2,32,0.001063,,,3,0.0009,789,3
+Random Weights (BN-calibrated),Conv2,V1,32,0.012397,,,3,0.007806,789,3
+Random Weights (BN-calibrated),Conv2,V2,32,0.003686,,,3,0.002678,789,3
+Random Weights (BN-calibrated),Conv3,LOC,32,0.002265,,,3,0.001707,789,3
+Random Weights (BN-calibrated),FC1,IT,32,0.006529,,,3,0.003637,789,3
+Random Weights (BN-calibrated),Conv1,V1,64,0.006088,,,3,0.003459,789,3
+Random Weights (BN-calibrated),Conv1,V2,64,-0.000214,,,3,6e-06,789,3
+Random Weights (BN-calibrated),Conv2,V1,64,0.009915,,,3,0.006104,789,3
+Random Weights (BN-calibrated),Conv2,V2,64,0.002603,,,3,0.001949,789,3
+Random Weights (BN-calibrated),Conv3,LOC,64,0.003408,,,3,0.002149,789,3
+Random Weights (BN-calibrated),FC1,IT,64,0.006767,,,3,0.003584,789,3
+Random Weights (BN-calibrated),Conv1,V1,96,0.005773,,,3,0.003276,789,3
+Random Weights (BN-calibrated),Conv1,V2,96,-0.000165,,,3,1e-05,789,3
+Random Weights (BN-calibrated),Conv2,V1,96,0.010416,,,3,0.00653,789,3
+Random Weights (BN-calibrated),Conv2,V2,96,0.003982,,,3,0.00279,789,3
+Random Weights (BN-calibrated),Conv3,LOC,96,0.005024,,,3,0.003006,789,3
+Random Weights (BN-calibrated),FC1,IT,96,0.0069,,,3,0.003728,789,3
+Random Weights (BN-calibrated),Conv1,V1,128,0.006048,,,3,0.003507,789,3
+Random Weights (BN-calibrated),Conv1,V2,128,0.000155,,,3,0.000201,789,3
+Random Weights (BN-calibrated),Conv2,V1,128,0.011101,,,3,0.007093,789,3
+Random Weights (BN-calibrated),Conv2,V2,128,0.004837,,,3,0.003345,789,3
+Random Weights (BN-calibrated),Conv3,LOC,128,0.005286,,,3,0.003139,789,3
+Random Weights (BN-calibrated),FC1,IT,128,0.006916,,,3,0.003755,789,3
+Random Weights (BN-calibrated),Conv1,V1,160,0.006489,,,3,0.003841,789,3
+Random Weights (BN-calibrated),Conv1,V2,160,0.000548,,,3,0.000459,789,3
+Random Weights (BN-calibrated),Conv2,V1,160,0.011689,,,3,0.007548,789,3
+Random Weights (BN-calibrated),Conv2,V2,160,0.005441,,,3,0.003742,789,3
+Random Weights (BN-calibrated),Conv3,LOC,160,0.005265,,,3,0.003107,789,3
+Random Weights (BN-calibrated),FC1,IT,160,0.006889,,,3,0.003711,789,3
+Random Weights (BN-calibrated),Conv1,V1,224,0.007446,,,3,0.004545,789,3
+Random Weights (BN-calibrated),Conv1,V2,224,0.001322,,,3,0.000972,789,3
+Random Weights (BN-calibrated),Conv2,V1,224,0.01345,,,3,0.008856,789,3
+Random Weights (BN-calibrated),Conv2,V2,224,0.007016,,,3,0.004766,789,3
+Random Weights (BN-calibrated),Conv3,LOC,224,0.00491,,,3,0.002909,789,3
+Random Weights (BN-calibrated),FC1,IT,224,0.006936,,,3,0.00382,789,3
+Random Weights (BN-calibrated),Conv1,V1,32,0.029328,,,3,0.019077,1337,4
+Random Weights (BN-calibrated),Conv1,V2,32,0.013733,,,3,0.00904,1337,4
+Random Weights (BN-calibrated),Conv2,V1,32,0.021253,,,3,0.013377,1337,4
+Random Weights (BN-calibrated),Conv2,V2,32,0.009433,,,3,0.006402,1337,4
+Random Weights (BN-calibrated),Conv3,LOC,32,0.004662,,,3,0.003011,1337,4
+Random Weights (BN-calibrated),FC1,IT,32,0.007674,,,3,0.004659,1337,4
+Random Weights (BN-calibrated),Conv1,V1,64,0.02128,,,3,0.013465,1337,4
+Random Weights (BN-calibrated),Conv1,V2,64,0.008378,,,3,0.005578,1337,4
+Random Weights (BN-calibrated),Conv2,V1,64,0.010474,,,3,0.005852,1337,4
+Random Weights (BN-calibrated),Conv2,V2,64,0.00297,,,3,0.002221,1337,4
+Random Weights (BN-calibrated),Conv3,LOC,64,0.0054,,,3,0.003093,1337,4
+Random Weights (BN-calibrated),FC1,IT,64,0.00684,,,3,0.004045,1337,4
+Random Weights (BN-calibrated),Conv1,V1,96,0.017599,,,3,0.010967,1337,4
+Random Weights (BN-calibrated),Conv1,V2,96,0.006305,,,3,0.004243,1337,4
+Random Weights (BN-calibrated),Conv2,V1,96,0.006411,,,3,0.003066,1337,4
+Random Weights (BN-calibrated),Conv2,V2,96,0.001985,,,3,0.001504,1337,4
+Random Weights (BN-calibrated),Conv3,LOC,96,0.006967,,,3,0.003947,1337,4
+Random Weights (BN-calibrated),FC1,IT,96,0.008437,,,3,0.004846,1337,4
+Random Weights (BN-calibrated),Conv1,V1,128,0.015963,,,3,0.009896,1337,4
+Random Weights (BN-calibrated),Conv1,V2,128,0.005483,,,3,0.003713,1337,4
+Random Weights (BN-calibrated),Conv2,V1,128,0.004984,,,3,0.00215,1337,4
+Random Weights (BN-calibrated),Conv2,V2,128,0.001872,,,3,0.001399,1337,4
+Random Weights (BN-calibrated),Conv3,LOC,128,0.006707,,,3,0.003792,1337,4
+Random Weights (BN-calibrated),FC1,IT,128,0.009142,,,3,0.005293,1337,4
+Random Weights (BN-calibrated),Conv1,V1,160,0.015237,,,3,0.009443,1337,4
+Random Weights (BN-calibrated),Conv1,V2,160,0.005118,,,3,0.003493,1337,4
+Random Weights (BN-calibrated),Conv2,V1,160,0.003906,,,3,0.001466,1337,4
+Random Weights (BN-calibrated),Conv2,V2,160,0.001474,,,3,0.001175,1337,4
+Random Weights (BN-calibrated),Conv3,LOC,160,0.006473,,,3,0.003654,1337,4
+Random Weights (BN-calibrated),FC1,IT,160,0.009393,,,3,0.005482,1337,4
+Random Weights (BN-calibrated),Conv1,V1,224,0.014334,,,3,0.008905,1337,4
+Random Weights (BN-calibrated),Conv1,V2,224,0.004766,,,3,0.003293,1337,4
+Random Weights (BN-calibrated),Conv2,V1,224,0.003408,,,3,0.001252,1337,4
+Random Weights (BN-calibrated),Conv2,V2,224,0.001731,,,3,0.001364,1337,4
+Random Weights (BN-calibrated),Conv3,LOC,224,0.005636,,,3,0.00322,1337,4
+Random Weights (BN-calibrated),FC1,IT,224,0.008995,,,3,0.005341,1337,4
+STDP,Conv1,V1,32,0.063968,,,3,0.044036,42,0
+STDP,Conv1,V2,32,0.038955,,,3,0.02544,42,0
+STDP,Conv2,V1,32,0.045886,,,3,0.031437,42,0
+STDP,Conv2,V2,32,0.027708,,,3,0.018047,42,0
+STDP,Conv3,LOC,32,0.004276,,,3,0.003119,42,0
+STDP,FC1,IT,32,0.012527,,,3,0.00741,42,0
+STDP,Conv1,V1,64,0.058065,,,3,0.039827,42,0
+STDP,Conv1,V2,64,0.034122,,,3,0.022245,42,0
+STDP,Conv2,V1,64,0.037569,,,3,0.025716,42,0
+STDP,Conv2,V2,64,0.022138,,,3,0.014606,42,0
+STDP,Conv3,LOC,64,0.005381,,,3,0.003512,42,0
+STDP,FC1,IT,64,0.015804,,,3,0.009496,42,0
+STDP,Conv1,V1,96,0.052563,,,3,0.035982,42,0
+STDP,Conv1,V2,96,0.030234,,,3,0.019721,42,0
+STDP,Conv2,V1,96,0.033624,,,3,0.022935,42,0
+STDP,Conv2,V2,96,0.02038,,,3,0.013474,42,0
+STDP,Conv3,LOC,96,0.005363,,,3,0.003413,42,0
+STDP,FC1,IT,96,0.016558,,,3,0.009975,42,0
+STDP,Conv1,V1,128,0.048708,,,3,0.033284,42,0
+STDP,Conv1,V2,128,0.027736,,,3,0.018083,42,0
+STDP,Conv2,V1,128,0.030184,,,3,0.02055,42,0
+STDP,Conv2,V2,128,0.018569,,,3,0.01232,42,0
+STDP,Conv3,LOC,128,0.004924,,,3,0.003131,42,0
+STDP,FC1,IT,128,0.016307,,,3,0.009938,42,0
+STDP,Conv1,V1,160,0.04644,,,3,0.031729,42,0
+STDP,Conv1,V2,160,0.026319,,,3,0.017169,42,0
+STDP,Conv2,V1,160,0.028531,,,3,0.019419,42,0
+STDP,Conv2,V2,160,0.017876,,,3,0.011893,42,0
+STDP,Conv3,LOC,160,0.004743,,,3,0.003017,42,0
+STDP,FC1,IT,160,0.016256,,,3,0.009969,42,0
+STDP,Conv1,V1,224,0.042777,,,3,0.029225,42,0
+STDP,Conv1,V2,224,0.024104,,,3,0.015737,42,0
+STDP,Conv2,V1,224,0.025899,,,3,0.017695,42,0
+STDP,Conv2,V2,224,0.016615,,,3,0.011134,42,0
+STDP,Conv3,LOC,224,0.004243,,,3,0.002772,42,0
+STDP,FC1,IT,224,0.014917,,,3,0.009192,42,0
+STDP,Conv1,V1,32,0.060601,,,3,0.041168,123,1
+STDP,Conv1,V2,32,0.039665,,,3,0.026167,123,1
+STDP,Conv2,V1,32,0.066074,,,3,0.044348,123,1
+STDP,Conv2,V2,32,0.042105,,,3,0.027851,123,1
+STDP,Conv3,LOC,32,0.004531,,,3,0.0032,123,1
+STDP,FC1,IT,32,0.013539,,,3,0.008722,123,1
+STDP,Conv1,V1,64,0.052848,,,3,0.03569,123,1
+STDP,Conv1,V2,64,0.033472,,,3,0.022072,123,1
+STDP,Conv2,V1,64,0.0543,,,3,0.036151,123,1
+STDP,Conv2,V2,64,0.032151,,,3,0.021602,123,1
+STDP,Conv3,LOC,64,0.00547,,,3,0.003643,123,1
+STDP,FC1,IT,64,0.017703,,,3,0.011077,123,1
+STDP,Conv1,V1,96,0.048115,,,3,0.032373,123,1
+STDP,Conv1,V2,96,0.029902,,,3,0.019735,123,1
+STDP,Conv2,V1,96,0.048055,,,3,0.031815,123,1
+STDP,Conv2,V2,96,0.027403,,,3,0.018605,123,1
+STDP,Conv3,LOC,96,0.006252,,,3,0.004147,123,1
+STDP,FC1,IT,96,0.01613,,,3,0.01014,123,1
+STDP,Conv1,V1,128,0.044923,,,3,0.030167,123,1
+STDP,Conv1,V2,128,0.027721,,,3,0.018305,123,1
+STDP,Conv2,V1,128,0.043409,,,3,0.028612,123,1
+STDP,Conv2,V2,128,0.024569,,,3,0.016737,123,1
+STDP,Conv3,LOC,128,0.006224,,,3,0.004123,123,1
+STDP,FC1,IT,128,0.015438,,,3,0.009714,123,1
+STDP,Conv1,V1,160,0.043097,,,3,0.028935,123,1
+STDP,Conv1,V2,160,0.026471,,,3,0.017504,123,1
+STDP,Conv2,V1,160,0.040737,,,3,0.026782,123,1
+STDP,Conv2,V2,160,0.022765,,,3,0.015572,123,1
+STDP,Conv3,LOC,160,0.00588,,,3,0.003941,123,1
+STDP,FC1,IT,160,0.0152,,,3,0.009454,123,1
+STDP,Conv1,V1,224,0.039927,,,3,0.026814,123,1
+STDP,Conv1,V2,224,0.024298,,,3,0.016117,123,1
+STDP,Conv2,V1,224,0.035813,,,3,0.023477,123,1
+STDP,Conv2,V2,224,0.019528,,,3,0.013479,123,1
+STDP,Conv3,LOC,224,0.00512,,,3,0.003506,123,1
+STDP,FC1,IT,224,0.014504,,,3,0.009008,123,1
+STDP,Conv1,V1,32,0.055015,,,3,0.037461,456,2
+STDP,Conv1,V2,32,0.031315,,,3,0.020764,456,2
+STDP,Conv2,V1,32,0.059608,,,3,0.040665,456,2
+STDP,Conv2,V2,32,0.036563,,,3,0.024062,456,2
+STDP,Conv3,LOC,32,0.005351,,,3,0.003884,456,2
+STDP,FC1,IT,32,0.01258,,,3,0.007509,456,2
+STDP,Conv1,V1,64,0.045822,,,3,0.031071,456,2
+STDP,Conv1,V2,64,0.025046,,,3,0.016709,456,2
+STDP,Conv2,V1,64,0.049796,,,3,0.033747,456,2
+STDP,Conv2,V2,64,0.029199,,,3,0.019267,456,2
+STDP,Conv3,LOC,64,0.006645,,,3,0.004389,456,2
+STDP,FC1,IT,64,0.013822,,,3,0.008549,456,2
+STDP,Conv1,V1,96,0.040256,,,3,0.027215,456,2
+STDP,Conv1,V2,96,0.021372,,,3,0.01434,456,2
+STDP,Conv2,V1,96,0.044673,,,3,0.030164,456,2
+STDP,Conv2,V2,96,0.025706,,,3,0.017045,456,2
+STDP,Conv3,LOC,96,0.006248,,,3,0.004139,456,2
+STDP,FC1,IT,96,0.013794,,,3,0.00838,456,2
+STDP,Conv1,V1,128,0.036538,,,3,0.02467,456,2
+STDP,Conv1,V2,128,0.018995,,,3,0.012807,456,2
+STDP,Conv2,V1,128,0.040941,,,3,0.027605,456,2
+STDP,Conv2,V2,128,0.023647,,,3,0.015691,456,2
+STDP,Conv3,LOC,128,0.005923,,,3,0.003911,456,2
+STDP,FC1,IT,128,0.012143,,,3,0.0073,456,2
+STDP,Conv1,V1,160,0.034227,,,3,0.023102,456,2
+STDP,Conv1,V2,160,0.017549,,,3,0.011882,456,2
+STDP,Conv2,V1,160,0.038899,,,3,0.026216,456,2
+STDP,Conv2,V2,160,0.022466,,,3,0.014925,456,2
+STDP,Conv3,LOC,160,0.006269,,,3,0.004134,456,2
+STDP,FC1,IT,160,0.010755,,,3,0.00636,456,2
+STDP,Conv1,V1,224,0.030778,,,3,0.020777,456,2
+STDP,Conv1,V2,224,0.015512,,,3,0.010575,456,2
+STDP,Conv2,V1,224,0.035878,,,3,0.024214,456,2
+STDP,Conv2,V2,224,0.02086,,,3,0.013906,456,2
+STDP,Conv3,LOC,224,0.0065,,,3,0.004346,456,2
+STDP,FC1,IT,224,0.009409,,,3,0.005552,456,2
+STDP,Conv1,V1,32,0.057315,,,3,0.039116,789,3
+STDP,Conv1,V2,32,0.032338,,,3,0.021334,789,3
+STDP,Conv2,V1,32,0.063669,,,3,0.043544,789,3
+STDP,Conv2,V2,32,0.03748,,,3,0.024833,789,3
+STDP,Conv3,LOC,32,0.007956,,,3,0.00527,789,3
+STDP,FC1,IT,32,0.013071,,,3,0.008463,789,3
+STDP,Conv1,V1,64,0.049655,,,3,0.033746,789,3
+STDP,Conv1,V2,64,0.026836,,,3,0.017767,789,3
+STDP,Conv2,V1,64,0.0569,,,3,0.038763,789,3
+STDP,Conv2,V2,64,0.03198,,,3,0.021235,789,3
+STDP,Conv3,LOC,64,0.008383,,,3,0.005215,789,3
+STDP,FC1,IT,64,0.01247,,,3,0.008031,789,3
+STDP,Conv1,V1,96,0.045724,,,3,0.031009,789,3
+STDP,Conv1,V2,96,0.024599,,,3,0.016294,789,3
+STDP,Conv2,V1,96,0.053664,,,3,0.036482,789,3
+STDP,Conv2,V2,96,0.029788,,,3,0.019803,789,3
+STDP,Conv3,LOC,96,0.009683,,,3,0.005928,789,3
+STDP,FC1,IT,96,0.013303,,,3,0.008516,789,3
+STDP,Conv1,V1,128,0.043692,,,3,0.029621,789,3
+STDP,Conv1,V2,128,0.02354,,,3,0.01559,789,3
+STDP,Conv2,V1,128,0.051597,,,3,0.03505,789,3
+STDP,Conv2,V2,128,0.028502,,,3,0.018954,789,3
+STDP,Conv3,LOC,128,0.009609,,,3,0.005873,789,3
+STDP,FC1,IT,128,0.013438,,,3,0.008412,789,3
+STDP,Conv1,V1,160,0.042613,,,3,0.028912,789,3
+STDP,Conv1,V2,160,0.023019,,,3,0.015256,789,3
+STDP,Conv2,V1,160,0.050235,,,3,0.034127,789,3
+STDP,Conv2,V2,160,0.027606,,,3,0.01838,789,3
+STDP,Conv3,LOC,160,0.009323,,,3,0.005727,789,3
+STDP,FC1,IT,160,0.0126,,,3,0.007937,789,3
+STDP,Conv1,V1,224,0.041045,,,3,0.027893,789,3
+STDP,Conv1,V2,224,0.022269,,,3,0.01479,789,3
+STDP,Conv2,V1,224,0.047812,,,3,0.032529,789,3
+STDP,Conv2,V2,224,0.026238,,,3,0.017523,789,3
+STDP,Conv3,LOC,224,0.008902,,,3,0.005503,789,3
+STDP,FC1,IT,224,0.0117,,,3,0.007159,789,3
+STDP,Conv1,V1,32,0.059156,,,3,0.040347,1337,4
+STDP,Conv1,V2,32,0.034879,,,3,0.023181,1337,4
+STDP,Conv2,V1,32,0.067373,,,3,0.045874,1337,4
+STDP,Conv2,V2,32,0.040727,,,3,0.026936,1337,4
+STDP,Conv3,LOC,32,0.003747,,,3,0.002897,1337,4
+STDP,FC1,IT,32,0.016663,,,3,0.010564,1337,4
+STDP,Conv1,V1,64,0.049945,,,3,0.033893,1337,4
+STDP,Conv1,V2,64,0.028775,,,3,0.019176,1337,4
+STDP,Conv2,V1,64,0.058657,,,3,0.03982,1337,4
+STDP,Conv2,V2,64,0.034221,,,3,0.022615,1337,4
+STDP,Conv3,LOC,64,0.004508,,,3,0.002972,1337,4
+STDP,FC1,IT,64,0.018119,,,3,0.011409,1337,4
+STDP,Conv1,V1,96,0.043182,,,3,0.029197,1337,4
+STDP,Conv1,V2,96,0.024504,,,3,0.016392,1337,4
+STDP,Conv2,V1,96,0.053238,,,3,0.036082,1337,4
+STDP,Conv2,V2,96,0.030919,,,3,0.020449,1337,4
+STDP,Conv3,LOC,96,0.004804,,,3,0.00307,1337,4
+STDP,FC1,IT,96,0.018821,,,3,0.011568,1337,4
+STDP,Conv1,V1,128,0.03882,,,3,0.026182,1337,4
+STDP,Conv1,V2,128,0.021874,,,3,0.014681,1337,4
+STDP,Conv2,V1,128,0.049381,,,3,0.033451,1337,4
+STDP,Conv2,V2,128,0.028661,,,3,0.019002,1337,4
+STDP,Conv3,LOC,128,0.004863,,,3,0.003094,1337,4
+STDP,FC1,IT,128,0.017787,,,3,0.010968,1337,4
+STDP,Conv1,V1,160,0.036061,,,3,0.024291,1337,4
+STDP,Conv1,V2,160,0.020179,,,3,0.01358,1337,4
+STDP,Conv2,V1,160,0.046926,,,3,0.031798,1337,4
+STDP,Conv2,V2,160,0.027155,,,3,0.018044,1337,4
+STDP,Conv3,LOC,160,0.004466,,,3,0.00282,1337,4
+STDP,FC1,IT,160,0.016437,,,3,0.010183,1337,4
+STDP,Conv1,V1,224,0.031566,,,3,0.021237,1337,4
+STDP,Conv1,V2,224,0.017471,,,3,0.011836,1337,4
+STDP,Conv2,V1,224,0.043148,,,3,0.029278,1337,4
+STDP,Conv2,V2,224,0.02523,,,3,0.016817,1337,4
+STDP,Conv3,LOC,224,0.003978,,,3,0.002537,1337,4
+STDP,FC1,IT,224,0.014939,,,3,0.009286,1337,4

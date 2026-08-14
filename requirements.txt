@@ -1,0 +1,23 @@
+# Python 3.11
+#
+# Figures and the CPU-side analyses (colour controls, table generation) need only the
+# core block. The GPU runs are Modal jobs and additionally need `modal`. The macaque
+# control additionally needs `brainscore-vision`, which pulls the neural data from S3
+# on first use (~2 GB, cached under ~/.brainio/).
+
+# --- core: enough to regenerate every figure from results/ ---
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+Pillow>=9.0.0
+
+# --- model evaluation and re-running the sweeps ---
+torch>=2.0.0
+torchvision>=0.15.0
+
+# --- orchestration for the GPU runs (code/*_modal.py, code/spawn_*.py) ---
+modal>=0.64.0
+
+# --- macaque electrophysiology via Brain-Score (code/cross_species/*macaque*) ---
+brainscore-vision>=2.3.0
