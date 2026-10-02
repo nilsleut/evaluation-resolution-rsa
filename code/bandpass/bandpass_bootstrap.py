@@ -5,7 +5,7 @@ Gap: V1 = Random - BP (Conv1); LOC = BP - Random (Conv3); cross-run pair set; pe
 matrix as step3, so every condition is paired with NATIVE@224 (from step3's draws); the
 column minus_native gives condition - NATIVE@224 with its bootstrap CI.
 
-Output: results/bandpass/bandpass_gaps.csv, data/bandpass/boot_parts.jsonl (resumable)
+Output: results/bandpass_exploratory/bandpass/bandpass_gaps.csv, data/bandpass/boot_parts.jsonl (resumable)
 """
 import json
 import sys
@@ -28,7 +28,7 @@ ITEMS = [(roi, c, rule, si) for roi, (layer, a, b) in CASES.items() for c in CON
          for rule in (a, b) for si in range(len(SEEDS))]
 CACHE = REPO / "data" / "bandpass" / "boot_stack.npy"
 PARTS = REPO / "data" / "bandpass" / "boot_parts.jsonl"
-OUT = REPO / "results" / "bandpass"
+OUT = REPO / "results" / "bandpass_exploratory" / "bandpass"
 TQ = tdist.ppf(0.975, len(SEEDS) - 1)
 _W = {}
 

@@ -8,7 +8,7 @@ UPSAMPLED@224 (taken from step3's draws, same resample index) are paired.
 
 Also reported per blur level: blur - NATIVE@224 (paired, boot CI).
 
-Output: results/blur/blur_gaps.csv, data/blur/boot_parts.jsonl (resumable)
+Output: results/bandpass_exploratory/blur/blur_gaps.csv, data/blur/boot_parts.jsonl (resumable)
 """
 import json
 import os
@@ -32,7 +32,7 @@ ITEMS = [(roi, r, rule, si) for roi, (layer, a, b) in CASES.items() for r in LEV
          for rule in (a, b) for si in range(len(SEEDS))]
 CACHE = REPO / "data" / "blur" / "boot_stack.npy"
 PARTS = REPO / "data" / "blur" / "boot_parts.jsonl"
-OUT = REPO / "results" / "blur"
+OUT = REPO / "results" / "bandpass_exploratory" / "blur"
 TQ = tdist.ppf(0.975, len(SEEDS) - 1)
 _W = {}
 

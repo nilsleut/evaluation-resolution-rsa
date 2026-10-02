@@ -7,7 +7,7 @@ inside every seed:
 Point = identity draw; boot CI = 2.5/97.5 percentiles; seeds_positive from the per-seed
 differences of the identity draw.
 
-Output: results/blur/blur_paired.csv
+Output: results/bandpass_exploratory/blur/blur_paired.csv
 """
 import sys
 from pathlib import Path
@@ -47,7 +47,7 @@ def main():
                                  boot_lo=np.quantile(m[1:], .025), boot_hi=np.quantile(m[1:], .975),
                                  seeds_positive=int((ds[0] > 0).sum())))
     out = pd.DataFrame(rows)
-    out.to_csv(REPO / "results" / "blur" / "blur_paired.csv", index=False)
+    out.to_csv(REPO / "results" / "bandpass_exploratory" / "blur" / "blur_paired.csv", index=False)
     pd.set_option("display.width", 200)
     print(out[out.convention == "persub"].round(4).to_string(index=False))
 

@@ -19,7 +19,7 @@ unblurred NATIVE image with it, so the match to the upsampling arm can be judged
 
 Models: Random Weights and Backprop, all 5 v12 seeds; features/RDMs exactly as step1 of the
 upsampling test (v12 extract_features + compute_rdm). Conv1 and Conv3 RDMs saved.
-Output: data/blur/rdms/r{r}/seed_{i}/rdm_{rule}_{layer}.npy, results/blur/blur_transform.json
+Output: data/blur/rdms/r{r}/seed_{i}/rdm_{rule}_{layer}.npy, results/bandpass_exploratory/blur/blur_transform.json
 """
 import json
 import math
@@ -39,7 +39,7 @@ RULES = ["Random Weights", "Backprop"]
 LAYERS = {"Conv1": 0, "Conv3": 2}
 PX = 224
 RDM_DIR = REPO / "data" / "blur" / "rdms"
-OUT = REPO / "results" / "blur"
+OUT = REPO / "results" / "bandpass_exploratory" / "blur"
 
 
 def sigma(r):

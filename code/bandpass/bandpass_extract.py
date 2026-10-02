@@ -21,7 +21,7 @@ Everything else as in the blur test: filter on the [0,1] image after Resize(224)
 CenterCrop(224) -> ToTensor, then Normalize; Random Weights and Backprop, 5 v12 seeds;
 v12 extract_features + compute_rdm; Conv1 and Conv3 RDMs saved.
 
-Output: data/bandpass/rdms/{cond}/seed_{i}/rdm_{rule}_{layer}.npy, results/bandpass/bandpass_transform.json
+Output: data/bandpass/rdms/{cond}/seed_{i}/rdm_{rule}_{layer}.npy, results/bandpass_exploratory/bandpass/bandpass_transform.json
 """
 import json
 import math
@@ -44,7 +44,7 @@ RULES = ["Random Weights", "Backprop"]
 LAYERS = {"Conv1": 0, "Conv3": 2}
 GREY = np.array([0.4914, 0.4822, 0.4465], np.float32)[:, None, None]
 RDM_DIR = REPO / "data" / "bandpass" / "rdms"
-OUT = REPO / "results" / "bandpass"
+OUT = REPO / "results" / "bandpass_exploratory" / "bandpass"
 
 
 def sigma(r):
