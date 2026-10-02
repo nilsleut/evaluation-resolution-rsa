@@ -1,0 +1,146 @@
+key,location,v2_printed,value,text,source
+gap.V1.32,"Abstract, Intro, 3.1, Methods",-0.001,-0.0006896894642351714,-0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.32.sem,"Abstract, Intro, 3.1",0.007,0.0050929843747825046,0.005,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.32.pos,"3.1, Methods",3,3.0,3,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.224,"Abstract, 3.1, Fig.1 text, 3.2, 3.4, 4.2",+0.044,0.030445937983289578,+0.030,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.224.sem,"Abstract, 3.1",0.006,0.004427199954293548,0.004,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.224.pos,"3.1, Methods",5,5.0,5,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+boot.V1.32.lo,Abstract,-,-0.0108676870283608,-0.011,"results/upsampling/step4_gaps.csv (v12, stimulus bootstrap, 1000 resamples)"
+boot.V1.32.hi,Abstract,-,0.0090284247190994,0.009,"results/upsampling/step4_gaps.csv (v12, stimulus bootstrap, 1000 resamples)"
+boot.V1.224,Abstract,+0.044,0.0304459379832895,+0.030,"results/upsampling/step4_gaps.csv (v12, stimulus bootstrap, 1000 resamples)"
+boot.V1.224.lo,Abstract,-,0.0181489949363781,0.018,"results/upsampling/step4_gaps.csv (v12, stimulus bootstrap, 1000 resamples)"
+boot.V1.224.hi,Abstract,-,0.0422934415076323,0.042,"results/upsampling/step4_gaps.csv (v12, stimulus bootstrap, 1000 resamples)"
+gap.V1.64,manifest only,-,0.009741775427727384,+0.010,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.64.pos,manifest only,-,3.0,3,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.96,App. C (96 px),+0.025,0.017537169005559367,+0.018,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.96.pos,manifest only,-,5.0,5,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.128,manifest only,-,0.02268817451800035,+0.023,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.128.pos,manifest only,-,5.0,5,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.160,manifest only,-,0.02572613364083077,+0.026,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.V1.160.pos,manifest only,-,5.0,5,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+mr.cr.V1.32,Methods,-0.001 (all pairs),-0.0021605534875983,-0.002,results/upsampling/step6_headline.csv
+mr.cr.V1.224,Methods,+0.044 (all pairs),0.0420149541018857,+0.042,results/upsampling/step6_headline.csv
+mr.all.V1.224,"Methods, 4.2",+0.044,0.0434955335475735,+0.043,results/upsampling/step6_headline.csv
+mr.all.V1.32,Methods,-0.001,-0.0006141002287082,-0.001,results/upsampling/step6_headline.csv
+rho.bp.V1.32,3.1,0.065,0.045927437018857306,0.046,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.bp.V1.224,"3.1, 3.4, Abstract (rnd)",0.031,0.022733609641613788,0.023,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.fa.V1.32,3.1,0.020,0.014673320419772201,0.015,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.fa.V1.224,"3.1, 3.4, Abstract (rnd)",0.012,0.008599050303510908,0.009,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.pc.V1.32,3.1,0.026,0.018762044987906016,0.019,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.pc.V1.224,"3.1, 3.4, Abstract (rnd)",0.016,0.011929474266569682,0.012,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.stdp.V1.32,3.1,0.059,0.04204142036856321,0.042,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.stdp.V1.224,"3.1, 3.4, Abstract (rnd)",0.037,0.026524894874443806,0.027,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.rnd.V1.32,3.1,0.064,0.045237747554622135,0.045,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.rnd.V1.224,"3.1, 3.4, Abstract (rnd)",0.075,0.053179547624903366,0.053,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+bestgap.32,"Abstract (32), 3.1, App. C",+0.014,0.010937834447827019,+0.011,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+bestgap.32.sem,3.1,0.006,0.004241659687857959,0.004,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+bestgap.32.pos,"3.1, App. C",4,4.0,4,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+bestgap.96,"Abstract (32), 3.1, App. C",+0.041,0.029560359762174315,+0.030,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+bestgap.96.pos,"3.1, App. C",5,5.0,5,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+bestgap.224,"Abstract (32), 3.1, App. C",+0.060,0.04176052405714194,+0.042,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+bestgap.224.sem,3.1,0.004,0.0033370440284123492,0.003,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+bestgap.224.pos,"3.1, App. C",5,5.0,5,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.LOC.32,"Intro, 3.7",+0.019,0.012149975510526118,+0.012,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.LOC.32.sem,3.7,0.001,0.0008660368096672088,0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.LOC.224,3.7,+0.018,0.011279681790422574,+0.011,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.LOC.224.sem,3.7,0.001,0.0006272731242796981,0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.IT.32,3.7,+0.015,0.011507369223228913,+0.012,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.IT.32.sem,3.7,0.002,0.0010999417401739938,0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.IT.224,3.7,+0.005,0.006376437724975351,+0.006,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+gap.IT.224.sem,3.7,0.001,0.0008987327009527236,0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.bp.LOC.32,3.7,0.017,0.010979902154223706,0.011,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rho.bp.LOC.224,3.7,0.013,0.008276735501878647,0.008,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rnd.LOC.max,3.7,-0.002,-0.0011700733563024092,-0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+rnd.LOC.min,3.7,-0.005,-0.0030029462885439303,-0.003,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+cal.b-random.224,3.2,-0.003,-0.0029589203895538513,-0.003,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.b-random.224.sem,3.2,-,0.006082854197412216,0.006,bncal RDMs
+cal.b-random.224.pos,3.2,-,2.0,2,bncal RDMs
+cal.d-random.224,3.2,-0.011,-0.00860989381095911,-0.009,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.d-random.224.sem,3.2,-,0.004494673216982512,0.004,bncal RDMs
+cal.d-random.224.pos,3.2,-,2.0,2,bncal RDMs
+cal.a-random.224,3.2,-0.026,-0.018988154503388532,-0.019,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.a-random.224.sem,3.2,-,0.004203581314386648,0.004,bncal RDMs
+cal.a-random.224.pos,3.2,-,0.0,0,bncal RDMs
+cal.c-random.224,3.2,-0.020,-0.014236093349727225,-0.014,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.c-random.224.sem,3.2,-,0.004224710251869103,0.004,bncal RDMs
+cal.c-random.224.pos,3.2,-,0.0,0,bncal RDMs
+cal.B-A.224,3.2,+0.023,0.016029234113834685,+0.016,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.B-A.224.sem,3.2,-,0.004168002946813056,0.004,bncal RDMs
+cal.B-A.224.pos,3.2,-,5.0,5,bncal RDMs
+cal.D-C.224,3.2,+0.008,0.005626199538768117,+0.006,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.D-C.224.sem,3.2,-,0.0014100431163989072,0.001,bncal RDMs
+cal.D-C.224.pos,3.2,-,5.0,5,bncal RDMs
+cal.D-B.224,3.2,-0.008,-0.005650973421405257,-0.006,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.D-B.224.sem,3.2,-,0.004265838323151096,0.004,bncal RDMs
+cal.D-B.224.pos,3.2,-,2.0,2,bncal RDMs
+cal.b-bp.224,3.2,+0.041,0.027487018264746938,+0.027,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.b-bp.224.sem,3.2,-,0.004932568179954127,0.005,bncal RDMs
+cal.b-bp.224.pos,3.2,-,5.0,5,bncal RDMs
+cal.d-bp.224,3.2,+0.033,0.02183604484334168,+0.022,"results/paper_v3/numbers_v3_part1.csv (bncal RDMs, BP v12, per subject, cross-run)"
+cal.d-bp.224.sem,3.2,-,0.0009148237473185938,0.001,bncal RDMs
+cal.d-bp.224.pos,3.2,-,5.0,5,bncal RDMs
+cal.sem.min,3.2,0.001,0.0009148237473185938,0.001,"bncal RDMs (variant - BP @224, SEM)"
+cal.sem.max,3.2,0.007,0.004932568179954127,0.005,"bncal RDMs (variant - BP @224, SEM)"
+arch.resnet50.32,3.3,0.045,0.030955666492939928,0.031,"data/arch_rdms (extract_arch.py), per subject, cross-run"
+arch.resnet50.224,3.3,0.032,0.02301010256057945,0.023,"data/arch_rdms (extract_arch.py), per subject, cross-run"
+arch.swin_t.32,3.3,0.079,0.05560649983757423,0.056,"data/arch_rdms (extract_arch.py), per subject, cross-run"
+arch.swin_t.224,3.3,0.052,0.036707348570701376,0.037,"data/arch_rdms (extract_arch.py), per subject, cross-run"
+ref.lum.V1,"Abstract, Methods, Intro, 3.4",0.074,0.053626948347884916,0.054,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+ref.hist.V1,3.4,0.045,0.03090675108669543,0.031,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+ref.rgb.V1,3.4,0.028,0.020065871765564538,0.020,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+ref.pixel.V1,3.4,0.030,0.02041058567969754,0.020,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+gabor.V1.min,3.4,0.018,0.011514371455084276,0.012,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+gabor.V1.max,3.4,0.037,0.02661654262196438,0.027,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+unt.partial_lum,3.4,0.038,0.025520937306189075,0.026,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+unt.pixel_decrease,3.4,0.004,0.0024527635245956956,0.002,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+gap.joint4.32,3.4,-0.020,-0.01270661490502579,-0.013,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+gap.joint4.224,3.4,+0.036,0.0238431754464484,+0.024,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+gap.lum.224,3.4,+0.026,0.017229548450983765,+0.017,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+six.order,3.4,0.94,0.942857142857143,0.94,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+within.rho25,3.4,0.87,0.8730769230769231,0.87,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+within.B.dV1,3.4,+0.011,0.007569843082653292,+0.008,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+within.B.dV1.pos,3.4,4,4.0,4,"results/paper_v3/numbers_v3_lowlevel.csv (per subject, cross-run)"
+ups.step.bp,3.5,-0.033,-0.022607335278206915,-0.023,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.step.rnd,3.5,-0.000,-1.6566569970517808e-05,-0.000,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.gapopen.NATIVE,"Abstract, 3.5, 4",+0.030,0.020704162555562195,+0.021,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.gapopen.NATIVE.sem,"Abstract, 3.5",0.002,0.0011768624400853166,0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.gapopen.NATIVE.pos,3.5,5,5.0,5,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.gapopen.UPSAMPLED,"Abstract, 3.5, 4",+0.003,0.0023480228782511007,+0.002,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.gapopen.UPSAMPLED.sem,"Abstract, 3.5",0.001,0.000990984813293056,0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.gapopen.UPSAMPLED.pos,3.5,-,4.0,4,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.bp.NATIVE,"Abstract, 3.5",-0.023,-0.015864319186407384,-0.016,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.bp.NATIVE.sem,3.5,0.002,0.001338589052445994,0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.bp.UPSAMPLED,"Abstract, 3.5",-0.000,-0.0002150274787675554,-0.000,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.bp.UPSAMPLED.sem,3.5,0.001,0.0010620243725855338,0.001,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.bp.UPSAMPLED.pos,"Abstract, 3.5",2,2.0,2,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.fa.NATIVE,3.5,-0.004,-0.002667182453270826,-0.003,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.fa.UPSAMPLED,3.5,+0.003,0.002414143009863785,+0.002,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.pc.NATIVE,3.5,-0.005,-0.0032863163071572,-0.003,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.pc.UPSAMPLED,3.5,+0.004,0.0025624563289695975,+0.003,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.rnd.UPSAMPLED,3.5,+0.0029,0.0021329953994835464,+0.0021,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.rnd.UPSAMPLED.sem,3.5,0.0003,0.00019505557854573792,0.0002,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.rnd.frac,3.5,44,44.07157911509098,44,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+ups.removed,"4, Conclusion",90,88.65917483042412,89,"results/paper_v3/numbers_v3_part1.csv (v12 checkpoints, per subject, cross-run)"
+td.bp.224,3.6,-0.031,-0.029746244443783498,-0.030,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.bp.224.sem,3.6,0.005,0.004678300204784012,0.005,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.bp.224.neg,3.6,5,5.0,5,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.bp.32,3.6,-0.000,0.0008127534939295731,+0.001,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.bp.32.sem,3.6,0.005,0.005270066556743454,0.005,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.bp.32.neg,3.6,3,3.0,3,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.pc.32,3.6,-0.026,-0.02498508873723548,-0.025,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.pc.32.sem,3.6,0.004,0.003917479249998,0.004,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.fa.32,3.6,-0.021,-0.020576620067541795,-0.021,"training-dynamics RDMs (Modal), per subject, cross-run"
+td.fa.32.sem,3.6,0.007,0.006509353971664103,0.007,"training-dynamics RDMs (Modal), per subject, cross-run"
+p1.rnd,Intro,0.075,0.0531795484204624,0.053,2604.16875 v4 numbers manifest (external_2604/)
+p1.bp,Intro,0.033,0.0223526677184551,0.022,2604.16875 v4 numbers manifest (external_2604/)
+p1.gap,"Intro, 4.2",+0.042,0.0308268807020073,+0.031,2604.16875 v4 numbers manifest (external_2604/)
+p1.gap.lo,Intro,-,0.0185610137620213,0.019,2604.16875 v4 numbers manifest (external_2604/)
+p1.gap.hi,Intro,-,0.0428111954311446,0.043,2604.16875 v4 numbers manifest (external_2604/)
+p1.pr.min,3.4,0.004,0.0024607025012184,0.002,"2604.16875 v4 numbers manifest (external_2604/) (partial-RSA decrease, V1)"
+p1.pr.max,3.4,0.008,0.0051622153585183,0.005,"2604.16875 v4 numbers manifest (external_2604/) (partial-RSA decrease, V1)"
+lb.V1,Methods (scale),-,0.0514332104565357,0.051,"2604.16875 v4 numbers manifest (external_2604/) (Nili LOSO lower bound, cross-run)"
+lb.V2,Methods (scale),-,0.0236072211051846,0.024,"2604.16875 v4 numbers manifest (external_2604/) (Nili LOSO lower bound, cross-run)"
+lb.LOC,Methods (scale),-,0.0182615232257146,0.018,"2604.16875 v4 numbers manifest (external_2604/) (Nili LOSO lower bound, cross-run)"
+lb.IT,Methods (scale),-,0.0210911355187288,0.021,"2604.16875 v4 numbers manifest (external_2604/) (Nili LOSO lower bound, cross-run)"
+lb.V1.lo,Methods (scale),-,0.0390578464524545,0.039,2604.16875 v4 numbers manifest (external_2604/)
+lb.V1.hi,Methods (scale),-,0.0638562865557606,0.064,2604.16875 v4 numbers manifest (external_2604/)
