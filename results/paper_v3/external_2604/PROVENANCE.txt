@@ -1,6 +1,6 @@
 Copied unchanged from learning-rules-rsa (arXiv:2604.16875 v4), git show <commit>:<path>.
 repo: https://github.com/nilsleut/learning-rules-rsa (local: Projekte_1/learning-rules-rsa)
-commit: 61ed382dbca6c3879e75b45ae20aa45aa6defd5c (tag arxiv-v4 on the release branch carries the same file)
+commit: 929dfa45fe3044b6e8ed94c0ab55e29f9af90631 (branch release-v4, the commit tagged arxiv-v4 descends from it)
 
 numbers_manifest.csv  <- results/paper_v3/numbers_manifest.csv  sha256 9ef0491607da61a0b8b335b9d228c47907e315488ea2cfd48fa33db94c1666d2
 
