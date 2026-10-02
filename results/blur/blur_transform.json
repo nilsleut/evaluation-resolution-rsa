@@ -1,0 +1,35 @@
+{
+  "method": "Gaussian low-pass, amplitude response 0.5 at r/2 cycles per image (Nyquist of an r-px grid); per channel on [0,1] 224px image before Normalize; mode=reflect, truncate=4",
+  "levels": {
+    "32": {
+      "sigma_px": 2.6234687518098863,
+      "cutoff_cycles_per_image": 16.0,
+      "corr_blur_vs_upsampled_r": 0.9915988164643447,
+      "corr_native_vs_upsampled_r": 0.9279683464103274
+    },
+    "64": {
+      "sigma_px": 1.3117343759049431,
+      "cutoff_cycles_per_image": 32.0,
+      "corr_blur_vs_upsampled_r": 0.9951074316269821,
+      "corr_native_vs_upsampled_r": 0.9648603788680501
+    },
+    "96": {
+      "sigma_px": 0.8744895839366288,
+      "cutoff_cycles_per_image": 48.0,
+      "corr_blur_vs_upsampled_r": 0.9968344127966298,
+      "corr_native_vs_upsampled_r": 0.9801895192099942
+    },
+    "128": {
+      "sigma_px": 0.6558671879524716,
+      "cutoff_cycles_per_image": 64.0,
+      "corr_blur_vs_upsampled_r": 0.9978057612975438,
+      "corr_native_vs_upsampled_r": 0.988279746638404
+    },
+    "160": {
+      "sigma_px": 0.5246937503619773,
+      "cutoff_cycles_per_image": 80.0,
+      "corr_blur_vs_upsampled_r": 0.9981623029543294,
+      "corr_native_vs_upsampled_r": 0.9933542850116889
+    }
+  }
+}
