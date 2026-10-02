@@ -1,0 +1,456 @@
+{
+  "0.1_config": {
+    "v12": {
+      "N_CIFAR": 8000,
+      "BATCH": 128,
+      "N_EPOCHS": 40,
+      "batches_per_epoch_drop_last": 62
+    },
+    "v11": {
+      "N_CIFAR": 8000,
+      "BATCH": 128,
+      "N_EPOCHS": 40,
+      "batches_per_epoch_drop_last": 62
+    },
+    "bench": {
+      "batches_per_epoch": 62,
+      "BATCH": 128,
+      "N_EPOCHS": 40,
+      "source": "bench_compute.py reads N_CIFAR/BATCH from the v12 namespace; N_EPOCHS_FULL = 40"
+    },
+    "projection_factor_v12_over_bench": 1.0
+  },
+  "0.2_checkpoints": {
+    "n_present": 30,
+    "n_expected": 30,
+    "inventory": [
+      {
+        "rule": "Random Weights",
+        "seed": 42,
+        "seed_idx": 0,
+        "file": "model_weights_random_weights_seed0.pt",
+        "exists": true,
+        "sha256": "86f49016edffe13c"
+      },
+      {
+        "rule": "Random Weights",
+        "seed": 123,
+        "seed_idx": 1,
+        "file": "model_weights_random_weights_seed1.pt",
+        "exists": true,
+        "sha256": "5903871d73b6540d"
+      },
+      {
+        "rule": "Random Weights",
+        "seed": 456,
+        "seed_idx": 2,
+        "file": "model_weights_random_weights_seed2.pt",
+        "exists": true,
+        "sha256": "862ae60147671bf1"
+      },
+      {
+        "rule": "Random Weights",
+        "seed": 789,
+        "seed_idx": 3,
+        "file": "model_weights_random_weights_seed3.pt",
+        "exists": true,
+        "sha256": "82ff1792527f0d82"
+      },
+      {
+        "rule": "Random Weights",
+        "seed": 1337,
+        "seed_idx": 4,
+        "file": "model_weights_random_weights_seed4.pt",
+        "exists": true,
+        "sha256": "408d5cad42f635bb"
+      },
+      {
+        "rule": "Backprop",
+        "seed": 42,
+        "seed_idx": 0,
+        "file": "model_weights_backprop_seed0.pt",
+        "exists": true,
+        "sha256": "50a808c87105c9d4"
+      },
+      {
+        "rule": "Backprop",
+        "seed": 123,
+        "seed_idx": 1,
+        "file": "model_weights_backprop_seed1.pt",
+        "exists": true,
+        "sha256": "2bcddc5412e87a96"
+      },
+      {
+        "rule": "Backprop",
+        "seed": 456,
+        "seed_idx": 2,
+        "file": "model_weights_backprop_seed2.pt",
+        "exists": true,
+        "sha256": "be3f455c0947f227"
+      },
+      {
+        "rule": "Backprop",
+        "seed": 789,
+        "seed_idx": 3,
+        "file": "model_weights_backprop_seed3.pt",
+        "exists": true,
+        "sha256": "cb8818e49a8679e4"
+      },
+      {
+        "rule": "Backprop",
+        "seed": 1337,
+        "seed_idx": 4,
+        "file": "model_weights_backprop_seed4.pt",
+        "exists": true,
+        "sha256": "03edf2a49d64c4d6"
+      },
+      {
+        "rule": "Feedback Alignment",
+        "seed": 42,
+        "seed_idx": 0,
+        "file": "model_weights_feedback_alignment_seed0.pt",
+        "exists": true,
+        "sha256": "940bd19f86adcce0"
+      },
+      {
+        "rule": "Feedback Alignment",
+        "seed": 123,
+        "seed_idx": 1,
+        "file": "model_weights_feedback_alignment_seed1.pt",
+        "exists": true,
+        "sha256": "1b52e2f780d1722c"
+      },
+      {
+        "rule": "Feedback Alignment",
+        "seed": 456,
+        "seed_idx": 2,
+        "file": "model_weights_feedback_alignment_seed2.pt",
+        "exists": true,
+        "sha256": "9fe191cfa827e017"
+      },
+      {
+        "rule": "Feedback Alignment",
+        "seed": 789,
+        "seed_idx": 3,
+        "file": "model_weights_feedback_alignment_seed3.pt",
+        "exists": true,
+        "sha256": "0b5d6520b8920653"
+      },
+      {
+        "rule": "Feedback Alignment",
+        "seed": 1337,
+        "seed_idx": 4,
+        "file": "model_weights_feedback_alignment_seed4.pt",
+        "exists": true,
+        "sha256": "3418a707cbecd2ec"
+      },
+      {
+        "rule": "Predictive Coding",
+        "seed": 42,
+        "seed_idx": 0,
+        "file": "model_weights_predictive_coding_seed0.pt",
+        "exists": true,
+        "sha256": "4bd563f12376cceb"
+      },
+      {
+        "rule": "Predictive Coding",
+        "seed": 123,
+        "seed_idx": 1,
+        "file": "model_weights_predictive_coding_seed1.pt",
+        "exists": true,
+        "sha256": "ec0d0e1aa544872e"
+      },
+      {
+        "rule": "Predictive Coding",
+        "seed": 456,
+        "seed_idx": 2,
+        "file": "model_weights_predictive_coding_seed2.pt",
+        "exists": true,
+        "sha256": "ed99ffe6d20b74cb"
+      },
+      {
+        "rule": "Predictive Coding",
+        "seed": 789,
+        "seed_idx": 3,
+        "file": "model_weights_predictive_coding_seed3.pt",
+        "exists": true,
+        "sha256": "3b9cc36176c46979"
+      },
+      {
+        "rule": "Predictive Coding",
+        "seed": 1337,
+        "seed_idx": 4,
+        "file": "model_weights_predictive_coding_seed4.pt",
+        "exists": true,
+        "sha256": "02fd1a4b95ce20ef"
+      },
+      {
+        "rule": "STDP",
+        "seed": 42,
+        "seed_idx": 0,
+        "file": "model_weights_stdp_seed0.pt",
+        "exists": true,
+        "sha256": "b9c2fabc78288405"
+      },
+      {
+        "rule": "STDP",
+        "seed": 123,
+        "seed_idx": 1,
+        "file": "model_weights_stdp_seed1.pt",
+        "exists": true,
+        "sha256": "5e4824d5eaef4c32"
+      },
+      {
+        "rule": "STDP",
+        "seed": 456,
+        "seed_idx": 2,
+        "file": "model_weights_stdp_seed2.pt",
+        "exists": true,
+        "sha256": "271552b57468e9f3"
+      },
+      {
+        "rule": "STDP",
+        "seed": 789,
+        "seed_idx": 3,
+        "file": "model_weights_stdp_seed3.pt",
+        "exists": true,
+        "sha256": "d9baa9b6e452d21b"
+      },
+      {
+        "rule": "STDP",
+        "seed": 1337,
+        "seed_idx": 4,
+        "file": "model_weights_stdp_seed4.pt",
+        "exists": true,
+        "sha256": "2c635343625a82f5"
+      },
+      {
+        "rule": "Random Weights (BN-calibrated)",
+        "seed": 42,
+        "seed_idx": 0,
+        "file": "model_weights_random_weights_(bn-calibrated)_seed0.pt",
+        "exists": true,
+        "sha256": "4d5e9f8d210760ae"
+      },
+      {
+        "rule": "Random Weights (BN-calibrated)",
+        "seed": 123,
+        "seed_idx": 1,
+        "file": "model_weights_random_weights_(bn-calibrated)_seed1.pt",
+        "exists": true,
+        "sha256": "a5fb830778b9430d"
+      },
+      {
+        "rule": "Random Weights (BN-calibrated)",
+        "seed": 456,
+        "seed_idx": 2,
+        "file": "model_weights_random_weights_(bn-calibrated)_seed2.pt",
+        "exists": true,
+        "sha256": "d6bc31124973e7e0"
+      },
+      {
+        "rule": "Random Weights (BN-calibrated)",
+        "seed": 789,
+        "seed_idx": 3,
+        "file": "model_weights_random_weights_(bn-calibrated)_seed3.pt",
+        "exists": true,
+        "sha256": "227a1fddc1c03a26"
+      },
+      {
+        "rule": "Random Weights (BN-calibrated)",
+        "seed": 1337,
+        "seed_idx": 4,
+        "file": "model_weights_random_weights_(bn-calibrated)_seed4.pt",
+        "exists": true,
+        "sha256": "5a2561be485e6226"
+      }
+    ],
+    "bench_b2_count": "25 = RULES5 (5 rules) x 5 seeds; bench_compute.py RULES5 omits 'Random Weights (BN-calibrated)', the 6th v12 condition. Resolution is not a checkpoint dimension (training is resolution-independent)."
+  },
+  "0.3_bn_eval": [
+    {
+      "rule": "Random Weights",
+      "seed_idx": 0,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": true,
+      "conv1_bn_running_var_mean": 1.0
+    },
+    {
+      "rule": "Backprop",
+      "seed_idx": 0,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.25476956367492676
+    },
+    {
+      "rule": "Feedback Alignment",
+      "seed_idx": 0,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 1.8789260387420654
+    },
+    {
+      "rule": "Predictive Coding",
+      "seed_idx": 0,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.3913453221321106
+    },
+    {
+      "rule": "Predictive Coding",
+      "seed_idx": 1,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.48730987310409546
+    },
+    {
+      "rule": "Predictive Coding",
+      "seed_idx": 2,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.31904876232147217
+    },
+    {
+      "rule": "Predictive Coding",
+      "seed_idx": 3,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.4218037724494934
+    },
+    {
+      "rule": "Predictive Coding",
+      "seed_idx": 4,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.5667519569396973
+    },
+    {
+      "rule": "STDP",
+      "seed_idx": 0,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.7606725096702576
+    },
+    {
+      "rule": "STDP",
+      "seed_idx": 1,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.7651184797286987
+    },
+    {
+      "rule": "STDP",
+      "seed_idx": 2,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 1.3367178440093994
+    },
+    {
+      "rule": "STDP",
+      "seed_idx": 3,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.8335750102996826
+    },
+    {
+      "rule": "STDP",
+      "seed_idx": 4,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.9043015837669373
+    },
+    {
+      "rule": "Random Weights (BN-calibrated)",
+      "seed_idx": 0,
+      "n_bn": 3,
+      "all_bn_training_false": true,
+      "features_deterministic": true,
+      "running_stats_unchanged": true,
+      "bn_identity_stats": false,
+      "conv1_bn_running_var_mean": 0.40023666620254517
+    }
+  ],
+  "0.4_arms": {
+    "transforms": {
+      "NATIVE": {
+        "32": "Compose(\n    Resize(size=32, interpolation=bilinear, max_size=None, antialias=True)\n    CenterCrop(size=(32, 32))\n    ToTensor()\n    Normalize(mean=(0.4914, 0.4822, 0.4465), std=(0.247, 0.243, 0.261))\n)",
+        "224": "Compose(\n    Resize(size=224, interpolation=bilinear, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    ToTensor()\n    Normalize(mean=(0.4914, 0.4822, 0.4465), std=(0.247, 0.243, 0.261))\n)"
+      },
+      "UPSAMPLED": {
+        "32": "Compose(\n    Resize(size=32, interpolation=bilinear, max_size=None, antialias=True)\n    CenterCrop(size=(32, 32))\n    Resize(size=32, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=(0.4914, 0.4822, 0.4465), std=(0.247, 0.243, 0.261))\n)",
+        "224": "Compose(\n    Resize(size=32, interpolation=bilinear, max_size=None, antialias=True)\n    CenterCrop(size=(32, 32))\n    Resize(size=224, interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=(0.4914, 0.4822, 0.4465), std=(0.247, 0.243, 0.261))\n)"
+      }
+    },
+    "n_images_resolved": 720,
+    "UP32_equals_NAT32_bitexact": "720/720",
+    "v11_NATIVE_equals_v12_NATIVE_224": "40/40",
+    "UPSAMPLED_224_shape": [
+      3,
+      224,
+      224
+    ],
+    "matches_spec": true
+  },
+  "1_pairs": {
+    "stim_order_sha256": "e6e2125077df5291",
+    "stim_order_identical_to_modal_copy": true,
+    "fmri_rdms_identical_to_modal_copy": true,
+    "fmri_rdms_symmetric": {
+      "V1_sub-01": true,
+      "V1_sub-02": true,
+      "V1_sub-03": true,
+      "V2_sub-01": true,
+      "V2_sub-02": true,
+      "V2_sub-03": true,
+      "LOC_sub-01": true,
+      "LOC_sub-02": true,
+      "LOC_sub-03": true,
+      "IT_sub-01": true,
+      "IT_sub-02": true,
+      "IT_sub-03": true
+    },
+    "n_stim": 720,
+    "n_pairs_all": 258840,
+    "n_pairs_cr": 210205,
+    "identical_to_crossrun_pair_set": true
+  }
+}
