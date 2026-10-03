@@ -1,7 +1,7 @@
 \documentclass[10pt,twocolumn]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL Evaluation_Resolution_Confounds_paper_v2.tex                   Mon Aug 24 13:57:52 2026
-%DIF ADD arxiv_upload_v3/Evaluation_Resolution_Confounds_paper_v3.tex   Sat Oct  3 17:16:01 2026
+%DIF ADD arxiv_upload_v3/Evaluation_Resolution_Confounds_paper_v3.tex   Sat Oct  3 17:29:10 2026
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
@@ -359,7 +359,7 @@ Several of the questions this study raises are answerable with the same infrastr
 RSA comparisons of learning rules and architectures at early visual cortex are governed by an evaluation-resolution confound that can manufacture or substantially change the apparent advantage of untrained networks. It holds across conditions, species, training time, and three architecture families. Four candidate mechanisms do not explain it: train/eval resolution matching, low-level Gabor and pixel accounts, the normalization state of the untrained baseline, and convergence of the pooled descriptor toward a global brightness statistic, three of them excluded by interventions that hold the convolutional weights bit-identical. A fifth experiment\DIFaddbegin \DIFadd{, analysed against a criterion fixed before the analysis, }\DIFaddend locates it: \DIFdelbegin \DIFdel{capping image detail at }\DIFdelend \DIFaddbegin \DIFadd{with image content limited to }\DIFaddend the training resolution \DIFdelbegin \DIFdel{while letting the pooled positions grow $12$-fold removes about $90\%$ of the effect, so what varies with evaluation resolution is the image detail and not the number of averaged positions}\DIFdelend \DIFaddbegin \DIFadd{the V1 gap at $224$\,px is as large as with native content ($R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$), so it arises once the input exceeds the training resolution, driven by a decline of backprop, and content above that resolution narrows it rather than creating it}\DIFaddend . Along the way we find that a single scalar luminance value per image matches the untrained network's V1 alignment here, and that luminance similarity orders the conditions exactly as their resolution slopes do without carrying the effect. That is a caution about what this comparison can resolve at all. In this setting, the learning effect that holds across resolution sits at a higher area (LOC). For this line of work, evaluation resolution is something to control and to report.
 
 \subsection*{Acknowledgements}
-The author thanks Martin Schrimpf for the arXiv endorsement and helpful feedback, and the creators of the THINGS-fMRI, FreemanZiemba2013, and MajajHong2015 datasets and the Brain-Score team for their infrastructure. \DIFaddbegin \DIFadd{Analysis code and text drafts were developed with the assistance of an AI coding assistant; all results were verified by the author.
+The author thanks \DIFdelbegin \DIFdel{Martin Schrimpf for the arXiv endorsement and helpful feedback, and the }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend creators of the THINGS-fMRI, FreemanZiemba2013, and MajajHong2015 datasets and the Brain-Score team for their infrastructure. \DIFaddbegin \DIFadd{Analysis code and text drafts were developed with the assistance of an AI coding assistant; all results were verified by the author.
 }\DIFaddend 
 
 \subsection*{Code and Data Availability}

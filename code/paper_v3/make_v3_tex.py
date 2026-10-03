@@ -214,6 +214,8 @@ R3 = [
      r"(a)~Mean Spearman $\rho$ (Conv1$\to$V1, per subject, cross-run pairs) across $5$ seeds, with 95\% stimulus-bootstrap CIs."),
     (r"after low-level statistics are partialled out (\S3.4).}",
      r"after low-level statistics are partialled out (\S3.4). (b)~Random$-$Backprop gap, paired per seed and averaged over the $5$ seeds, with paired 95\% stimulus-bootstrap CIs, for native stimuli and for stimuli with content limited to $32$\,px (\S3.5).}"),
+    (r"The author thanks Martin Schrimpf for the arXiv endorsement and helpful feedback, and the creators of",
+     r"The author thanks the creators of"),
     (r"datasets and the Brain-Score team for their infrastructure.",
      r"datasets and the Brain-Score team for their infrastructure. Analysis code and text drafts were developed with the assistance of an AI coding assistant; all results were verified by the author."),
 ]
