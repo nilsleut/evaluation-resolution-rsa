@@ -152,6 +152,10 @@ def main():
               r"property of the content and not of the pooling", r"dependence is on image content",
               r"falls epoch by epoch", r"accumulating epoch by epoch", r"\bblur", r"band-?pass", r"low-pass"]
     hits = [p for p in banned if re.search(p, flat, re.I)]
+    # the upsampling analysis used a criterion fixed before the analysis but was not preregistered:
+    # checked on the whole source, including the version notes
+    if re.search(r"preregist", tex, re.I):
+        hits.append("preregist (whole source)")
     if hits:
         fails["wording_lint"] = hits
     n_items = tex.count("\\bibitem")

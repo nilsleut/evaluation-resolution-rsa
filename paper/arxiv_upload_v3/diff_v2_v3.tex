@@ -1,7 +1,7 @@
 \documentclass[10pt,twocolumn]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL Evaluation_Resolution_Confounds_paper_v2.tex                   Mon Aug 24 13:57:52 2026
-%DIF ADD arxiv_upload_v3/Evaluation_Resolution_Confounds_paper_v3.tex   Sat Oct  3 17:29:10 2026
+%DIF ADD arxiv_upload_v3/Evaluation_Resolution_Confounds_paper_v3.tex   Sat Oct  3 18:38:35 2026
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
@@ -10,7 +10,8 @@
 \usepackage{natbib}
 \usepackage{xcolor}
 \usepackage{caption}
-%DIF 10a10
+%DIF 10a10-11
+\usepackage[section]{placeins} %DIF > 
 \input{numbers_v3.tex} %DIF > 
 %DIF -------
 
@@ -121,11 +122,11 @@ Representational similarity analysis (RSA) is increasingly used to ask which lea
 
 \textbf{Keywords:} representational similarity analysis, early visual cortex, learning rules, evaluation resolution, batch normalization, untrained networks, methodological confound
 
-\DIFaddbegin \textbf{\DIFadd{Note on version 3.}} \DIFadd{This version changes the convention behind the numbers, not the analyses. (i)~Every RSA value is now computed per subject and averaged over the three subjects (v2: against the RDM averaged over subjects), on the $210{,}205$ of $258{,}840$ stimulus pairs whose two stimuli lie in different fMRI runs for all three subjects. Two subjects saw the stimuli in identical run order, and same-run pairs carry a run component they share (see the revised endpoint study, \mbox{%DIFAUXCMD
+\DIFaddbegin \textbf{\DIFadd{Note on version 3.}} \DIFadd{This version changes the convention behind the numbers and reverses the interpretation of one analysis (}\S3\DIFadd{.5). (i)~Every RSA value is now computed per subject and averaged over the three subjects (v2: against the RDM averaged over subjects), on the $210{,}205$ of $258{,}840$ stimulus pairs whose two stimuli lie in different fMRI runs for all three subjects. Two subjects saw the stimuli in identical run order, and same-run pairs carry a run component they share (see the revised endpoint study, \mbox{%DIFAUXCMD
 \citealt{leutenegger2026}}\hskip0pt%DIFAUXCMD
 ). Values are lower in this convention; no comparison between conditions changes sign, and the seed counts are unchanged. The headline V1 gap at $224$\,px is $\NV{boot.V1.224}$, 95\% stimulus-bootstrap CI $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$. (ii)~Sweep, best-layer, higher-area and content-control values are from the $30$-checkpoint retrain of the repaired five-seed sweep, which reproduces the published sweep to within $6\times10^{-4}$ at the headline cell; backprop differs between the two runs only within its run-to-run reproducibility (}\S4\DIFadd{.1). (iii)~The scale section reports the leave-one-subject-out lower bound \mbox{%DIFAUXCMD
 \citep{nili2014} }\hskip0pt%DIFAUXCMD
-on cross-run pairs. (iv)~All figures are recomputed in this convention; their error bars are now 95\% stimulus-bootstrap CIs rather than across-seed SEM. (v)~One value is not recomputed, because its RDMs were not stored: the calibration on the evaluation stimuli in }\S3\DIFadd{.2, given in the v2 convention. The joint four-reference partial correlation in }\S3\DIFadd{.4 could not be reproduced exactly at $32$\,px from its stated definition ($-0.017$ against the printed $-0.020$, v2 convention); the v3 value follows the stated definition. (vi)~The dataset description is corrected to 3T. (vii)~v2 stated that image detail above the $32$\,px training resolution carries the V1 effect. A preregistered evaluation-only upsampling analysis shows the opposite: with image content limited to $32$\,px the gap is larger ($R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$); it arises when the input size exceeds the training resolution, driven by a decline of backpropagation. v2 had measured only the growth of the gap between $64$ and $224$\,px within each arm and set aside the jump at the first upsampled step as a resizing artifact; that jump is the effect. (viii)~The training-dynamics description is corrected: at $224$\,px backprop does not decline epoch by epoch but drops in the first epoch and then recovers partly (}\S3\DIFadd{.6). A manifest of every changed number, with its source, is in the code repository (}\texttt{\DIFadd{results/paper\_v3/NUMBERS\_MANIFEST\_v3.md}}\DIFadd{).
+on cross-run pairs. (iv)~All figures are recomputed in this convention; their error bars are now 95\% stimulus-bootstrap CIs rather than across-seed SEM. (v)~One value is not recomputed, because its RDMs were not stored: the calibration on the evaluation stimuli in }\S3\DIFadd{.2, given in the v2 convention. The joint four-reference partial correlation in }\S3\DIFadd{.4 could not be reproduced exactly at $32$\,px from its stated definition ($-0.017$ against the printed $-0.020$, v2 convention); the v3 value follows the stated definition. (vi)~The dataset description is corrected to 3T. (vii)~v2 stated that image detail above the $32$\,px training resolution carries the V1 effect. An evaluation-only upsampling analysis with a decision criterion fixed before the analysis shows the opposite: with image content limited to $32$\,px the gap is larger ($R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$); it arises when the input size exceeds the training resolution, driven by a decline of backpropagation. v2 had measured only the growth of the gap between $64$ and $224$\,px within each arm and set aside the jump at the first upsampled step as a resizing artifact; that jump is the effect. (viii)~The training-dynamics description is corrected: at $224$\,px backprop does not decline epoch by epoch but drops in the first epoch and then recovers partly (}\S3\DIFadd{.6). A manifest of every changed number, with its source, is in the code repository (}\texttt{\DIFadd{results/paper\_v3/NUMBERS\_MANIFEST\_v3.md}}\DIFadd{).
 }
 
 \DIFaddend \textbf{Note on version 2.} This version corrects the text of v1. No figure and no data file changes, and no comparison between conditions changes in substance. One table value changes, by $0.001$ (Appendix~C, the best-layer gap at $96$\,px). One interpretive claim is withdrawn.
@@ -199,44 +200,71 @@ The structure of what follows is an elimination followed by a localization. Sect
 
 Across the sweep, the early-visual rule ranking is not fixed; it shifts with evaluation resolution (Fig.~\ref{fig:sweep}). Every trained condition aligns best at or near the $32$\,px training resolution and falls off as resolution rises: backprop from \DIFdelbegin \DIFdel{$\rho=0.065$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho=\NV{rho.bp.V1.32}$ }\DIFaddend at $32$\,px to \DIFdelbegin \DIFdel{$\rho=0.031$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho=\NV{rho.bp.V1.224}$ }\DIFaddend at $224$\,px, feedback alignment from \DIFdelbegin \DIFdel{$0.020$ to $0.012$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{rho.fa.V1.32}$ to $\NV{rho.fa.V1.224}$}\DIFaddend , predictive coding from \DIFdelbegin \DIFdel{$0.026$ to $0.016$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{rho.pc.V1.32}$ to $\NV{rho.pc.V1.224}$}\DIFaddend , STDP from \DIFdelbegin \DIFdel{$0.059$ to $0.037$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{rho.stdp.V1.32}$ to $\NV{rho.stdp.V1.224}$ }\DIFaddend ($5$ seeds). The untrained network goes the other way, climbing from \DIFdelbegin \DIFdel{$\rho=0.064$ to $\rho=0.075$}\DIFdelend \DIFaddbegin \DIFadd{$\rho=\NV{rho.rnd.V1.32}$ to $\rho=\NV{rho.rnd.V1.224}$}\DIFaddend .
 
-The gap between untrained and backprop at V1, which is what ``untrained $\geq$ trained'' claims rest on, follows directly from this. It runs from \DIFdelbegin \DIFdel{$-0.001 \pm 0.007$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.32} \pm \NV{gap.V1.32.sem}$ }\DIFaddend at the $32$\,px training resolution (\DIFdelbegin \DIFdel{$3/5$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.32.pos}/5$ }\DIFaddend seeds positive, not significant\DIFdelbegin \DIFdel{) to $+0.044 \pm 0.006$ }\DIFdelend \DIFaddbegin \DIFadd{; 95\% CI $[\NV{boot.V1.32.lo}, \NV{boot.V1.32.hi}]$) to $\NV{gap.V1.224} \pm \NV{gap.V1.224.sem}$ }\DIFaddend at $224$\,px (\DIFdelbegin \DIFdel{$5/5$ seeds positive}\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.224.pos}/5$ seeds positive; 95\% CI $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$}\DIFaddend ), growing monotonically across the sweep. With five seeds the sign-flip test has a floor of $p = 1/32 \approx 0.031$; the dose--response relationship across six resolutions, not the $p$-value at any one of them, is what the claim rests on. At the resolution the models were trained on there is no effect; at the resolution normally used to evaluate them it is large.
-
-The fixed layer-to-ROI mapping does not create this. Selecting, for each condition and each resolution, whichever layer aligns best with V1 leaves the best layer unchanged across the sweep for every condition but predictive coding, and the gap grows in the same way and further: \DIFdelbegin \DIFdel{$+0.014 \pm 0.006$ ($4/5$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{bestgap.32} \pm \NV{bestgap.32.sem}$ ($\NV{bestgap.32.pos}/5$ }\DIFaddend seeds) at $32$\,px to \DIFdelbegin \DIFdel{$+0.060 \pm 0.004$ ($5/5$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{bestgap.224} \pm \NV{bestgap.224.sem}$ ($\NV{bestgap.224.pos}/5$}\DIFaddend ) at $224$\,px (Appendix~C). One thing does change: under best-layer selection the gap at the training resolution is no longer $\approx 0$ but \DIFdelbegin \DIFdel{$+0.014$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{bestgap.32}$}\DIFaddend . That the gap \emph{vanishes} at $32$\,px is a property of the fixed Conv1 mapping; that it \emph{grows} with resolution is not. The selection is also informative in its own right: the untrained network's best V1 layer is Conv2 while backprop's is Conv1, so a fixed Conv1$\to$V1 mapping is not neutral between the two conditions being compared.
-
-\begin{figure}[t]
+\DIFaddbegin \begin{figure}[tbp]
 \centering
-\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig1_v1_sweep.pdf}
-%DIFDELCMD < %%%
-\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{figures/fig1_v1_sweep_v3.pdf}
-\DIFaddendFL \caption{\textbf{V1 alignment is a function of evaluation resolution.} \DIFaddbeginFL \DIFaddFL{(a)~}\DIFaddendFL Mean Spearman $\rho$ (Conv1$\to$V1\DIFaddbeginFL \DIFaddFL{, per subject, cross-run pairs}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{$\pm$ SEM }\DIFdelendFL across $5$ seeds\DIFaddbeginFL \DIFaddFL{, with 95\% stimulus-bootstrap CIs}\DIFaddendFL . Every trained condition peaks at the $32$\,px training resolution and declines; only the untrained random network rises. The Random$-$Backprop gap is $\approx 0$ at $32$\,px and grows to \DIFdelbeginFL \DIFdelFL{$+0.044$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$\NV{gap.V1.224}$ }\DIFaddendFL at $224$\,px; the same pattern holds, shifted downward, after low-level statistics are partialled out (\S3.4). \DIFaddbeginFL \DIFaddFL{(b)~Random$-$Backprop gap, paired per seed and averaged over the $5$ seeds, with paired 95\% stimulus-bootstrap CIs, for native stimuli and for stimuli with content limited to $32$\,px (}\S3\DIFaddFL{.5).}\DIFaddendFL }
+\includegraphics[width=\columnwidth]{figures/fig1_v1_sweep_v3.pdf}
+\caption{\textbf{\DIFaddFL{V1 alignment is a function of evaluation resolution.}} \DIFaddFL{(a)~Mean Spearman $\rho$ (Conv1$\to$V1, per subject, cross-run pairs) across $5$ seeds, with 95\% stimulus-bootstrap CIs. Every trained condition peaks at the $32$\,px training resolution and declines; only the untrained random network rises. The Random$-$Backprop gap is $\approx 0$ at $32$\,px and grows to $\NV{gap.V1.224}$ at $224$\,px; the same pattern holds, shifted downward, after low-level statistics are partialled out (}\S3\DIFaddFL{.4). (b)~Random$-$Backprop gap, paired per seed and averaged over the $5$ seeds, with paired 95\% stimulus-bootstrap CIs, for native stimuli and for stimuli with content limited to $32$\,px (}\S3\DIFaddFL{.5).}}
 \label{fig:sweep}
 \end{figure}
 
-\subsection{It is not the untrained baseline's normalization}
+\DIFaddend The gap between untrained and backprop at V1, which is what ``untrained $\geq$ trained'' claims rest on, follows directly from this. It runs from \DIFdelbegin \DIFdel{$-0.001 \pm 0.007$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.32} \pm \NV{gap.V1.32.sem}$ }\DIFaddend at the $32$\,px training resolution (\DIFdelbegin \DIFdel{$3/5$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.32.pos}/5$ }\DIFaddend seeds positive, not significant\DIFdelbegin \DIFdel{) to $+0.044 \pm 0.006$ }\DIFdelend \DIFaddbegin \DIFadd{; 95\% CI $[\NV{boot.V1.32.lo}, \NV{boot.V1.32.hi}]$) to $\NV{gap.V1.224} \pm \NV{gap.V1.224.sem}$ }\DIFaddend at $224$\,px (\DIFdelbegin \DIFdel{$5/5$ seeds positive}\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.224.pos}/5$ seeds positive; 95\% CI $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$}\DIFaddend ), growing monotonically across the sweep. With five seeds the sign-flip test has a floor of $p = 1/32 \approx 0.031$; the dose--response relationship across six resolutions, not the $p$-value at any one of them, is what the claim rests on. At the resolution the models were trained on there is no effect; at the resolution normally used to evaluate them it is large.
+
+The fixed layer-to-ROI mapping does not create this. Selecting, for each condition and each resolution, whichever layer aligns best with V1 leaves the best layer unchanged across the sweep for every condition but predictive coding, and the gap grows in the same way and further: \DIFdelbegin \DIFdel{$+0.014 \pm 0.006$ ($4/5$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{bestgap.32} \pm \NV{bestgap.32.sem}$ ($\NV{bestgap.32.pos}/5$ }\DIFaddend seeds) at $32$\,px to \DIFdelbegin \DIFdel{$+0.060 \pm 0.004$ ($5/5$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{bestgap.224} \pm \NV{bestgap.224.sem}$ ($\NV{bestgap.224.pos}/5$}\DIFaddend ) at $224$\,px (Appendix~C). One thing does change: under best-layer selection the gap at the training resolution is no longer $\approx 0$ but \DIFdelbegin \DIFdel{$+0.014$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{bestgap.32}$}\DIFaddend . That the gap \emph{vanishes} at $32$\,px is a property of the fixed Conv1 mapping; that it \emph{grows} with resolution is not. The selection is also informative in its own right: the untrained network's best V1 layer is Conv2 while backprop's is Conv1, so a fixed Conv1$\to$V1 mapping is not neutral between the two conditions being compared.
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}[t]
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig1_v1_sweep.pdf}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\textbf{\DIFdelFL{V1 alignment is a function of evaluation resolution.}} %DIFAUXCMD
+\DIFdelFL{Mean Spearman $\rho$ (Conv1$\to$V1) $\pm$ SEM across $5$ seeds. Every trained condition peaks at the $32$\,px training resolution and declines; only the untrained random network rises. The Random$-$Backprop gap is $\approx 0$ at $32$\,px and grows to $+0.044$ at $224$\,px; the same pattern holds, shifted downward, after low-level statistics are partialled out (}%DIFDELCMD < \S3%%%
+\DIFdelFL{.4).}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:sweep}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \subsection{It is not the untrained baseline's normalization}
 
 A candidate that concerns the baseline rather than the models. The untrained condition is a network whose batch-normalization layers have never seen data: running mean $0$, running variance $1$, no batches tracked, so in evaluation mode they are the identity. The untrained baseline is therefore not a network with matched normalization but a network with none, while every trained condition carries statistics accumulated at $32$\,px. That difference is correlated with the contrast the comparison is meant to isolate, so in principle it could produce the whole effect.
 
 It does not (Fig.~\ref{fig:bncal}). Calibrating at the evaluation resolution costs little: \DIFdelbegin \DIFdel{$-0.003 \pm 0.009$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.b-random.224} \pm \NV{cal.b-random.224.sem}$ }\DIFaddend at $224$\,px with CIFAR-10 statistics (\DIFdelbegin \DIFdel{$2/5$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.b-random.224.pos}/5$ }\DIFaddend seeds positive) and \DIFdelbegin \DIFdel{$-0.011 \pm 0.006$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.d-random.224} \pm \NV{cal.d-random.224.sem}$ }\DIFaddend with THINGS statistics from a disjoint image pool (\DIFdelbegin \DIFdel{$2/5$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.d-random.224.pos}/5$}\DIFaddend ). Calibrating at $32$\,px and evaluating higher costs more (\DIFdelbegin \DIFdel{$-0.026 \pm 0.006$ and $-0.020 \pm 0.006$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.a-random.224} \pm \NV{cal.a-random.224.sem}$ and $\NV{cal.c-random.224} \pm \NV{cal.c-random.224.sem}$ }\DIFaddend at $224$\,px). The $2\times2$ design separates the two factors: matching the calibration resolution is worth \DIFdelbegin \DIFdel{$+0.023 \pm 0.006$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.B-A.224} \pm \NV{cal.B-A.224.sem}$ }\DIFaddend for CIFAR and \DIFdelbegin \DIFdel{$+0.008 \pm 0.002$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.D-C.224} \pm \NV{cal.D-C.224.sem}$ }\DIFaddend for THINGS ($5/5$ seeds each), whereas changing the calibration set at matched resolution is worth \DIFdelbegin \DIFdel{$-0.008 \pm 0.006$ ($2/5$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.D-B.224} \pm \NV{cal.D-B.224.sem}$ ($\NV{cal.D-B.224.pos}/5$}\DIFaddend ). What the calibration costs is itself mostly a resolution effect, not a distribution effect.
 
-The untrained advantage survives all of it. Against a resolution-matched calibrated baseline the untrained network still exceeds backprop at V1 at $224$\,px by \DIFdelbegin \DIFdel{$+0.041$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.b-bp.224}$ }\DIFaddend (CIFAR calibration) or \DIFdelbegin \DIFdel{$+0.033$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.d-bp.224}$ }\DIFaddend (THINGS calibration), $5/5$ seeds in both cases, against \DIFdelbegin \DIFdel{$+0.044$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.224}$ }\DIFaddend for the uncalibrated baseline; and the gap remains $\approx 0$ at $32$\,px under every variant. The resolution dependence is not an artifact of an unnormalized baseline. We report seed counts rather than standard errors for these paired contrasts because at $n=5$ the paired SEM is itself unstable: it ranges from \DIFdelbegin \DIFdel{$0.001$ to $0.007$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.sem.min}$ to $\NV{cal.sem.max}$ }\DIFaddend across variants whose per-seed differences are comparable, depending on how strongly a given variant happens to covary with backprop across the five initializations.
-
-The natural reading of what calibration does cost, that alignment tracks how well the stored statistics match the activations the evaluation stimuli actually produce, is contradicted by the same experiment. Calibrating on the $720$ evaluation images gives, by construction, an almost exact estimate of those activations (mean gap $0.0003$, variance ratio $1.00$ at the first block) and is the worst of the eight variants, costing $-0.030 \pm 0.006$ relative to the identity baseline ($0/5$ seeds positive\DIFaddbegin \DIFadd{; v2 convention, RDM averaged over subjects on all pairs: the RDMs of this probe were not stored, so it is the one value not recomputed per subject on cross-run pairs}\DIFaddend ). The identity baseline's stored variance is wrong by a factor of $7$ at the first block, and by $37$ and $202$ at the second and third, and it aligns best of all. Since the Conv1$\to$V1 comparison depends on the first block alone, this is not a downstream effect. We can therefore say what the calibration cost is not, but not what it is, and we leave that open as well.
-
-\begin{figure}[t]
+\DIFaddbegin \begin{figure}[tbp]
 \centering
-\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig6_bn_calibrated.pdf}
-%DIFDELCMD < %%%
-\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{figures/fig6_bn_calibrated_v3.pdf}
-\DIFaddendFL \caption{\textbf{The effect is not the untrained baseline's normalization.} V1 alignment vs.\ evaluation resolution for the untrained network with its initialized (identity) batch-normalization statistics and for four calibrated variants ($2\times2$: CIFAR-10 or disjoint THINGS images, at $32$\,px or at the evaluation resolution), with the backprop-trained network for reference. Calibration leaves the convolutional weights bit-identical. Resolution-matched calibration costs little and preserves the untrained network's V1 advantage over backprop.}
+\includegraphics[width=\columnwidth]{figures/fig6_bn_calibrated_v3.pdf}
+\caption{\textbf{\DIFaddFL{The effect is not the untrained baseline's normalization.}} \DIFaddFL{V1 alignment vs.\ evaluation resolution for the untrained network with its initialized (identity) batch-normalization statistics and for four calibrated variants ($2\times2$: CIFAR-10 or disjoint THINGS images, at $32$\,px or at the evaluation resolution), with the backprop-trained network for reference. Calibration leaves the convolutional weights bit-identical. Resolution-matched calibration costs little and preserves the untrained network's V1 advantage over backprop.}}
 \label{fig:bncal}
 \end{figure}
 
-\subsection{Train/eval resolution matching does not account for it: ResNet-50 and Swin-Tiny}
+\DIFaddend The untrained advantage survives all of it. Against a resolution-matched calibrated baseline the untrained network still exceeds backprop at V1 at $224$\,px by \DIFdelbegin \DIFdel{$+0.041$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.b-bp.224}$ }\DIFaddend (CIFAR calibration) or \DIFdelbegin \DIFdel{$+0.033$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.d-bp.224}$ }\DIFaddend (THINGS calibration), $5/5$ seeds in both cases, against \DIFdelbegin \DIFdel{$+0.044$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.224}$ }\DIFaddend for the uncalibrated baseline; and the gap remains $\approx 0$ at $32$\,px under every variant. The resolution dependence is not an artifact of an unnormalized baseline. We report seed counts rather than standard errors for these paired contrasts because at $n=5$ the paired SEM is itself unstable: it ranges from \DIFdelbegin \DIFdel{$0.001$ to $0.007$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{cal.sem.min}$ to $\NV{cal.sem.max}$ }\DIFaddend across variants whose per-seed differences are comparable, depending on how strongly a given variant happens to covary with backprop across the five initializations.
+
+The natural reading of what calibration does cost, that alignment tracks how well the stored statistics match the activations the evaluation stimuli actually produce, is contradicted by the same experiment. Calibrating on the $720$ evaluation images gives, by construction, an almost exact estimate of those activations (mean gap $0.0003$, variance ratio $1.00$ at the first block) and is the worst of the eight variants, costing $-0.030 \pm 0.006$ relative to the identity baseline ($0/5$ seeds positive\DIFaddbegin \DIFadd{; v2 convention, RDM averaged over subjects on all pairs: the RDMs of this probe were not stored, so it is the one value not recomputed per subject on cross-run pairs}\DIFaddend ). The identity baseline's stored variance is wrong by a factor of $7$ at the first block, and by $37$ and $202$ at the second and third, and it aligns best of all. Since the Conv1$\to$V1 comparison depends on the first block alone, this is not a downstream effect. We can therefore say what the calibration cost is not, but not what it is, and we leave that open as well.
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}[t]
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig6_bn_calibrated.pdf}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\textbf{\DIFdelFL{The effect is not the untrained baseline's normalization.}} %DIFAUXCMD
+\DIFdelFL{V1 alignment vs.\ evaluation resolution for the untrained network with its initialized (identity) batch-normalization statistics and for four calibrated variants ($2\times2$: CIFAR-10 or disjoint THINGS images, at $32$\,px or at the evaluation resolution), with the backprop-trained network for reference. Calibration leaves the convolutional weights bit-identical. Resolution-matched calibration costs little and preserves the untrained network's V1 advantage over backprop.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:bncal}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \subsection{Train/eval resolution matching does not account for it: ResNet-50 and Swin-Tiny}
 
 The obvious explanation is that a model is penalized when evaluated away from its training resolution, which predicts that a model trained at $224$\,px should peak at $224$\,px. It does not. An ImageNet-trained ResNet-50 and a Swin-Tiny transformer, both trained at $224$\,px, show V1 alignment that falls toward $224$\,px and peaks at low resolution, just as the $32$\,px-trained networks do (Fig.~\ref{fig:arch}): ResNet-50 from \DIFdelbegin \DIFdel{$\rho=0.045$ to $\rho=0.032$}\DIFdelend \DIFaddbegin \DIFadd{$\rho=\NV{arch.resnet50.32}$ to $\rho=\NV{arch.resnet50.224}$}\DIFaddend , Swin-Tiny from \DIFdelbegin \DIFdel{$\rho=0.079$ to $\rho=0.052$}\DIFdelend \DIFaddbegin \DIFadd{$\rho=\NV{arch.swin_t.32}$ to $\rho=\NV{arch.swin_t.224}$}\DIFaddend . The pattern thus holds across three architecture families (custom CNN, ResNet-50, Swin-Tiny) and does not depend on training resolution. Only the untrained network climbs with resolution.
 
-\begin{figure}[t]
-\centering
+\DIFdelbegin %DIFDELCMD < \begin{figure}[t]
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{figure}[tbp]
+\DIFaddendFL \centering
 \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig2_architectures.pdf}
 %DIFDELCMD < %%%
 \DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{figures/fig2_architectures_v3.pdf}
@@ -248,7 +276,14 @@ The obvious explanation is that a model is penalized when evaluated away from it
 
 A candidate account is that untrained filters look V1-like because they capture low-level image statistics. The Gabor version fails too (Fig.~\ref{fig:gabor}). A Gabor filterbank is itself only weakly related to V1 (\DIFdelbegin \DIFdel{$\rho\approx0.018$}\DIFdelend \DIFaddbegin \DIFadd{$\rho\approx\NV{gabor.V1.min}$}\DIFaddend --\DIFdelbegin \DIFdel{$0.037$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{gabor.V1.max}$}\DIFaddend ), and across models and resolutions we see no relationship between Gabor-similarity and V1 alignment, though with three model families the analysis is not powered to exclude a weak one. The clearer evidence is the counterexample: the ResNet-50's early stage is about ten times more Gabor-like than the untrained CNN (Gabor-similarity $\approx0.22$--$0.31$ vs.\ $\approx0.02$--$0.03$) and yet aligns less well with V1. Being Gabor-like does not buy V1 alignment here.
 
-A raw-luminance (pixel) RDM behaves the same way. It is itself weakly related to V1 (\DIFdelbegin \DIFdel{$\rho=0.030$}\DIFdelend \DIFaddbegin \DIFadd{$\rho=\NV{ref.pixel.V1}$}\DIFaddend ), and the models are barely pixel-like, with no ordering that tracks V1 alignment. The endpoint study reached the same conclusion by a different route, partialling a pixel RDM out of both model and brain RDMs and finding the V1 ordering fully preserved, with decreases of \DIFdelbegin \DIFdel{$0.004$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{p1.pr.min}$}\DIFaddend --\DIFdelbegin \DIFdel{$0.008$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{p1.pr.max}$ }\DIFaddend \citep{leutenegger2026}; our own partial-RSA implementation reproduces that band (\DIFdelbegin \DIFdel{$0.004$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{unt.pixel_decrease}$ }\DIFaddend at $224$\,px) before being applied to the references below. V1-like filter structure is, after all, exactly what unsupervised learning on natural image statistics is known to produce \citep{olshausen1996}, so a low-level account is the natural first suspect.
+\DIFaddbegin \begin{figure}[tbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig5_gabor_v3.pdf}
+\caption{\textbf{\DIFaddFL{The effect is not a simple Gabor account.}} \DIFaddFL{Gabor-model similarity (x) vs.\ V1 alignment (y) across models and resolutions. We see no relationship between the two; the ResNet-50, far more Gabor-like, is less V1-aligned than the untrained CNN.}}
+\label{fig:gabor}
+\end{figure}
+
+\DIFaddend A raw-luminance (pixel) RDM behaves the same way. It is itself weakly related to V1 (\DIFdelbegin \DIFdel{$\rho=0.030$}\DIFdelend \DIFaddbegin \DIFadd{$\rho=\NV{ref.pixel.V1}$}\DIFaddend ), and the models are barely pixel-like, with no ordering that tracks V1 alignment. The endpoint study reached the same conclusion by a different route, partialling a pixel RDM out of both model and brain RDMs and finding the V1 ordering fully preserved, with decreases of \DIFdelbegin \DIFdel{$0.004$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{p1.pr.min}$}\DIFaddend --\DIFdelbegin \DIFdel{$0.008$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{p1.pr.max}$ }\DIFaddend \citep{leutenegger2026}; our own partial-RSA implementation reproduces that band (\DIFdelbegin \DIFdel{$0.004$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{unt.pixel_decrease}$ }\DIFaddend at $224$\,px) before being applied to the references below. V1-like filter structure is, after all, exactly what unsupervised learning on natural image statistics is known to produce \citep{olshausen1996}, so a low-level account is the natural first suspect.
 
 A further low-level account concerns the pooling itself. Global average pooling over the Conv1 map covers $256$ spatial positions at $32$\,px and $12{,}544$ at $224$\,px, a $49$-fold increase, so the pooled descriptor converges toward a global image statistic as resolution rises; with random filters that limit is close to a global colour or luminance measure. This is the account that comes closest to working, and the one whose failure is most informative. Global statistics are a large part of why the untrained network aligns with V1 at all: a single scalar luminance value per image reaches \DIFdelbegin \DIFdel{$\rho = 0.074$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = \NV{ref.lum.V1}$ }\DIFaddend against the V1 RDM, essentially matching the untrained network's own \DIFdelbegin \DIFdel{$0.075$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{rho.rnd.V1.224}$ }\DIFaddend at $224$\,px, and partialling luminance out of both model and brain RDMs halves the untrained network's alignment (\DIFdelbegin \DIFdel{$0.075 \to 0.038$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{rho.rnd.V1.224} \to \NV{unt.partial_lum}$}\DIFaddend ). That early visual cortex is strongly driven by low-level image properties is not itself new \citep{goddard2020}; what we quantify is that in this dataset a one-dimensional descriptor matches the best model we tested under this comparison. The luminance figure itself involves no model and no readout, so it bounds the brain side directly; the models' figures are specific to rank correlation on globally pooled features, and a fitted readout on the full feature map could well place them higher. The claim is therefore about what RSA on pooled features can resolve at V1 here, not about model--brain alignment in general. Mean chromaticity fails in the opposite direction: among the five learning-rule conditions the untrained network is the \emph{least} mean-RGB-like ($0.24$) and backprop the most ($0.54$).
 
@@ -258,20 +293,37 @@ The ordering is nevertheless not a pooling mechanism, and the same experiment sh
 
 We therefore report this account as tested and not supported. What survives it is an observation rather than a mechanism: whatever moves V1 alignment in this setting also moves similarity to a single brightness scalar, and we can explain neither.
 
-\begin{figure}[t]
-\centering
-\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig5_gabor.pdf}
+\DIFdelbegin %DIFDELCMD < \begin{figure}[t]
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig5_gabor.pdf}
 %DIFDELCMD < %%%
-\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{figures/fig5_gabor_v3.pdf}
-\DIFaddendFL \caption{\textbf{The effect is not a simple Gabor account.} Gabor-model similarity (x) vs.\ V1 alignment (y) across models and resolutions. We see no relationship between the two; the ResNet-50, far more Gabor-like, is less V1-aligned than the untrained CNN.}
-\label{fig:gabor}
-\end{figure}
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\textbf{\DIFdelFL{The effect is not a simple Gabor account.}} %DIFAUXCMD
+\DIFdelFL{Gabor-model similarity (x) vs.\ V1 alignment (y) across models and resolutions. We see no relationship between the two; the ResNet-50, far more Gabor-like, is less V1-aligned than the untrained CNN.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:gabor}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \subsection{\DIFadd{Input size, not image content}}
+\DIFaddend 
 
-\subsection{\DIFdelbegin \DIFdel{Content}\DIFdelend \DIFaddbegin \DIFadd{Input size}\DIFaddend , not \DIFdelbegin \DIFdel{pooled positions}\DIFdelend \DIFaddbegin \DIFadd{image content}\DIFaddend }
+\DIFdelbegin \subsection{\DIFdel{Content, not pooled positions}}
+%DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+%DIFDELCMD < 
 
-Varying evaluation resolution varies two things at once: the number of positions the descriptor is pooled over, and the image detail available at each. A final experiment separates them (Fig.~\ref{fig:content}). We repeat the sweep in a second arm in which every stimulus is first reduced to $32$\,px and then upsampled to the evaluation resolution, so the information content is capped at the training resolution while the network still pools over the full number of positions. At $32$\,px the second resize is a no-op and the two arms are identical by construction, which we verify (max $|\Delta\rho| = 0$ across all cells).
+%DIFDELCMD < %%%
+\DIFdelend Varying evaluation resolution varies two things at once: the number of positions the descriptor is pooled over, and the image detail available at each. A final experiment separates them (Fig.~\ref{fig:content}). We repeat the sweep in a second arm in which every stimulus is first reduced to $32$\,px and then upsampled to the evaluation resolution, so the information content is capped at the training resolution while the network still pools over the full number of positions. At $32$\,px the second resize is a no-op and the two arms are identical by construction, which we verify (max $|\Delta\rho| = 0$ across all cells).
 
-\DIFdelbegin \DIFdel{Read at the endpoints the two arms look alike: every sign is preserved and the gap opens wider under upsampling. That is misleading. The first step of }\DIFdelend \DIFaddbegin \DIFadd{We evaluated the comparison against a criterion fixed before the analysis (October 2026): }\DIFaddend the \DIFdelbegin \DIFdel{upsampled arm is where the resize chain is introduced at all, and it costs the trained conditions a large one-off penalty (backprop $-0.033$ }\DIFdelend \DIFaddbegin \DIFadd{ratio $R = \mathrm{Gap}_{\mathrm{UP}}(224)/\mathrm{Gap}_{\mathrm{NAT}}(224)$ of the V1 Random$-$Backprop gap with content limited to the gap with native content, with a stimulus-bootstrap CI on resamples shared by both arms. $R \geq 0.5$ with a CI of $\mathrm{Gap}_{\mathrm{UP}}$ excluding $0$ was to mean that the effect depends on input size; a CI of $R$ including $0$, that it depends on image content. The result is the first case. At $224$\,px the gap is $\NV{s4.V1.up224}$ $[\NV{s4.V1.up224.lo}, \NV{s4.V1.up224.hi}]$ with content limited and $\NV{boot.V1.224}$ $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$ with native content, $R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$; limiting the content widens the gap by $\NV{s4.V1.diff}$ $[\NV{s4.V1.diff.lo}, \NV{s4.V1.diff.hi}]$.
+\DIFdelbegin \DIFdel{Read at the endpoints the two arms look alike: every sign is preserved and the gap opens wider under upsampling. That is misleading. The first step of }\DIFdelend \DIFaddbegin \begin{figure*}[tp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig7_content_control_v3.pdf}
+\caption{\textbf{\DIFaddFL{With image content limited to the training resolution, the V1 gap is as large as with native content.}} \DIFaddFL{V1 alignment (Conv1$\to$V1) vs.\ evaluation resolution, mean over $5$ seeds with 95\% stimulus-bootstrap CIs (per subject, cross-run pairs), with stimuli at their native resolution (left) and with their content capped at $32$\,px before upsampling (right). The arms are identical at $32$\,px by construction. What differs is the shape. At native resolution the trained conditions decline steadily across the whole sweep; with content limited they drop at the first step, as soon as the input exceeds the training resolution, and then run flat. Across the shaded $64\to224$\,px span the pooled positions increase twelvefold while the right-hand arm's content stays fixed, and the Random$-$Backprop gap opens by $\NV{ups.gapopen.UPSAMPLED}$ there against $\NV{ups.gapopen.NATIVE}$ on the left. Only the untrained network rises in both arms.}}
+\label{fig:content}
+\end{figure*}
+
+\DIFadd{We evaluated the comparison against a criterion fixed before the analysis (October 2026): }\DIFaddend the \DIFdelbegin \DIFdel{upsampled arm is where the resize chain is introduced at all, and it costs the trained conditions a large one-off penalty (backprop $-0.033$ }\DIFdelend \DIFaddbegin \DIFadd{ratio $R = \mathrm{Gap}_{\mathrm{UP}}(224)/\mathrm{Gap}_{\mathrm{NAT}}(224)$ of the V1 Random$-$Backprop gap with content limited to the gap with native content, with a stimulus-bootstrap CI on resamples shared by both arms. $R \geq 0.5$ with a CI of $\mathrm{Gap}_{\mathrm{UP}}$ excluding $0$ was to mean that the effect depends on input size; a CI of $R$ including $0$, that it depends on image content. The result is the first case. At $224$\,px the gap is $\NV{s4.V1.up224}$ $[\NV{s4.V1.up224.lo}, \NV{s4.V1.up224.hi}]$ with content limited and $\NV{boot.V1.224}$ $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$ with native content, $R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$; limiting the content widens the gap by $\NV{s4.V1.diff}$ $[\NV{s4.V1.diff.lo}, \NV{s4.V1.diff.hi}]$.
 }
 
 \DIFadd{The shape shows where the gap comes from. With content limited it appears in full at the first step ($\NV{s4.V1.up64}$ }\DIFaddend at $64$\,\DIFdelbegin \DIFdel{px) while costing the untrained network nothing ($-0.000$). That penalty is then constant, so it is a property of the content and not of the pooling.
@@ -291,22 +343,28 @@ Varying evaluation resolution varies two things at once: the number of positions
 
 \DIFadd{One caution applies to both areas. Upsampled images are smoother than natural images of the same size; the comparison separates information content from input size, but it does not isolate which property of the image is responsible for backprop's decline at V1 or for the loss of its advantage at LOC}\DIFaddend .
 
-\begin{figure*}[t]
-\centering
-\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/fig7_content_control.pdf}
+\DIFdelbegin %DIFDELCMD < \begin{figure*}[t]
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics[width=\textwidth]{figures/fig7_content_control.pdf}
 %DIFDELCMD < %%%
-\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/fig7_content_control_v3.pdf}
-\DIFaddendFL \caption{\DIFdelbeginFL \textbf{\DIFdelFL{The dependence is on image content, not on pooled positions.}} %DIFAUXCMD
-\DIFdelendFL \DIFaddbeginFL \textbf{\DIFaddFL{With image content limited to the training resolution, the V1 gap is as large as with native content.}} \DIFaddendFL V1 alignment (Conv1$\to$V1) vs.\ evaluation resolution, mean \DIFdelbeginFL \DIFdelFL{$\pm$ SEM }\DIFdelendFL over $5$ seeds \DIFaddbeginFL \DIFaddFL{with 95\% stimulus-bootstrap CIs (per subject}\DIFaddendFL , \DIFaddbeginFL \DIFaddFL{cross-run pairs), }\DIFaddendFL with stimuli at their native resolution (left) and with their content capped at $32$\,px before upsampling (right). The arms are identical at $32$\,px by construction. What differs is the shape. At native resolution the trained conditions decline steadily across the whole sweep; with content \DIFdelbeginFL \DIFdelFL{fixed }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{limited }\DIFaddendFL they drop \DIFdelbeginFL \DIFdelFL{once }\DIFdelendFL at the first step, \DIFdelbeginFL \DIFdelFL{where }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{as soon as }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{resize chain is introduced}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{input exceeds the training resolution}\DIFaddendFL , and then run flat\DIFdelbeginFL \DIFdelFL{or turn back up}\DIFdelendFL . Across the shaded $64\to224$\,px span the pooled positions increase twelvefold while the right-hand arm's content stays fixed, and the Random$-$Backprop gap opens by \DIFdelbeginFL \DIFdelFL{$+0.003$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$\NV{ups.gapopen.UPSAMPLED}$ }\DIFaddendFL there against \DIFdelbeginFL \DIFdelFL{$+0.030$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$\NV{ups.gapopen.NATIVE}$ }\DIFaddendFL on the left. Only the untrained network rises in both arms.}
-\label{fig:content}
-\end{figure*}
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\textbf{\DIFdelFL{The dependence is on image content, not on pooled positions.}} %DIFAUXCMD
+\DIFdelFL{V1 alignment (Conv1$\to$V1) vs.\ evaluation resolution, mean $\pm$ SEM over $5$ seeds, with stimuli at their native resolution (left) and with their content capped at $32$\,px before upsampling (right). The arms are identical at $32$\,px by construction. What differs is the shape. At native resolution the trained conditions decline steadily across the whole sweep; with content fixed they drop once at the first step, where the resize chain is introduced, and then run flat or turn back up. Across the shaded $64\to224$\,px span the pooled positions increase twelvefold while the right-hand arm's content stays fixed, and the Random$-$Backprop gap opens by $+0.003$ there against $+0.030$ on the left. Only the untrained network rises in both arms.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:content}
+%DIFDELCMD < \end{figure*}
+%DIFDELCMD < 
 
-\subsection{It generalizes over training time and across species}
+%DIFDELCMD < %%%
+\DIFdelend \subsection{It generalizes over training time and across species}
 
 The same thing happens over training, not just at the endpoint (Fig.~\ref{fig:dynamics}). At $224$\,px backprop V1 alignment \DIFdelbegin \DIFdel{falls epochby epoch ($-0.031 \pm 0.005$ from epoch $0$ to }\DIFdelend \DIFaddbegin \DIFadd{drops sharply in the first epoch, from $\NV{td.bp224.e0}$ to $\NV{td.bp224.e1}$, and then recovers partly, to $\NV{td.bp224.e40}$ at epoch }\DIFaddend $40$ \DIFdelbegin \DIFdel{, $5/5$ }\DIFdelend \DIFaddbegin \DIFadd{(net change $\NV{td.bp.224} \pm \NV{td.bp.224.sem}$, $\NV{td.bp.224.neg}/5$ }\DIFaddend seeds negative), which is the published ``training degrades early-visual alignment'' result; evaluated at the $32$\,px training resolution the same run returns to its starting value (\DIFdelbegin \DIFdel{$-0.000 \pm 0.005$, $3/5$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{td.bp.32} \pm \NV{td.bp.32.sem}$, $\NV{td.bp.32.neg}/5$ }\DIFaddend seeds negative). For backpropagation, what looked like degradation was the resolution gap widening as training proceeded. This is not uniform across rules: predictive coding and feedback alignment lose alignment at the training resolution as well (\DIFdelbegin \DIFdel{$-0.026 \pm 0.004$ and $-0.021 \pm 0.007$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{td.pc.32} \pm \NV{td.pc.32.sem}$ and $\NV{td.fa.32} \pm \NV{td.fa.32.sem}$}\DIFaddend ; $5/5$ and $4/5$ seeds negative), so for those two the loss is not purely a resolution artifact. For predictive coding the loss is also unlikely to be a weight effect: over the same $40$ epochs that condition displaces its first convolutional layer by about $2\%$ of the initialization norm (Appendix~B), which is hard to reconcile with an alignment change of $0.03$--$0.04$. This is consistent with its trajectory being carried by its accumulating normalization statistics rather than by its weight-update rule, though we have not tested that directly, and its curve should be read with that caveat. Macaque electrophysiology shows the same collapse at V1/V2, where the rule differences shrink toward the training resolution: directional cross-species support, from a single seed (see Limitations).
 
-\begin{figure*}[t]
-\centering
+\DIFdelbegin %DIFDELCMD < \begin{figure*}[t]
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{figure*}[tp]
+\DIFaddendFL \centering
 \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/fig3_dynamics.pdf}
 %DIFDELCMD < %%%
 \DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/fig3_dynamics_v3.pdf}
@@ -318,8 +376,10 @@ The same thing happens over training, not just at the endpoint (Fig.~\ref{fig:dy
 
 One effect holds up across the sweep (Fig.~\ref{fig:higher}). At LOC, backprop-trained networks align better than untrained ones at every resolution (backprop$-$untrained \DIFdelbegin \DIFdel{$= +0.019 \pm 0.001$ }\DIFdelend \DIFaddbegin \DIFadd{$= \NV{gap.LOC.32} \pm \NV{gap.LOC.32.sem}$ }\DIFaddend at $32$\,px and \DIFdelbegin \DIFdel{$+0.018 \pm 0.001$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.LOC.224} \pm \NV{gap.LOC.224.sem}$ }\DIFaddend at $224$\,px; $5/5$ seeds throughout). IT shows a weaker but consistently positive version of the same thing (\DIFdelbegin \DIFdel{$+0.015 \pm 0.002$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.IT.32} \pm \NV{gap.IT.32.sem}$ }\DIFaddend at $32$\,px, \DIFdelbegin \DIFdel{$+0.005 \pm 0.001$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.IT.224} \pm \NV{gap.IT.224.sem}$ }\DIFaddend at $224$\,px; $5/5$ seeds). What is stable across resolution here is the difference, not the levels: backprop's own LOC alignment falls from \DIFdelbegin \DIFdel{$0.017$ to $0.013$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{rho.bp.LOC.32}$ to $\NV{rho.bp.LOC.224}$ }\DIFaddend over the sweep, but the untrained baseline sits near zero and slightly negative throughout (\DIFdelbegin \DIFdel{$-0.002$ to $-0.005$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{rnd.LOC.max}$ to $\NV{rnd.LOC.min}$}\DIFaddend ), so the sign and approximate size of the gap never change. Learning does leave a mark on the representations that this analysis choice does not erase, and it sits at higher areas rather than at V1.
 
-\begin{figure*}[t]
-\centering
+\DIFdelbegin %DIFDELCMD < \begin{figure*}[t]
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{figure*}[tp]
+\DIFaddendFL \centering
 \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/fig4_higher_areas.pdf}
 %DIFDELCMD < %%%
 \DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/fig4_higher_areas_v3.pdf}

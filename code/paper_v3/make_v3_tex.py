@@ -5,6 +5,7 @@ make_manifest.py); the convention, the noise-bound paragraph, the dataset descri
 version note are updated. No new results (no upsampling follow-up, no blur or band-pass test).
 Each replacement must match exactly once in the v2 source, otherwise the script stops.
 """
+import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
@@ -31,7 +32,7 @@ r(r"a single scalar luminance value per image reaches $\rho = 0.074$ against V1,
 
 # ── version note (inserted before the v2 note) ──────────────────────────────
 r(r"\textbf{Note on version 2.}",
-  r"""\textbf{Note on version 3.} This version changes the convention behind the numbers, not the analyses. (i)~Every RSA value is now computed per subject and averaged over the three subjects (v2: against the RDM averaged over subjects), on the $210{,}205$ of $258{,}840$ stimulus pairs whose two stimuli lie in different fMRI runs for all three subjects. Two subjects saw the stimuli in identical run order, and same-run pairs carry a run component they share (see the revised endpoint study, \citealt{leutenegger2026}). Values are lower in this convention; no comparison between conditions changes sign, and the seed counts are unchanged. The headline V1 gap at $224$\,px is $\NV{boot.V1.224}$, 95\% stimulus-bootstrap CI $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$. (ii)~Sweep, best-layer, higher-area and content-control values are from the $30$-checkpoint retrain of the repaired five-seed sweep, which reproduces the published sweep to within $6\times10^{-4}$ at the headline cell; backprop differs between the two runs only within its run-to-run reproducibility (\S4.1). (iii)~The scale section reports the leave-one-subject-out lower bound \citep{nili2014} on cross-run pairs. (iv)~The figures are those of v2 and show the v2 convention (RDM averaged over subjects, all pairs; Fig.~\ref{fig:dynamics}: per subject, all pairs). (v)~One value is not recomputed, because its RDMs were not stored: the calibration on the evaluation stimuli in \S3.2, given in the v2 convention. The joint four-reference partial correlation in \S3.4 could not be reproduced exactly at $32$\,px from its stated definition ($-0.017$ against the printed $-0.020$, v2 convention); the v3 value follows the stated definition. (vi)~The dataset description is corrected to 3T. A manifest of every changed number, with its source, is in the code repository (\texttt{results/paper\_v3/NUMBERS\_MANIFEST\_v3.md}).
+  r"""\textbf{Note on version 3.} This version changes the convention behind the numbers and reverses the interpretation of one analysis (\S3.5). (i)~Every RSA value is now computed per subject and averaged over the three subjects (v2: against the RDM averaged over subjects), on the $210{,}205$ of $258{,}840$ stimulus pairs whose two stimuli lie in different fMRI runs for all three subjects. Two subjects saw the stimuli in identical run order, and same-run pairs carry a run component they share (see the revised endpoint study, \citealt{leutenegger2026}). Values are lower in this convention; no comparison between conditions changes sign, and the seed counts are unchanged. The headline V1 gap at $224$\,px is $\NV{boot.V1.224}$, 95\% stimulus-bootstrap CI $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$. (ii)~Sweep, best-layer, higher-area and content-control values are from the $30$-checkpoint retrain of the repaired five-seed sweep, which reproduces the published sweep to within $6\times10^{-4}$ at the headline cell; backprop differs between the two runs only within its run-to-run reproducibility (\S4.1). (iii)~The scale section reports the leave-one-subject-out lower bound \citep{nili2014} on cross-run pairs. (iv)~The figures are those of v2 and show the v2 convention (RDM averaged over subjects, all pairs; Fig.~\ref{fig:dynamics}: per subject, all pairs). (v)~One value is not recomputed, because its RDMs were not stored: the calibration on the evaluation stimuli in \S3.2, given in the v2 convention. The joint four-reference partial correlation in \S3.4 could not be reproduced exactly at $32$\,px from its stated definition ($-0.017$ against the printed $-0.020$, v2 convention); the v3 value follows the stated definition. (vi)~The dataset description is corrected to 3T. A manifest of every changed number, with its source, is in the code repository (\texttt{results/paper\_v3/NUMBERS\_MANIFEST\_v3.md}).
 
 \textbf{Note on version 2.}""")
 
@@ -208,7 +209,7 @@ R3 = [
     (r"but the absolute scale should not be read as a property of V1.",
      r"but the absolute scale should not be read as a property of V1. (13)~The upsampled images of \S3.5 are smoother than natural images of the same size. The comparison separates information content from input size, but it does not isolate which image property is responsible for backprop's decline."),
     (r"(vi)~The dataset description is corrected to 3T.",
-     r"(vi)~The dataset description is corrected to 3T. (vii)~v2 stated that image detail above the $32$\,px training resolution carries the V1 effect. A preregistered evaluation-only upsampling analysis shows the opposite: with image content limited to $32$\,px the gap is larger ($R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$); it arises when the input size exceeds the training resolution, driven by a decline of backpropagation. v2 had measured only the growth of the gap between $64$ and $224$\,px within each arm and set aside the jump at the first upsampled step as a resizing artifact; that jump is the effect. (viii)~The training-dynamics description is corrected: at $224$\,px backprop does not decline epoch by epoch but drops in the first epoch and then recovers partly (\S3.6)."),
+     r"(vi)~The dataset description is corrected to 3T. (vii)~v2 stated that image detail above the $32$\,px training resolution carries the V1 effect. An evaluation-only upsampling analysis with a decision criterion fixed before the analysis shows the opposite: with image content limited to $32$\,px the gap is larger ($R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$); it arises when the input size exceeds the training resolution, driven by a decline of backpropagation. v2 had measured only the growth of the gap between $64$ and $224$\,px within each arm and set aside the jump at the first upsampled step as a resizing artifact; that jump is the effect. (viii)~The training-dynamics description is corrected: at $224$\,px backprop does not decline epoch by epoch but drops in the first epoch and then recovers partly (\S3.6)."),
     (r"(a)~Mean Spearman", r"(a)~Mean Spearman"),  # placeholder kept idempotent (see fig. 1 caption below)
     (r"Mean Spearman $\rho$ (Conv1$\to$V1, per subject, cross-run pairs) across $5$ seeds, with 95\% stimulus-bootstrap CIs.",
      r"(a)~Mean Spearman $\rho$ (Conv1$\to$V1, per subject, cross-run pairs) across $5$ seeds, with 95\% stimulus-bootstrap CIs."),
@@ -220,6 +221,26 @@ R3 = [
      r"datasets and the Brain-Score team for their infrastructure. Analysis code and text drafts were developed with the assistance of an AI coding assistant; all results were verified by the author."),
 ]
 R3 = [x for x in R3 if x[0] != x[1]]
+
+
+def place_figures(t):
+    """Put every figure right after the first paragraph of its own subsection that references it,
+    allow here/bottom/page placement, and keep floats from drifting past a \\section heading
+    (placeins), so that no figure ends up after the references."""
+    fig = re.compile(r"\\begin\{(figure\*?)\}\[t\]\n.*?\\end\{\1\}\n\n?", re.S)
+    for m in list(fig.finditer(t)):
+        block = m.group(0)
+        label = re.search(r"\\label\{([^}]+)\}", block)[1]
+        t = t.replace(block, "", 1)
+        sub = t.rfind("\\subsection{", 0, m.start())
+        ref = t.index("\\ref{" + label + "}", sub)
+        end = t.index("\n\n", ref) + 2
+        spec = "[tp]" if m.group(1) == "figure*" else "[tbp]"
+        block = block.replace("}[t]\n", "}" + spec + "\n", 1).rstrip("\n") + "\n\n"
+        t = t[:end] + block + t[end:]
+    pkg = "\\usepackage{caption}\n"
+    assert t.count(pkg) == 1
+    return t.replace(pkg, pkg + "\\usepackage[section]{placeins}\n")
 
 
 def main():
@@ -241,6 +262,7 @@ def main():
         n = t.count(old)
         assert n == 1, (n, old[:90])
         t = t.replace(old, new)
+    t = place_figures(t)
     DST.write_text(t, encoding="utf-8")
     print(f"{len(R)} replacements -> {DST.name}")
 
