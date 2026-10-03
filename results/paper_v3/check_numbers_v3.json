@@ -1,6 +1,7 @@
 {
  "n_keys_used": 135,
  "n_manifest": 170,
- "n_pdf_decimals": 266,
+ "n_pdf_decimals": 346,
+ "n_bibliography_lines_removed": 24,
  "fails": {}
 }

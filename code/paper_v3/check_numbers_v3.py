@@ -5,7 +5,8 @@
 3. Every decimal number in the PDF text is a manifest value or listed in ALLOWED with the
    reason it does not change (v2-note quotations, model-vs-reference similarities that involve
    no brain data, constants, values shown in the unchanged v2 figures, the one value that
-   could not be recomputed).
+   could not be recomputed). Only the bibliography entries are excluded; appendices and figure
+   pages that follow the "References" heading are checked.
 4. Decimal literals typed in the v3 source body (outside \\NV) are listed.
 
 Output: results/paper_v3/check_numbers_v3.json; exit code 1 on any failure.
@@ -83,6 +84,34 @@ def norm(t):
     return t
 
 
+def alnum(s):
+    return re.sub(r"[^0-9a-z]", "", s.lower())
+
+
+def strip_bibliography(txt, tex):
+    """Remove only the bibliography entries from the PDF text.
+
+    pdftotext places the appendices and some figure pages after the "References" heading and
+    interleaves wrapped entries with figure text, so the text cannot be cut at the heading.
+    A line after the heading is dropped if it is a fragment of a \\bibitem entry of the source
+    (compared on letters and digits only, since pdftotext drops hyphens and ligatures differ).
+    """
+    src = tex[tex.index("\\begin{thebibliography}"):tex.index("\\end{thebibliography}")]
+    src = re.sub(r"\\bibitem\[[^\]]*\]\{[^}]*\}", " ", src)
+    src = re.sub(r"\\[a-zA-Z]+", " ", src).replace("~", " ")
+    bib = alnum(src.replace("fi", "").replace("fl", ""))
+    lines = txt.splitlines()
+    head = next(i for i, l in enumerate(lines) if l.strip() == "References")
+    keep, dropped = lines[:head], []
+    for l in lines[head + 1:]:
+        n = alnum(l.replace("fi", "").replace("fl", "").replace("\ufb01", "").replace("\ufb02", ""))
+        if len(n) >= 20 and re.search("[a-z]", n) and n in bib:
+            dropped.append(l)
+        else:
+            keep.append(l)
+    return "\n".join(keep), dropped
+
+
 def main():
     fails = {}
     m = pd.read_csv(MAN, dtype={"text": str})
@@ -103,7 +132,7 @@ def main():
         fails["rounding"] = bad
     allowed_vals = {norm(str(t)) for t in m.text} | set(ALLOWED)
     txt = subprocess.run(["pdftotext", "-enc", "UTF-8", str(PDF), "-"], capture_output=True).stdout.decode("utf-8")
-    body = txt.split("References")[0]
+    body, bib_lines = strip_bibliography(txt, tex)
     nums = re.findall(r"(?<![\w.])[-\u2212+]?\d*\.\d+", body)
     unknown = sorted({norm(n) for n in nums} - allowed_vals, key=float)
     if unknown:
@@ -125,7 +154,11 @@ def main():
     hits = [p for p in banned if re.search(p, flat, re.I)]
     if hits:
         fails["wording_lint"] = hits
-    out = {"n_keys_used": len(used), "n_manifest": len(m), "n_pdf_decimals": len(nums), "fails": fails}
+    n_items = tex.count("\\bibitem")
+    if len(bib_lines) < n_items:
+        fails["bibliography_not_removed"] = f"{len(bib_lines)} lines removed for {n_items} entries"
+    out = {"n_keys_used": len(used), "n_manifest": len(m), "n_pdf_decimals": len(nums),
+           "n_bibliography_lines_removed": len(bib_lines), "fails": fails}
     (REPO / "results" / "paper_v3" / "check_numbers_v3.json").write_text(json.dumps(out, indent=1))
     print(json.dumps(out, indent=1))
     sys.exit(1 if fails else 0)
