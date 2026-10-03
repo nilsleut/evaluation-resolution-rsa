@@ -168,6 +168,58 @@ R2 += [
 ]
 
 
+# ── third pass: §3.5 corrected (upsampling test, criterion fixed before the run), training-
+#    dynamics wording, version-note items, limitation, acknowledgement. No blur / band-pass. ──
+SPANS = [   # (start marker, end marker inclusive, replacement)
+    (r"A fifth experiment does locate the effect.", r"remains unexplained.",
+     r"A fifth experiment, analysed against a criterion fixed before the analysis, separates the two things resolution changes at once. Repeating the sweep on stimuli first reduced to $32$\,px and then upsampled limits the image content to the training resolution while the input still grows. The V1 gap does not shrink: at $224$\,px it is $\NV{s4.V1.up224}$ (95\% CI $[\NV{s4.V1.up224.lo}, \NV{s4.V1.up224.hi}]$) with content limited, against $\NV{boot.V1.224}$ with native content (ratio $\NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$). The gap therefore arises once the input exceeds the training resolution, driven by a decline of backprop; image content above $32$\,px is not needed for it and narrows it. The backprop advantage at LOC, by contrast, disappears under band-limited upsampling."),
+    (r"Read at the endpoints the two arms look alike: every sign is preserved", r"could have lived.",
+     r"""We evaluated the comparison against a criterion fixed before the analysis (October 2026): the ratio $R = \mathrm{Gap}_{\mathrm{UP}}(224)/\mathrm{Gap}_{\mathrm{NAT}}(224)$ of the V1 Random$-$Backprop gap with content limited to the gap with native content, with a stimulus-bootstrap CI on resamples shared by both arms. $R \geq 0.5$ with a CI of $\mathrm{Gap}_{\mathrm{UP}}$ excluding $0$ was to mean that the effect depends on input size; a CI of $R$ including $0$, that it depends on image content. The result is the first case. At $224$\,px the gap is $\NV{s4.V1.up224}$ $[\NV{s4.V1.up224.lo}, \NV{s4.V1.up224.hi}]$ with content limited and $\NV{boot.V1.224}$ $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$ with native content, $R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$; limiting the content widens the gap by $\NV{s4.V1.diff}$ $[\NV{s4.V1.diff.lo}, \NV{s4.V1.diff.hi}]$.
+
+The shape shows where the gap comes from. With content limited it appears in full at the first step ($\NV{s4.V1.up64}$ at $64$\,px) and changes little thereafter: it opens by $\NV{ups.gapopen.UPSAMPLED}$ from $64$ to $224$\,px, against $\NV{ups.gapopen.NATIVE}$ with native content, so growing the number of pooled positions from $1{,}024$ to $12{,}544$ does not carry it either. It is carried by backprop. With content limited, backprop's V1 alignment falls from $\NV{rho.bp.V1.32}$ at $32$\,px to $\NV{s4.bp.up.min}$--$\NV{s4.bp.up.max}$ at every larger input size; with native content it declines gradually to $\NV{rho.bp.V1.224}$ at $224$\,px. The untrained network stays between $\NV{rho.rnd.V1.32}$ and $\NV{rho.rnd.V1.224}$ in both arms. Image content above the training resolution is therefore not needed for the V1 gap; where it is present, it keeps backprop's alignment higher and narrows the gap. The gap arises once the input exceeds the training resolution.
+
+LOC behaves differently. There the backprop advantage is invariant to resolution with native content ($\NV{gap.LOC.32}$ at $32$\,px, $\NV{gap.LOC.224}$ at $224$\,px) but disappears with content limited ($\NV{s4.LOC.up224}$ $[\NV{s4.LOC.up224.lo}, \NV{s4.LOC.up224.hi}]$ at $224$\,px; difference from native $\NV{s4.LOC.diff}$ $[\NV{s4.LOC.diff.lo}, \NV{s4.LOC.diff.hi}]$): it needs natural broadband image content. The ratio $R$ is not informative at LOC ($\NV{s4.LOC.R}$ $[\NV{s4.LOC.R.lo}, \NV{s4.LOC.R.hi}]$) because its denominator is close to zero.
+
+One caution applies to both areas. Upsampled images are smoother than natural images of the same size; the comparison separates information content from input size, but it does not isolate which property of the image is responsible for backprop's decline at V1 or for the loss of its advantage at LOC."""),
+]
+R3 = [
+    (r"\subsection{Content, not pooled positions}", r"\subsection{Input size, not image content}"),
+    (r"\textbf{The dependence is on image content, not on pooled positions.}",
+     r"\textbf{With image content limited to the training resolution, the V1 gap is as large as with native content.}"),
+    (r"with content fixed they drop once at the first step, where the resize chain is introduced, and then run flat or turn back up.",
+     r"with content limited they drop at the first step, as soon as the input exceeds the training resolution, and then run flat."),
+    (r"(3)~We separate the two things evaluation resolution changes at once and locate the dependence on the image-content axis rather than the pooling axis.",
+     r"(3)~We separate the two things evaluation resolution changes at once and show that the V1 gap does not require image content above the training resolution: it arises once the input exceeds that resolution, driven by a decline of backprop."),
+    (r"Section~3.5 then separates the two things resolution changes at once and finds the dependence on the content axis rather than the pooling axis.",
+     r"Section~3.5 then separates the two things resolution changes at once and finds that the V1 gap follows the input size, not the image content."),
+    (r"Section~3.5 constrains the pure form of it: in the upsampled arm the filters cover exactly the same fraction of the image as in the native arm at every resolution, so a receptive-field account alone predicts no difference between the arms, and backprop's decline nevertheless disappears. What survives is a mixed statement, that the filter needs detail on its own spatial scale, and we have not tested it.",
+     r"Section~3.5 fits it: in the upsampled arm the filters cover the same fraction of the image as in the native arm, and the gap appears in full as soon as the input exceeds the training resolution, whether or not image content above that resolution is present. What the account does not explain is why that content, where present, narrows the gap."),
+    (r"holding image content fixed at the training resolution while letting the pooled positions grow $12$-fold removes about $\NV{ups.removed}\%$ of the effect (\S3.5), so the dependence lives on the content axis. Why detail above $32$\,px should help random filters and hurt trained ones is the question that remains.",
+     r"limiting the image content to the training resolution leaves the V1 gap at $224$\,px intact ($R = \NV{s4.V1.R}$, \S3.5), so the gap follows the input size relative to the training resolution and is carried by a decline of backprop; image content above the training resolution narrows it. Why trained filters lose alignment once the input exceeds their training scale is the question that remains."),
+    (r"A fifth experiment locates it: capping image detail at the training resolution while letting the pooled positions grow $12$-fold removes about $\NV{ups.removed}\%$ of the effect, so what varies with evaluation resolution is the image detail and not the number of averaged positions.",
+     r"A fifth experiment, analysed against a criterion fixed before the analysis, locates it: with image content limited to the training resolution the V1 gap at $224$\,px is as large as with native content ($R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$), so it arises once the input exceeds the training resolution, driven by a decline of backprop, and content above that resolution narrows it rather than creating it."),
+    (r"Section~3.5 places the dependence on the content axis, which narrows the search without ending it: the next question is which property of the detail above the training resolution is responsible, and a bandpass decomposition of the stimuli would be the natural way to ask.",
+     r"Section~3.5 ties the V1 gap to the input size relative to the training resolution, which narrows the search without ending it: the next question is which property of the enlarged input lowers backprop's alignment, and why image content above the training resolution partly offsets it."),
+    (r"tracks the same dependence, accumulating epoch by epoch.", r"tracks the same dependence."),
+    (r"At $224$\,px backprop V1 alignment falls epoch by epoch ($\NV{td.bp.224} \pm \NV{td.bp.224.sem}$ from epoch $0$ to $40$, $\NV{td.bp.224.neg}/5$ seeds negative),",
+     r"At $224$\,px backprop V1 alignment drops sharply in the first epoch, from $\NV{td.bp224.e0}$ to $\NV{td.bp224.e1}$, and then recovers partly, to $\NV{td.bp224.e40}$ at epoch $40$ (net change $\NV{td.bp.224} \pm \NV{td.bp.224.sem}$, $\NV{td.bp.224.neg}/5$ seeds negative),"),
+    (r"At $224$\,px backprop appears to degrade; at $32$\,px it returns to baseline, showing no net degradation.",
+     r"At $224$\,px backprop drops in the first epoch and recovers only partly; at $32$\,px it returns to baseline, showing no net degradation."),
+    (r"but the absolute scale should not be read as a property of V1.",
+     r"but the absolute scale should not be read as a property of V1. (13)~The upsampled images of \S3.5 are smoother than natural images of the same size. The comparison separates information content from input size, but it does not isolate which image property is responsible for backprop's decline."),
+    (r"(vi)~The dataset description is corrected to 3T.",
+     r"(vi)~The dataset description is corrected to 3T. (vii)~v2 stated that image detail above the $32$\,px training resolution carries the V1 effect. A preregistered evaluation-only upsampling analysis shows the opposite: with image content limited to $32$\,px the gap is larger ($R = \NV{s4.V1.R}$ $[\NV{s4.V1.R.lo}, \NV{s4.V1.R.hi}]$); it arises when the input size exceeds the training resolution, driven by a decline of backpropagation. v2 had measured only the growth of the gap between $64$ and $224$\,px within each arm and set aside the jump at the first upsampled step as a resizing artifact; that jump is the effect. (viii)~The training-dynamics description is corrected: at $224$\,px backprop does not decline epoch by epoch but drops in the first epoch and then recovers partly (\S3.6)."),
+    (r"(a)~Mean Spearman", r"(a)~Mean Spearman"),  # placeholder kept idempotent (see fig. 1 caption below)
+    (r"Mean Spearman $\rho$ (Conv1$\to$V1, per subject, cross-run pairs) across $5$ seeds, with 95\% stimulus-bootstrap CIs.",
+     r"(a)~Mean Spearman $\rho$ (Conv1$\to$V1, per subject, cross-run pairs) across $5$ seeds, with 95\% stimulus-bootstrap CIs."),
+    (r"after low-level statistics are partialled out (\S3.4).}",
+     r"after low-level statistics are partialled out (\S3.4). (b)~Random$-$Backprop gap, paired per seed and averaged over the $5$ seeds, with paired 95\% stimulus-bootstrap CIs, for native stimuli and for stimuli with content limited to $32$\,px (\S3.5).}"),
+    (r"datasets and the Brain-Score team for their infrastructure.",
+     r"datasets and the Brain-Score team for their infrastructure. Analysis code and text drafts were developed with the assistance of an AI coding assistant; all results were verified by the author."),
+]
+R3 = [x for x in R3 if x[0] != x[1]]
+
+
 def main():
     t = SRC.read_text(encoding="utf-8")
     for old, new in R:
@@ -175,6 +227,15 @@ def main():
         assert n == 1, (n, old[:90])
         t = t.replace(old, new)
     for old, new in R2:
+        n = t.count(old)
+        assert n == 1, (n, old[:90])
+        t = t.replace(old, new)
+    for start, end, new in SPANS:
+        assert t.count(start) == 1, start[:80]
+        i = t.index(start)
+        j = t.index(end, i) + len(end)
+        t = t[:i] + new + t[j:]
+    for old, new in R3:
         n = t.count(old)
         assert n == 1, (n, old[:90])
         t = t.replace(old, new)

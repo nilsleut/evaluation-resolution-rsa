@@ -61,6 +61,7 @@ ALLOWED = {
     "2.4": "initialization scale factor",
     # v3 note: v2 printed value quoted next to its recomputation
     "0.020": "v3 note: joint partial at 32 px as printed in v2",
+    "0.5": "decision threshold of the criterion fixed before the upsampling analysis (R >= 0.5)",
 }
 # section numbers (\S3.1 ... \S4.4) and tick labels of the unchanged v2 figures
 ALLOWED.update({f"{a}.{b}": "section number" for a in (3, 4) for b in range(1, 8)})
@@ -112,6 +113,18 @@ def main():
     typed = sorted({norm(x) for x in re.findall(r"(?<![\w.])[-+]?\d*\.\d+", b)} - allowed_vals, key=float)
     if typed:
         fails["typed_literals_not_allowed"] = typed
+    # 5. wording lint: the v2 reading of §3.5 (detail above 32 px carries the effect) is reversed
+    #    in v3; the training-dynamics description is corrected; exploratory blur / band-pass
+    #    results are not part of the paper.
+    flat = re.sub(r"\s+", " ", tex[tex.index("\\begin{document}"):tex.index("\\begin{thebibliography}")])
+    flat = flat.split("\\textbf{Note on version 3.}")[0] + flat.split("\\section{Introduction}")[1]  # version notes quote withdrawn claims
+    banned = [r"carried by image detail", r"detail above [^.]{0,60}carr", r"content axis", r"requires that detail",
+              r"hurts? trained ones", r"image detail and not the number", r"resize chain is introduced",
+              r"property of the content and not of the pooling", r"dependence is on image content",
+              r"falls epoch by epoch", r"accumulating epoch by epoch", r"\bblur", r"band-?pass", r"low-pass"]
+    hits = [p for p in banned if re.search(p, flat, re.I)]
+    if hits:
+        fails["wording_lint"] = hits
     out = {"n_keys_used": len(used), "n_manifest": len(m), "n_pdf_decimals": len(nums), "fails": fails}
     (REPO / "results" / "paper_v3" / "check_numbers_v3.json").write_text(json.dumps(out, indent=1))
     print(json.dumps(out, indent=1))

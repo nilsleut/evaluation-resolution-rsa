@@ -219,6 +219,37 @@ e("lb.V1.lo", "Methods (scale)", "-", ext("lb.cr.V1.lo"), src=S_EXT)
 e("lb.V1.hi", "Methods (scale)", "-", ext("lb.cr.V1.hi"), src=S_EXT)
 
 
+# ── 3.5 rewrite: upsampling test (step4, per subject, cross-run, v12, bootstrap CI) ──
+S4R = "results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples)"
+R4 = pd.read_csv(UPS / "step4_ratio.csv")
+R4 = R4[R4.convention == "persub"].set_index("roi")
+for roi in ("V1", "LOC"):
+    r = R4.loc[roi]
+    e(f"s4.{roi}.up224", "3.5, Abstract", "-", r.gap_up_224, sign=True, src=S4R)
+    e(f"s4.{roi}.up224.lo", "3.5, Abstract", "-", r.gap_up_lo, src=S4R)
+    e(f"s4.{roi}.up224.hi", "3.5, Abstract", "-", r.gap_up_hi, src=S4R)
+    e(f"s4.{roi}.R", "3.5, Abstract, note", "-", r.R, d=2, src=S4R)
+    e(f"s4.{roi}.R.lo", "3.5, Abstract, note", "-", r.R_lo, d=2, src=S4R)
+    e(f"s4.{roi}.R.hi", "3.5, Abstract, note", "-", r.R_hi, d=2, src=S4R)
+    e(f"s4.{roi}.diff", "3.5", "-", r.up_minus_nat, sign=True, src=S4R)
+    e(f"s4.{roi}.diff.lo", "3.5", "-", r.up_minus_nat_lo, src=S4R)
+    e(f"s4.{roi}.diff.hi", "3.5", "-", r.up_minus_nat_hi, src=S4R)
+e("s4.V1.up64", "3.5", "-", g4up := float(G4[(G4.convention == "persub") & (G4.roi == "V1") & (G4.arm == "UPSAMPLED")
+                                             & (G4.res == 64)].gap.iloc[0]), sign=True, src="results/upsampling/step4_gaps.csv")
+_rs = pd.concat([pd.read_csv(UPS / f"rsa_seed{i}.csv") for i in range(5)])
+_rs = _rs[(_rs.variant == "cr") & (_rs.convention == "persub") & (_rs.layer == "Conv1") & (_rs.roi == "V1")]
+_bpu = _rs[(_rs.rule == "Backprop") & (_rs.arm == "UPSAMPLED") & (_rs.res >= 64)].groupby("res").rho.mean()
+e("s4.bp.up.min", "3.5", "-", _bpu.min(), src="results/upsampling/rsa_seed*.csv")
+e("s4.bp.up.max", "3.5", "-", _bpu.max(), src="results/upsampling/rsa_seed*.csv")
+e("s4.bp.up.64", "3.5", "-", _bpu.loc[64], src="results/upsampling/rsa_seed*.csv")
+
+# ── 3.6 training dynamics: backprop at 224 px, epoch 0 -> 1 -> 40 (seed mean, per subject, cross-run) ──
+_FD = pd.read_csv(P3 / "figure_data_v3.csv").set_index("cell")
+for ep in (0, 1, 40):
+    e(f"td.bp224.e{ep}", "3.6", "-", float(_FD.loc[f"td|Backprop|224|{ep}", "mean"]),
+      src="results/paper_v3/figure_data_v3.csv (training-dynamics RDMs)")
+
+
 def main():
     m = pd.DataFrame(E)
     assert m.key.is_unique, m[m.key.duplicated()]

@@ -149,3 +149,28 @@ Primary convention of v3: per subject, cross-run stimulus pairs (210,205 of 258,
 | `lb.IT` | Methods (scale) | - | 0.021 | 2604.16875 v4 numbers manifest (external_2604/) (Nili LOSO lower bound, cross-run) |
 | `lb.V1.lo` | Methods (scale) | - | 0.039 | 2604.16875 v4 numbers manifest (external_2604/) |
 | `lb.V1.hi` | Methods (scale) | - | 0.064 | 2604.16875 v4 numbers manifest (external_2604/) |
+| `s4.V1.up224` | 3.5, Abstract | - | +0.035 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.up224.lo` | 3.5, Abstract | - | 0.023 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.up224.hi` | 3.5, Abstract | - | 0.046 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.R` | 3.5, Abstract, note | - | 1.14 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.R.lo` | 3.5, Abstract, note | - | 1.03 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.R.hi` | 3.5, Abstract, note | - | 1.34 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.diff` | 3.5 | - | +0.004 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.diff.lo` | 3.5 | - | 0.001 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.diff.hi` | 3.5 | - | 0.008 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.up224` | 3.5, Abstract | - | +0.003 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.up224.lo` | 3.5, Abstract | - | -0.004 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.up224.hi` | 3.5, Abstract | - | 0.009 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.R` | 3.5, Abstract, note | - | 0.23 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.R.lo` | 3.5, Abstract, note | - | -0.58 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.R.hi` | 3.5, Abstract, note | - | 0.83 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.diff` | 3.5 | - | -0.009 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.diff.lo` | 3.5 | - | -0.017 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.LOC.diff.hi` | 3.5 | - | -0.001 | results/upsampling/step4_ratio.csv (v12, per subject, cross-run, 1000 stimulus resamples) |
+| `s4.V1.up64` | 3.5 | - | +0.032 | results/upsampling/step4_gaps.csv |
+| `s4.bp.up.min` | 3.5 | - | 0.014 | results/upsampling/rsa_seed*.csv |
+| `s4.bp.up.max` | 3.5 | - | 0.016 | results/upsampling/rsa_seed*.csv |
+| `s4.bp.up.64` | 3.5 | - | 0.016 | results/upsampling/rsa_seed*.csv |
+| `td.bp224.e0` | 3.6 | - | 0.053 | results/paper_v3/figure_data_v3.csv (training-dynamics RDMs) |
+| `td.bp224.e1` | 3.6 | - | 0.012 | results/paper_v3/figure_data_v3.csv (training-dynamics RDMs) |
+| `td.bp224.e40` | 3.6 | - | 0.023 | results/paper_v3/figure_data_v3.csv (training-dynamics RDMs) |

@@ -44,15 +44,35 @@ def eb(ax, x, m, e, rule=None, colour=None, marker=None, ls="-", label=None, **k
 
 
 def fig1():
-    fig, ax = plt.subplots(figsize=(3.4, 2.7))
+    """(a) absolute rho per condition (native); (b) paired Random - Backprop gap, native and
+    content limited to 32 px, from results/upsampling/step4_gaps.csv (per subject, cross-run,
+    paired stimulus bootstrap shared by both arms)."""
+    fig, (ax, bx) = plt.subplots(2, 1, figsize=(3.4, 5.2), gridspec_kw={"height_ratios": [1.35, 1]})
     for r in MF.PAPER_RULES:
         eb(ax, *cell("fig1", f"NATIVE|{r}|"), rule=r)
     ax.set_ylim(0, None)
     ax.axvline(32, color="0.6", lw=0.7, ls=":", zorder=0)
     ax.annotate("training resolution", xy=(34, ax.get_ylim()[0]), va="bottom", ha="left", fontsize=6, color="0.45")
     MF.res_axis(ax)
+    ax.set_xlabel("")
     ax.set_ylabel(YLAB_V1)
-    MF.legend_below(fig, ax, ncol=2)
+    ax.set_title("(a)", loc="left", fontsize=8)
+    ax.legend(*ax.get_legend_handles_labels(), loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=2,
+              frameon=False, handlelength=2.2, columnspacing=1.4)
+    g = pd.read_csv(REPO / "results" / "upsampling" / "step4_gaps.csv")
+    g = g[(g.convention == "persub") & (g.roi == "V1")]
+    bx.axhline(0, color="0.5", lw=0.7, zorder=0)
+    bx.axvline(32, color="0.6", lw=0.7, ls=":", zorder=0)
+    for arm, colour, marker, ls, lab in (("NATIVE", "#333333", "o", "-", "native"),
+                                         ("UPSAMPLED", "#D55E00", "s", (0, (4, 2)), "content limited to 32 px")):
+        d = g[g.arm == arm].sort_values("res")
+        bx.errorbar(d.res, d.gap, yerr=np.vstack([d.gap - d.boot_lo, d.boot_hi - d.gap]), color=colour, marker=marker,
+                    linestyle=ls, capsize=2, elinewidth=0.9, label=lab)
+    MF.res_axis(bx)
+    bx.set_ylabel(r"Random $-$ Backprop, V1")
+    bx.set_title("(b)", loc="left", fontsize=8)
+    bx.legend(frameon=False, loc="lower right", handlelength=2.4)
+    fig.subplots_adjust(hspace=0.78)
     fig.savefig(OUT / "fig1_v1_sweep_v3.pdf")
     fig.savefig(OUT / "fig1_v1_sweep_v3.png")
     plt.close(fig)
