@@ -259,8 +259,7 @@ Endpoint study this one corrects and extends:
 
 ## Acknowledgements
 
-Martin Schrimpf, for the arXiv endorsement and helpful feedback; the creators of the
-THINGS-fMRI, FreemanZiemba2013 and MajajHong2015 datasets; and the Brain-Score team
+The creators of the THINGS-fMRI, FreemanZiemba2013 and MajajHong2015 datasets; and the Brain-Score team
 for their infrastructure.
 
 ## License
