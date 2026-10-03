@@ -1,7 +1,7 @@
 \documentclass[10pt,twocolumn]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL Evaluation_Resolution_Confounds_paper_v2.tex                   Mon Aug 24 13:57:52 2026
-%DIF ADD arxiv_upload_v3/Evaluation_Resolution_Confounds_paper_v3.tex   Fri Oct  2 21:40:22 2026
+%DIF ADD arxiv_upload_v3/Evaluation_Resolution_Confounds_paper_v3.tex   Sat Oct  3 11:31:22 2026
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
@@ -125,7 +125,7 @@ Representational similarity analysis (RSA) is increasingly used to ask which lea
 \citealt{leutenegger2026}}\hskip0pt%DIFAUXCMD
 ). Values are lower in this convention; no comparison between conditions changes sign, and the seed counts are unchanged. The headline V1 gap at $224$\,px is $\NV{boot.V1.224}$, 95\% stimulus-bootstrap CI $[\NV{boot.V1.224.lo}, \NV{boot.V1.224.hi}]$. (ii)~Sweep, best-layer, higher-area and content-control values are from the $30$-checkpoint retrain of the repaired five-seed sweep, which reproduces the published sweep to within $6\times10^{-4}$ at the headline cell; backprop differs between the two runs only within its run-to-run reproducibility (}\S4\DIFadd{.1). (iii)~The scale section reports the leave-one-subject-out lower bound \mbox{%DIFAUXCMD
 \citep{nili2014} }\hskip0pt%DIFAUXCMD
-on cross-run pairs. (iv)~The figures are those of v2 and show the v2 convention (RDM averaged over subjects, all pairs; Fig.~\ref{fig:dynamics}: per subject, all pairs). (v)~One value is not recomputed, because its RDMs were not stored: the calibration on the evaluation stimuli in }\S3\DIFadd{.2, given in the v2 convention. The joint four-reference partial correlation in }\S3\DIFadd{.4 could not be reproduced exactly at $32$\,px from its stated definition ($-0.017$ against the printed $-0.020$, v2 convention); the v3 value follows the stated definition. (vi)~The dataset description is corrected to 3T. A manifest of every changed number, with its source, is in the code repository (}\texttt{\DIFadd{results/paper\_v3/NUMBERS\_MANIFEST\_v3.md}}\DIFadd{).
+on cross-run pairs. (iv)~All figures are recomputed in this convention; their error bars are now 95\% stimulus-bootstrap CIs rather than across-seed SEM. (v)~One value is not recomputed, because its RDMs were not stored: the calibration on the evaluation stimuli in }\S3\DIFadd{.2, given in the v2 convention. The joint four-reference partial correlation in }\S3\DIFadd{.4 could not be reproduced exactly at $32$\,px from its stated definition ($-0.017$ against the printed $-0.020$, v2 convention); the v3 value follows the stated definition. (vi)~The dataset description is corrected to 3T. A manifest of every changed number, with its source, is in the code repository (}\texttt{\DIFadd{results/paper\_v3/NUMBERS\_MANIFEST\_v3.md}}\DIFadd{).
 }
 
 \DIFaddend \textbf{Note on version 2.} This version corrects the text of v1. No figure and no data file changes, and no comparison between conditions changes in substance. One table value changes, by $0.001$ (Appendix~C, the best-layer gap at $96$\,px). One interpretive claim is withdrawn.
@@ -170,7 +170,9 @@ Not everything moves with resolution. At a higher area (LOC), backpropagation-tr
 
 \textbf{Stimulus preprocessing.} Stimuli are resized with bilinear interpolation on the PIL image (\texttt{transforms.Resize(px)} followed by \texttt{CenterCrop(px)}), which scales the shorter edge and preserves aspect ratio, so the retained image region is identical at every evaluation resolution; downsampling is antialiased. Inputs are normalized with each model's own training statistics: CIFAR-10 channel statistics for the custom CNN, ImageNet statistics for the ResNet-50 and the Swin-Tiny. All models are placed in evaluation mode for feature extraction, so batch normalization uses its stored running statistics and these are not updated by the evaluation pass; this is asserted at extraction time for every condition. Note that the untrained network's batch-normalization layers retain their initialized running statistics (mean $0$, variance $1$), so normalization is close to the identity for that condition, whereas the trained networks carry statistics accumulated at the $32$\,px training resolution.
 
-\textbf{RSA.} For each model we extract layer activations for every stimulus, global-average-pool convolutional or stage feature maps, and build a model RDM with correlation distance. For the predictive-coding condition, features are the representations produced by the inference loop ($T=10$ steps at inference rate $0.02$), not a single feedforward pass; using the feedforward pass instead gives a different model. Model and brain RDMs are compared by Spearman correlation. \DIFdelbegin \DIFdel{The main figures report the }\DIFdelend \DIFaddbegin \DIFadd{Values in the text are the }\DIFaddend mean $\pm$ SEM across the $5$ seeds\DIFdelbegin \DIFdel{. Two averaging schemes appear in this paper. }\DIFdelend \DIFaddbegin \DIFadd{, with the number of seeds in which a difference is positive, in the per-subject convention: each model RDM is correlated with each subject's RDM and the three correlations are averaged, using only the $210{,}205$ of $258{,}840$ stimulus pairs whose two stimuli lie in different fMRI runs for all three subjects (two subjects saw the stimuli in identical run order, so same-run pairs share a run component). The headline V1 gap additionally carries a 95\% stimulus-bootstrap CI ($1{,}000$ resamples of the $720$ stimuli, with the cross-run pair set recomputed in each). The figures are unchanged from v2: }\DIFaddend Figures~\ref{fig:sweep}, \DIFdelbegin \DIFdel{\ref{fig:arch} }\DIFdelend \DIFaddbegin \DIFadd{\ref{fig:bncal}, \ref{fig:arch}, \ref{fig:content} }\DIFaddend and \ref{fig:higher} correlate each model RDM \DIFdelbegin \DIFdel{against }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend the RDM averaged over the three subjects \DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{on all stimulus pairs, and }\DIFaddend Figure~\ref{fig:dynamics} \DIFdelbegin \DIFdel{correlates against each subject separately and averages the resulting correlations . Averaging RDMs before correlating reduces noise in the brain estimate and yields uniformly higher $\rho$, so the two schemes }\DIFdelend \DIFaddbegin \DIFadd{averages per-subject correlations on all pairs. The conventions }\DIFaddend give different absolute values for the same models \DIFdelbegin \DIFdel{. The main effect is unchanged under either}\DIFdelend \DIFaddbegin \DIFadd{and the same pattern}\DIFaddend : the V1 Random$-$Backprop gap runs from \DIFdelbegin \DIFdel{$-0.001 \pm 0.007$ ($3/5$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.32}$ ($\NV{gap.V1.32.pos}/5$ }\DIFaddend seeds) at $32$\,px to \DIFdelbegin \DIFdel{$+0.044 \pm 0.006$ ($5/5$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.224}$ ($\NV{gap.V1.224.pos}/5$}\DIFaddend ) at $224$\,px \DIFdelbegin \DIFdel{under RDM averaging }\DIFdelend \DIFaddbegin \DIFadd{per subject on cross-run pairs, from $\NV{mr.cr.V1.32}$ to $\NV{mr.cr.V1.224}$ with RDM averaging on cross-run pairs}\DIFaddend , and from \DIFdelbegin \DIFdel{$+0.000 \pm 0.005$ ($3/5$) to $+0.032 \pm 0.004$ ($5/5$) under per-subject averaging }\DIFdelend \DIFaddbegin \DIFadd{$\NV{mr.all.V1.32}$ to $\NV{mr.all.V1.224}$ with RDM averaging on all pairs}\DIFaddend . Differences across seeds, such as the Random$-$Backprop gap, are tested with a paired, one-sided sign-flip permutation test over the five seeds ($2^5=32$ assignments; smallest attainable $p = 1/32 \approx 0.031$), following the companion training-dynamics study. All differences, factor effects and standard errors are computed at full precision; they may therefore differ in the last digit from arithmetic on the rounded values printed. Layer$\to$ROI mapping for the custom CNN: Conv1$\to$V1/V2, Conv2$\to$V1/V2, Conv3$\to$LOC, FC1$\to$IT --- six layer--ROI pairs. The headline V1 result uses Conv1 throughout; Conv2 enters the best-layer analysis of Appendix~C. For ResNet-50: \texttt{layer1}$\to$V1/V2, \texttt{layer2}$\to$V4, \texttt{layer4}$\to$IT. For Swin-Tiny: early stage$\to$V1/V2, late stage$\to$IT.
+\textbf{RSA.} For each model we extract layer activations for every stimulus, global-average-pool convolutional or stage feature maps, and build a model RDM with correlation distance. For the predictive-coding condition, features are the representations produced by the inference loop ($T=10$ steps at inference rate $0.02$), not a single feedforward pass; using the feedforward pass instead gives a different model. Model and brain RDMs are compared by Spearman correlation. \DIFdelbegin \DIFdel{The main figures report the }\DIFdelend \DIFaddbegin \DIFadd{Values in the text are the }\DIFaddend mean $\pm$ SEM across the $5$ seeds\DIFdelbegin \DIFdel{. Two averaging schemes appear in this paper. Figures~\ref{fig:sweep}, \ref{fig:arch} and \ref{fig:higher} correlate }\DIFdelend \DIFaddbegin \DIFadd{, with the number of seeds in which a difference is positive, in the per-subject convention: }\DIFaddend each model RDM \DIFdelbegin \DIFdel{against the RDM averaged over the three subjects; Figure~\ref{fig:dynamics} correlates against each subject separately and averages the resulting correlations.Averaging RDMs before correlating reduces noise in the brain estimate and yields uniformly higher $\rho$, so the two schemes }\DIFdelend \DIFaddbegin \DIFadd{is correlated with each subject's RDM and the three correlations are averaged, using only the $210{,}205$ of $258{,}840$ stimulus pairs whose two stimuli lie in different fMRI runs for all three subjects (two subjects saw the stimuli in identical run order, so same-run pairs share a run component). The headline V1 gap additionally carries a 95\% stimulus-bootstrap CI ($1{,}000$ resamples of the $720$ stimuli, with the cross-run pair set recomputed in each). The figures use the same convention; their error bars are 95\% stimulus-bootstrap CIs of the seed mean (Fig.~\ref{fig:arch}: of the single ResNet-50 and Swin-Tiny checkpoints), and Fig.~\ref{fig:gabor} shows single-seed points as in v2. The model set is the $30$-checkpoint retrain of the repaired sweep; the endpoint study \mbox{%DIFAUXCMD
+\citep{leutenegger2026} }\hskip0pt%DIFAUXCMD
+uses a nominally identical retrain of the same five-seed configuration, and its gap at the headline cell ($\NV{p1.gap}$) differs from ours ($\NV{gap.V1.224}$) by less than the seed spread. The conventions }\DIFaddend give different absolute values for the same models \DIFdelbegin \DIFdel{. The main effect is unchanged under either}\DIFdelend \DIFaddbegin \DIFadd{and the same pattern}\DIFaddend : the V1 Random$-$Backprop gap runs from \DIFdelbegin \DIFdel{$-0.001 \pm 0.007$ ($3/5$ }\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.32}$ ($\NV{gap.V1.32.pos}/5$ }\DIFaddend seeds) at $32$\,px to \DIFdelbegin \DIFdel{$+0.044 \pm 0.006$ ($5/5$}\DIFdelend \DIFaddbegin \DIFadd{$\NV{gap.V1.224}$ ($\NV{gap.V1.224.pos}/5$}\DIFaddend ) at $224$\,px \DIFdelbegin \DIFdel{under RDM averaging }\DIFdelend \DIFaddbegin \DIFadd{per subject on cross-run pairs, from $\NV{mr.cr.V1.32}$ to $\NV{mr.cr.V1.224}$ with RDM averaging on cross-run pairs}\DIFaddend , and from \DIFdelbegin \DIFdel{$+0.000 \pm 0.005$ ($3/5$) to $+0.032 \pm 0.004$ ($5/5$) under per-subject averaging }\DIFdelend \DIFaddbegin \DIFadd{$\NV{mr.all.V1.32}$ to $\NV{mr.all.V1.224}$ with RDM averaging on all pairs}\DIFaddend . Differences across seeds, such as the Random$-$Backprop gap, are tested with a paired, one-sided sign-flip permutation test over the five seeds ($2^5=32$ assignments; smallest attainable $p = 1/32 \approx 0.031$), following the companion training-dynamics study. All differences, factor effects and standard errors are computed at full precision; they may therefore differ in the last digit from arithmetic on the rounded values printed. Layer$\to$ROI mapping for the custom CNN: Conv1$\to$V1/V2, Conv2$\to$V1/V2, Conv3$\to$LOC, FC1$\to$IT --- six layer--ROI pairs. The headline V1 result uses Conv1 throughout; Conv2 enters the best-layer analysis of Appendix~C. For ResNet-50: \texttt{layer1}$\to$V1/V2, \texttt{layer2}$\to$V4, \texttt{layer4}$\to$IT. For Swin-Tiny: early stage$\to$V1/V2, late stage$\to$IT.
 
 \textbf{Interpreting the scale.} Absolute Spearman $\rho$ values in this setting are low\DIFdelbegin \DIFdel{, and we report no noise ceiling for them}\DIFdelend . The $720$ evaluation stimuli are single-presentation, so no within-subject reliability can be estimated on them\DIFdelbegin \DIFdel{, and with three subjects a between-subject estimate is not usable either: }\DIFdelend \DIFaddbegin \DIFadd{. With three subjects the informative reference is the leave-one-subject-out lower bound of \mbox{%DIFAUXCMD
 \citet{nili2014}}\hskip0pt%DIFAUXCMD
@@ -203,8 +205,10 @@ The fixed layer-to-ROI mapping does not create this. Selecting, for each conditi
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig1_v1_sweep.pdf}
-\caption{\textbf{V1 alignment is a function of evaluation resolution.} Mean Spearman $\rho$ (Conv1$\to$V1) $\pm$ SEM across $5$ seeds. Every trained condition peaks at the $32$\,px training resolution and declines; only the untrained random network rises. The Random$-$Backprop gap is $\approx 0$ at $32$\,px and grows to $+0.044$ at $224$\,px \DIFaddbeginFL \DIFaddFL{in the plotted convention (RDM averaged over subjects, all stimulus pairs}\DIFaddendFL ; \DIFaddbeginFL \DIFaddFL{per subject on cross-run pairs, $\NV{gap.V1.224}$); }\DIFaddendFL the same pattern holds, shifted downward, after low-level statistics are partialled out (\S3.4).}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig1_v1_sweep.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{figures/fig1_v1_sweep_v3.pdf}
+\DIFaddendFL \caption{\textbf{V1 alignment is a function of evaluation resolution.} Mean Spearman $\rho$ (Conv1$\to$V1\DIFaddbeginFL \DIFaddFL{, per subject, cross-run pairs}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{$\pm$ SEM }\DIFdelendFL across $5$ seeds\DIFaddbeginFL \DIFaddFL{, with 95\% stimulus-bootstrap CIs}\DIFaddendFL . Every trained condition peaks at the $32$\,px training resolution and declines; only the untrained random network rises. The Random$-$Backprop gap is $\approx 0$ at $32$\,px and grows to \DIFdelbeginFL \DIFdelFL{$+0.044$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$\NV{gap.V1.224}$ }\DIFaddendFL at $224$\,px; the same pattern holds, shifted downward, after low-level statistics are partialled out (\S3.4).}
 \label{fig:sweep}
 \end{figure}
 
@@ -220,8 +224,10 @@ The natural reading of what calibration does cost, that alignment tracks how wel
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig6_bn_calibrated.pdf}
-\caption{\textbf{The effect is not the untrained baseline's normalization.} V1 alignment vs.\ evaluation resolution for the untrained network with its initialized (identity) batch-normalization statistics and for four calibrated variants ($2\times2$: CIFAR-10 or disjoint THINGS images, at $32$\,px or at the evaluation resolution), with the backprop-trained network for reference. Calibration leaves the convolutional weights bit-identical. Resolution-matched calibration costs little and preserves the untrained network's V1 advantage over backprop.}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig6_bn_calibrated.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{figures/fig6_bn_calibrated_v3.pdf}
+\DIFaddendFL \caption{\textbf{The effect is not the untrained baseline's normalization.} V1 alignment vs.\ evaluation resolution for the untrained network with its initialized (identity) batch-normalization statistics and for four calibrated variants ($2\times2$: CIFAR-10 or disjoint THINGS images, at $32$\,px or at the evaluation resolution), with the backprop-trained network for reference. Calibration leaves the convolutional weights bit-identical. Resolution-matched calibration costs little and preserves the untrained network's V1 advantage over backprop.}
 \label{fig:bncal}
 \end{figure}
 
@@ -231,8 +237,10 @@ The obvious explanation is that a model is penalized when evaluated away from it
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig2_architectures.pdf}
-\caption{\textbf{Architecture-independent, not train/eval matching.} V1 alignment vs.\ evaluation resolution for three architecture families. All three trained models, including ResNet-50 and Swin-Tiny (both trained at $224$\,px), fall toward $224$\,px; only the untrained CNN rises. There is no crossover at the $224$\,px training resolution.}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig2_architectures.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{figures/fig2_architectures_v3.pdf}
+\DIFaddendFL \caption{\textbf{Architecture-independent, not train/eval matching.} V1 alignment vs.\ evaluation resolution for three architecture families. All three trained models, including ResNet-50 and Swin-Tiny (both trained at $224$\,px), fall toward $224$\,px; only the untrained CNN rises. There is no crossover at the $224$\,px training resolution.}
 \label{fig:arch}
 \end{figure}
 
@@ -252,8 +260,10 @@ We therefore report this account as tested and not supported. What survives it i
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig5_gabor.pdf}
-\caption{\textbf{The effect is not a simple Gabor account.} Gabor-model similarity (x) vs.\ V1 alignment (y) across models and resolutions. We see no relationship between the two; the ResNet-50, far more Gabor-like, is less V1-aligned than the untrained CNN.}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{figures/fig5_gabor.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{figures/fig5_gabor_v3.pdf}
+\DIFaddendFL \caption{\textbf{The effect is not a simple Gabor account.} Gabor-model similarity (x) vs.\ V1 alignment (y) across models and resolutions. We see no relationship between the two; the ResNet-50, far more Gabor-like, is less V1-aligned than the untrained CNN.}
 \label{fig:gabor}
 \end{figure}
 
@@ -269,8 +279,10 @@ The dependence is therefore carried by image detail that exists above the traini
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig7_content_control.pdf}
-\caption{\textbf{The dependence is on image content, not on pooled positions.} V1 alignment (Conv1$\to$V1) vs.\ evaluation resolution, mean $\pm$ SEM over $5$ seeds, with stimuli at their native resolution (left) and with their content capped at $32$\,px before upsampling (right). The arms are identical at $32$\,px by construction. What differs is the shape. At native resolution the trained conditions decline steadily across the whole sweep; with content fixed they drop once at the first step, where the resize chain is introduced, and then run flat or turn back up. Across the shaded $64\to224$\,px span the pooled positions increase twelvefold while the right-hand arm's content stays fixed, and the Random$-$Backprop gap opens by $+0.003$ there against $+0.030$ on the left \DIFaddbeginFL \DIFaddFL{(plotted convention, v2 run; per subject on cross-run pairs $\NV{ups.gapopen.UPSAMPLED}$ against $\NV{ups.gapopen.NATIVE}$)}\DIFaddendFL . Only the untrained network rises in both arms.}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/fig7_content_control.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/fig7_content_control_v3.pdf}
+\DIFaddendFL \caption{\textbf{The dependence is on image content, not on pooled positions.} V1 alignment (Conv1$\to$V1) vs.\ evaluation resolution, mean \DIFdelbeginFL \DIFdelFL{$\pm$ SEM }\DIFdelendFL over $5$ seeds \DIFaddbeginFL \DIFaddFL{with 95\% stimulus-bootstrap CIs (per subject}\DIFaddendFL , \DIFaddbeginFL \DIFaddFL{cross-run pairs), }\DIFaddendFL with stimuli at their native resolution (left) and with their content capped at $32$\,px before upsampling (right). The arms are identical at $32$\,px by construction. What differs is the shape. At native resolution the trained conditions decline steadily across the whole sweep; with content fixed they drop once at the first step, where the resize chain is introduced, and then run flat or turn back up. Across the shaded $64\to224$\,px span the pooled positions increase twelvefold while the right-hand arm's content stays fixed, and the Random$-$Backprop gap opens by \DIFdelbeginFL \DIFdelFL{$+0.003$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$\NV{ups.gapopen.UPSAMPLED}$ }\DIFaddendFL there against \DIFdelbeginFL \DIFdelFL{$+0.030$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$\NV{ups.gapopen.NATIVE}$ }\DIFaddendFL on the left. Only the untrained network rises in both arms.}
 \label{fig:content}
 \end{figure*}
 
@@ -280,8 +292,10 @@ The same thing happens over training, not just at the endpoint (Fig.~\ref{fig:dy
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig3_dynamics.pdf}
-\caption{\textbf{``Training degrades V1'' tracks the same dependence.} V1 alignment (Conv1$\to$V1) over training, evaluated at $224$\,px (left) and at the $32$\,px training resolution (right), mean across seeds and subjects. At $224$\,px backprop appears to degrade; at $32$\,px it returns to baseline, showing no net degradation.}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/fig3_dynamics.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/fig3_dynamics_v3.pdf}
+\DIFaddendFL \caption{\textbf{``Training degrades V1'' tracks the same dependence.} V1 alignment (Conv1$\to$V1) over training, evaluated at $224$\,px (left) and at the $32$\,px training resolution (right), mean \DIFdelbeginFL \DIFdelFL{across }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{over }\DIFaddendFL seeds \DIFdelbeginFL \DIFdelFL{and subjects}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{of per-subject $\rho$ on cross-run pairs, with 95\% stimulus-bootstrap CIs}\DIFaddendFL . At $224$\,px backprop appears to degrade; at $32$\,px it returns to baseline, showing no net degradation.}
 \label{fig:dynamics}
 \end{figure*}
 
@@ -291,8 +305,10 @@ One effect holds up across the sweep (Fig.~\ref{fig:higher}). At LOC, backprop-t
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig4_higher_areas.pdf}
-\caption{\textbf{A genuine learning effect survives at higher areas.} Backprop vs.\ untrained alignment ($\pm$ SEM, $5$ seeds) across resolution at LOC (left) and IT (right). Backprop exceeds the untrained baseline at every resolution ($5/5$ seeds), unlike at V1.}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/fig4_higher_areas.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/fig4_higher_areas_v3.pdf}
+\DIFaddendFL \caption{\textbf{A genuine learning effect survives at higher areas.} Backprop vs.\ untrained alignment (\DIFdelbeginFL \DIFdelFL{$\pm$ SEM}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{per subject}\DIFaddendFL , \DIFaddbeginFL \DIFaddFL{cross-run pairs; 95\% stimulus-bootstrap CIs, }\DIFaddendFL $5$ seeds) across resolution at LOC (left) and IT (right). Backprop exceeds the untrained baseline at every resolution ($5/5$ seeds), unlike at V1.}
 \label{fig:higher}
 \end{figure*}
 

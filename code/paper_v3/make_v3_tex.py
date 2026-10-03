@@ -144,9 +144,37 @@ r(r"Leutenegger, N. (2026). Untrained CNNs match backpropagation at V1: A system
 Nili, H., Wingfield, C., Walther, A., Su, L., Marslen-Wilson, W., and Kriegeskorte, N. (2014). A toolbox for representational similarity analysis. \textit{PLoS Computational Biology}, 10:e1003553.""")
 
 
+# ── second pass: figures recomputed in the v3 convention (applied after R) ──
+R2 = []
+for f in ("fig1_v1_sweep", "fig6_bn_calibrated", "fig2_architectures", "fig5_gabor", "fig7_content_control",
+          "fig3_dynamics", "fig4_higher_areas"):
+    R2.append((f"{{figures/{f}.pdf}}", f"{{figures/{f}_v3.pdf}}"))
+R2 += [
+    (r"Mean Spearman $\rho$ (Conv1$\to$V1) $\pm$ SEM across $5$ seeds.",
+     r"Mean Spearman $\rho$ (Conv1$\to$V1, per subject, cross-run pairs) across $5$ seeds, with 95\% stimulus-bootstrap CIs."),
+    (r"The Random$-$Backprop gap is $\approx 0$ at $32$\,px and grows to $+0.044$ at $224$\,px in the plotted convention (RDM averaged over subjects, all stimulus pairs; per subject on cross-run pairs, $\NV{gap.V1.224}$);",
+     r"The Random$-$Backprop gap is $\approx 0$ at $32$\,px and grows to $\NV{gap.V1.224}$ at $224$\,px;"),
+    (r"mean $\pm$ SEM over $5$ seeds, with stimuli",
+     r"mean over $5$ seeds with 95\% stimulus-bootstrap CIs (per subject, cross-run pairs), with stimuli"),
+    (r"and the Random$-$Backprop gap opens by $+0.003$ there against $+0.030$ on the left (plotted convention, v2 run; per subject on cross-run pairs $\NV{ups.gapopen.UPSAMPLED}$ against $\NV{ups.gapopen.NATIVE}$).",
+     r"and the Random$-$Backprop gap opens by $\NV{ups.gapopen.UPSAMPLED}$ there against $\NV{ups.gapopen.NATIVE}$ on the left."),
+    (r"mean across seeds and subjects.",
+     r"mean over seeds of per-subject $\rho$ on cross-run pairs, with 95\% stimulus-bootstrap CIs."),
+    (r"($\pm$ SEM, $5$ seeds)", r"(per subject, cross-run pairs; 95\% stimulus-bootstrap CIs, $5$ seeds)"),
+    (r"The figures are unchanged from v2: Figures~\ref{fig:sweep}, \ref{fig:bncal}, \ref{fig:arch}, \ref{fig:content} and \ref{fig:higher} correlate each model RDM with the RDM averaged over the three subjects on all stimulus pairs, and Figure~\ref{fig:dynamics} averages per-subject correlations on all pairs.",
+     r"The figures use the same convention; their error bars are 95\% stimulus-bootstrap CIs of the seed mean (Fig.~\ref{fig:arch}: of the single ResNet-50 and Swin-Tiny checkpoints), and Fig.~\ref{fig:gabor} shows single-seed points as in v2. The model set is the $30$-checkpoint retrain of the repaired sweep; the endpoint study \citep{leutenegger2026} uses a nominally identical retrain of the same five-seed configuration, and its gap at the headline cell ($\NV{p1.gap}$) differs from ours ($\NV{gap.V1.224}$) by less than the seed spread."),
+    (r"(iv)~The figures are those of v2 and show the v2 convention (RDM averaged over subjects, all pairs; Fig.~\ref{fig:dynamics}: per subject, all pairs).",
+     r"(iv)~All figures are recomputed in this convention; their error bars are now 95\% stimulus-bootstrap CIs rather than across-seed SEM."),
+]
+
+
 def main():
     t = SRC.read_text(encoding="utf-8")
     for old, new in R:
+        n = t.count(old)
+        assert n == 1, (n, old[:90])
+        t = t.replace(old, new)
+    for old, new in R2:
         n = t.count(old)
         assert n == 1, (n, old[:90])
         t = t.replace(old, new)
